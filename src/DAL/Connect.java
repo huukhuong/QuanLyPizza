@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class Connect {
 
     public static Connection conn = null;
-    private String dbName = "quanlysinhvien";
+    private String dbName = "quanlypizza";
     String userName = "root";
     String password = "";
 

@@ -11,7 +11,7 @@ public class DangNhapDAL {
     public static TaiKhoan dangNhap(String user, String password) {
         TaiKhoan tk = null;
         try {
-            String sql = "SELECT * FROM TaiKhoan WHERE TenDangNhap=? AND MatKhau=?";
+            String sql = "SELECT * FROM TaiKhoan WHERE MaNhanVien=? AND MatKhau=?";
             PreparedStatement pre = Connect.conn.prepareStatement(sql);
             pre.setString(1, user);
             pre.setString(2, password);
@@ -24,6 +24,7 @@ public class DangNhapDAL {
             }
             return tk;
         } catch (SQLException e) {
+            e.printStackTrace();
         }
         return tk;
     }
