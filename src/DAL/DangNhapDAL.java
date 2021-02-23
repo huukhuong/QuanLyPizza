@@ -18,8 +18,8 @@ public class DangNhapDAL {
             ResultSet rs = pre.executeQuery();
             if (rs.next()) {
                 tk = new TaiKhoan();
-                tk.setMaNhanVien(user);
-                tk.setMatKhau(password);
+                tk.setMaNhanVien(rs.getString("MaNhanVien"));
+                tk.setMatKhau(rs.getString("MatKhau"));
                 tk.setChucVu(rs.getString("ChucVu"));
             }
             return tk;
