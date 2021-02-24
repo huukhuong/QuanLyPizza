@@ -30,12 +30,10 @@ public class DangNhapService {
         user = user.replaceAll("\\s+", "");
         password = password.replaceAll("\\s+", "");
         int result = 0;
-
         if (user.length() <= 0 || password.length() <= 0) {
-            return result = EMPTY_ERROR;
-        }
-        if (DangNhapDAL.dangNhap(user, password) == null) {
-            return result = WRONG_ERROR;
+            result = EMPTY_ERROR;
+        } else if (DangNhapDAL.dangNhap(user, password) == null) {
+            result = WRONG_ERROR;
         }
         return result;
     }
