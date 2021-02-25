@@ -1,4 +1,4 @@
-package quanlysinhvien.GUI;
+package GUI;
 
 import javax.swing.JPanel;
 
