@@ -97,7 +97,7 @@ public class DangNhapUI extends JFrame {
         txtUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                xuLyDangNhap();
+                txtPassword.requestFocus();
             }
         });
         txtPassword.addActionListener(new ActionListener() {

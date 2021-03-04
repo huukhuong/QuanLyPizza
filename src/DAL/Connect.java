@@ -1,12 +1,11 @@
 package DAL;
 
+import GUI.MyDialog;
 import com.mysql.jdbc.Driver;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Connect {
 
@@ -24,7 +23,8 @@ public class Connect {
             com.mysql.jdbc.Driver driver = new Driver();
             conn = driver.connect(strConnect, pro);
         } catch (SQLException ex) {
-            Logger.getLogger(Connect.class.getName()).log(Level.SEVERE, null, ex);
+            new MyDialog("Không kết nối được tới CSDL!", MyDialog.ERROR_DIALOG);
+            System.exit(0);
         }
 
     }
