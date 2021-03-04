@@ -57,9 +57,10 @@ public class MyDialog extends JDialog {
         lblContent.setFont(new Font("", Font.PLAIN, 18));
         lblContent.setHorizontalAlignment(JTextField.CENTER);
         lblContent.setForeground(Color.BLACK);
-        lblContent.setText("<html><div style='text-align: center; width:300px'>"
-                + content
-                + "</div></html>");
+        lblContent.setText("<html>" +
+                "<div style='text-align: center; width:300px'>" +
+                    content +
+                "</div></html>");
 
         btnOK.setPreferredSize(new Dimension(60, 30));
         btnCancel.setPreferredSize(btnOK.getPreferredSize());
@@ -86,22 +87,22 @@ public class MyDialog extends JDialog {
 
         con.add(pnMain);
 
-        Color backbroundHeader = new Color(0);
+        Color backgroundHeader = new Color(0);
         switch (type) {
             case ERROR_DIALOG:
-                backbroundHeader = new Color(220, 53, 69);
+                backgroundHeader = new Color(220, 53, 69);
                 lblIcon.setIcon(iconError);
                 break;
             case SUCCESS_DIALOG:
-                backbroundHeader = new Color(40, 167, 69);
+                backgroundHeader = new Color(40, 167, 69);
                 lblIcon.setIcon(iconSuccess);
                 break;
             case INFO_DIALOG:
-                backbroundHeader = new Color(0, 123, 255);
+                backgroundHeader = new Color(0, 123, 255);
                 lblIcon.setIcon(iconInfo);
                 break;
             case WARNING_DIALOG:
-                backbroundHeader = new Color(255, 193, 7);
+                backgroundHeader = new Color(255, 193, 7);
                 lblIcon.setIcon(iconWarning);
                 pnButton.add(btnCancel);
                 break;
@@ -111,7 +112,7 @@ public class MyDialog extends JDialog {
 
         btnOK.setPreferredSize(new Dimension(80, 30));
         btnCancel.setPreferredSize(btnOK.getPreferredSize());
-        pnHeader.setBackground(backbroundHeader);
+        pnHeader.setBackground(backgroundHeader);
     }
 
     private void addEvents() {
