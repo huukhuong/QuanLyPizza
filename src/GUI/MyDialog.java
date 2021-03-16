@@ -16,7 +16,7 @@ public class MyDialog extends JDialog {
     public final static int WARNING_DIALOG = 4;
 
     public MyDialog(String content, int type) {
-        Main.changLNF("Nimbus");
+        Main.changLNF("Windows");
         this.content = content;
         this.type = type;
         addControls();
@@ -191,6 +191,7 @@ public class MyDialog extends JDialog {
         this.setUndecorated(true);
         this.setSize(400, 250);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(true);
         this.setModal(true);
         this.setBackground(Color.WHITE);
         this.setVisible(true);
