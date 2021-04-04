@@ -28,18 +28,18 @@ public class DangNhapUI extends JFrame {
     private void addControls() {
         Container con = getContentPane();
 
-        pnMain = new ImagePanel("image/background-login.png");
+        pnMain = new ImagePanel("image/LoginUI/background-login.png");
         pnMain.setLayout(null);
 
-        btnExit = new JLabel(new ImageIcon("image/btn-close.png"));
+        btnExit = new JLabel(new ImageIcon("image/LoginUI/btn-close.png"));
         btnExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnExit.setBounds(395, 120, 28, 28);
 
-        btnLogin = new JLabel(new ImageIcon("image/btn-login.png"));
+        btnLogin = new JLabel(new ImageIcon("image/LoginUI/btn-login.png"));
         btnLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnLogin.setBounds(40, 448, 362, 55);
 
-        btnForgot = new JLabel(new ImageIcon("image/btn-forgot.png"));
+        btnForgot = new JLabel(new ImageIcon("image/LoginUI/btn-forgot.png"));
         btnForgot.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnForgot.setBounds(140, 516, 166, 30);
 
@@ -88,10 +88,12 @@ public class DangNhapUI extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent e) {
+                btnExit.setIcon(new ImageIcon("image/LoginUI/btn-close--hover.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
+                btnExit.setIcon(new ImageIcon("image/LoginUI/btn-close.png"));
             }
         });
         txtUser.addActionListener(new ActionListener() {
@@ -122,10 +124,12 @@ public class DangNhapUI extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent e) {
+                btnForgot.setIcon(new ImageIcon("image/LoginUI/btn-forgot--hover.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
+                btnForgot.setIcon(new ImageIcon("image/LoginUI/btn-forgot.png"));
             }
         });
         btnLogin.addMouseListener(new MouseListener() {
@@ -144,10 +148,12 @@ public class DangNhapUI extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent e) {
+                btnLogin.setIcon(new ImageIcon("image/LoginUI/btn-login--hover.png"));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
+                btnLogin.setIcon(new ImageIcon("image/LoginUI/btn-login.png"));
             }
         });
     }
