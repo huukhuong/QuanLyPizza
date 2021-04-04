@@ -3,16 +3,18 @@ package DTO;
 public class TaiKhoan {
 
     private String maNhanVien;
+    private String tenDangNhap;
     private String matKhau;
-    private String chucVu;
+    private String quyen;
 
     public TaiKhoan() {
     }
 
-    public TaiKhoan(String maNhanVien, String matKhau, String chucVu) {
+    public TaiKhoan(String maNhanVien, String tenDangNhap, String matKhau, String quyen) {
         this.maNhanVien = maNhanVien;
+        this.tenDangNhap = tenDangNhap;
         this.matKhau = matKhau;
-        this.chucVu = chucVu;
+        this.quyen = quyen;
     }
 
     public String getMaNhanVien() {
@@ -23,6 +25,14 @@ public class TaiKhoan {
         this.maNhanVien = maNhanVien;
     }
 
+    public String getTenDangNhap() {
+        return tenDangNhap;
+    }
+
+    public void setTenDangNhap(String tenDangNhap) {
+        this.tenDangNhap = tenDangNhap;
+    }
+
     public String getMatKhau() {
         return matKhau;
     }
@@ -31,11 +41,12 @@ public class TaiKhoan {
         this.matKhau = matKhau;
     }
 
-    public String getChucVu() {
-        return chucVu;
+    public String getQuyen() {
+        return quyen;
     }
 
-    public void setChucVu(String chucVu) {
-        this.chucVu = chucVu;
+    public void setQuyen(String quyen) {
+        this.quyen = quyen;
     }
+
 }
