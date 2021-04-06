@@ -1,6 +1,6 @@
 package GUI;
 
-import DAL.Connect;
+import DAO.MyConnect;
 import static Main.Main.changLNF;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,13 +10,14 @@ import javax.swing.*;
 public class QuanLyUI extends JFrame {
 
     public static void main(String[] args) {
-        new Connect();
+        new MyConnect();
         changLNF("Nimbus");
         QuanLyUI ui = new QuanLyUI();
         ui.showWindow();
     }
 
     public QuanLyUI() {
+        this.setSize(1280, 900);
         addControls();
         addEvents();
     }
@@ -25,8 +26,7 @@ public class QuanLyUI extends JFrame {
         Image icon = Toolkit.getDefaultToolkit().getImage("image/ManagerUI/icon-app.png");
         this.setIconImage(icon);
 
-        this.setSize(1024, 768);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setUndecorated(true);
         this.setLocationRelativeTo(null);
         this.setTitle("Phần mềm quản lý cửa hàng pizza");
@@ -43,6 +43,9 @@ public class QuanLyUI extends JFrame {
     private CardLayout cardGroup = new CardLayout();
 
     private void addControls() {
+        int width = this.getWidth();
+        int height = this.getHeight();
+
         Container con = getContentPane();
 
         JPanel pnMain = new JPanel();
@@ -54,7 +57,7 @@ public class QuanLyUI extends JFrame {
         ============================================================
          */
         pnTitle = new JPanel(null);
-        pnTitle.setPreferredSize(new Dimension(1024, 46));
+        pnTitle.setPreferredSize(new Dimension(width, 46));
         pnTitle.setBackground(new Color(242, 153, 74));
 
         JLabel lblIconApp = new JLabel(new ImageIcon("image/ManagerUI/icon-app.png"));
@@ -62,16 +65,16 @@ public class QuanLyUI extends JFrame {
         pnTitle.add(lblIconApp);
 
         JLabel lblTitleText = new JLabel(new ImageIcon("image/ManagerUI/title-text.png"));
-        lblTitleText.setBounds(293, 3, 428, 38);
+        lblTitleText.setBounds(width / 2 - 428 / 2, 3, 428, 38);
         pnTitle.add(lblTitleText);
 
         btnMinimize = new JLabel(new ImageIcon("image/ManagerUI/btn-minimize.png"));
-        btnMinimize.setBounds(931, 5, 38, 35);
+        btnMinimize.setBounds(width - 85, 5, 38, 35);
         btnMinimize.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         pnTitle.add(btnMinimize);
 
         btnClose = new JLabel(new ImageIcon("image/ManagerUI/btn-close.png"));
-        btnClose.setBounds(980, 5, 35, 35);
+        btnClose.setBounds(width - 40, 5, 35, 35);
         btnClose.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         pnTitle.add(btnClose);
 
@@ -82,7 +85,7 @@ public class QuanLyUI extends JFrame {
         ============================================================
          */
         JPanel pnMenuLeft = new JPanel();
-        pnMenuLeft.setPreferredSize(new Dimension(250, 722));
+        pnMenuLeft.setPreferredSize(new Dimension(250, height - pnTitle.getHeight()));
         pnMenuLeft.setBackground(clLeftItem);
         pnMenuLeft.setLayout(new BoxLayout(pnMenuLeft, BoxLayout.Y_AXIS));
 
@@ -110,7 +113,7 @@ public class QuanLyUI extends JFrame {
             lbl.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             pnMenuLeft.add(lbl);
         }
-        
+
         lblBanHang.setBackground(clLeftItemSelected);
 
         pnMain.add(pnMenuLeft, BorderLayout.WEST);
@@ -127,7 +130,7 @@ public class QuanLyUI extends JFrame {
         pnSanPham = new JPanel();
         pnNhanVien = new JPanel();
         pnKhachHang = new JPanel();
-        
+
         pnBanHang.setBackground(Color.BLACK);
         pnNhapHang.setBackground(Color.BLUE);
         pnSanPham.setBackground(Color.CYAN);
@@ -274,11 +277,7 @@ public class QuanLyUI extends JFrame {
     }
 
     private void thoatChuongTrinh() {
-        System.exit(0);
-    }
-
-    private void setIconImage(ImageIcon imageIcon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.dispose();
     }
 
 }

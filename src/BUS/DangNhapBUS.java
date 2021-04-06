@@ -1,10 +1,10 @@
-package BLL;
+package BUS;
 
-import DAL.DangNhapDAL;
+import DAO.DangNhapDAO;
 import DTO.TaiKhoan;
-import GUI.MyDialog;
+import MyCustom.MyDialog;
 
-public class DangNhapService {
+public class DangNhapBUS {
 
     private final static int EMPTY_ERROR = 1;
     private final static int WRONG_ERROR = 2;
@@ -15,7 +15,13 @@ public class DangNhapService {
                     MyDialog.ERROR_DIALOG);
             return null;
         }
-        TaiKhoan account = DangNhapDAL.dangNhap(user, password);
+        TaiKhoan tk = new TaiKhoan();
+        tk.setTenDangNhap(user);
+        tk.setMatKhau(password);
+        
+        DangNhapDAO dangNhapDAO = new DangNhapDAO();
+        TaiKhoan account = dangNhapDAO.dangNhap(tk);
+        
         if (account == null) {
             MyDialog dlg = new MyDialog("Sai thông tin đăng nhập!",
                     MyDialog.ERROR_DIALOG);
@@ -30,9 +36,17 @@ public class DangNhapService {
         user = user.replaceAll("\\s+", "");
         password = password.replaceAll("\\s+", "");
         int result = 0;
+        
+        TaiKhoan tk = new TaiKhoan();
+        tk.setTenDangNhap(user);
+        tk.setMatKhau(password);
+        
+        DangNhapDAO dangNhapDAO = new DangNhapDAO();
+        TaiKhoan account = dangNhapDAO.dangNhap(tk);
+        
         if (user.length() <= 0 || password.length() <= 0) {
             result = EMPTY_ERROR;
-        } else if (DangNhapDAL.dangNhap(user, password) == null) {
+        } else if (account == null) {
             result = WRONG_ERROR;
         }
         return result;

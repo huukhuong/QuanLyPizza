@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 04, 2021 lúc 06:33 PM
+-- Thời gian đã tạo: Th4 04, 2021 lúc 06:45 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `quanlypizza`
+-- Cơ sở dữ liệu: `3ksshop`
 --
 
 -- --------------------------------------------------------
@@ -151,9 +151,9 @@ CREATE TABLE `loai` (
 --
 
 INSERT INTO `loai` (`MaLoai`, `TenLoai`) VALUES
-(1, 'Pizza'),
-(2, 'NuocUong'),
-(3, 'NguyenLieu');
+(1, 'ThucAn'),
+(2, 'DoChoi'),
+(3, 'ThuCung');
 
 -- --------------------------------------------------------
 
@@ -173,7 +173,7 @@ CREATE TABLE `nhacungcap` (
 --
 
 INSERT INTO `nhacungcap` (`MaNCC`, `TenNCC`, `DiaChi`, `DienThoai`) VALUES
-(1, 'Bột mì vinahey', '347 An Dương Vương , phường 4 , quận 5 TP HCM', '0396527908');
+(1, 'Thức ăn vinahey', '347 An Dương Vương , phường 4 , quận 5 TP HCM', '0396527908');
 
 -- --------------------------------------------------------
 
@@ -229,7 +229,7 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `MaLoai`, `SoLuong`, `DonViTinh`, `HinhAnh`, `DonGia`) VALUES
-(1, 'Pizza Aloha', 1, 1000, 'Cái', '', 100000);
+(1, 'Thức ăn cho chó', 1, 1000, 'Cái', '', 100000);
 
 -- --------------------------------------------------------
 
@@ -250,7 +250,7 @@ CREATE TABLE `taikhoan` (
 
 INSERT INTO `taikhoan` (`MaNV`, `TenDangNhap`, `MatKhau`, `Quyen`) VALUES
 (1, 'admin', 'admin', 'adm'),
-(2, 'ql01', 'ql01', '');
+(2, 'ql01', 'ql01', 'mng');
 
 --
 -- Chỉ mục cho các bảng đã đổ

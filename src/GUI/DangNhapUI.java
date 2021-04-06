@@ -1,6 +1,8 @@
 package GUI;
 
-import BLL.DangNhapService;
+import MyCustom.ImagePanel;
+import MyCustom.MyDialog;
+import BUS.DangNhapBUS;
 import DTO.TaiKhoan;
 
 import javax.swing.*;
@@ -190,16 +192,19 @@ public class DangNhapUI extends JFrame {
     }
 
     private void xuLyDangNhap() {
-        TaiKhoan tk = DangNhapService.getTaiKhoanDangNhap(txtUser.getText(),
+        TaiKhoan tk = DangNhapBUS.getTaiKhoanDangNhap(txtUser.getText(),
                 txtPassword.getText());
         if (tk == null) {
 
         } else {
-
+            QuanLyUI quanly = new QuanLyUI();
+            quanly.showWindow();
         }
     }
 
     public void showWindow() {
+        Image icon = Toolkit.getDefaultToolkit().getImage("image/ManagerUI/icon-app.png");
+        this.setIconImage(icon);
         this.setVisible(true);
     }
 

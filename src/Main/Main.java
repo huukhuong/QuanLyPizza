@@ -1,12 +1,12 @@
 package Main;
 
-import DAL.Connect;
+import DAO.MyConnect;
 import GUI.DangNhapUI;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Connect();
+        new MyConnect();
 
         changLNF("Nimbus");
         DangNhapUI login = new DangNhapUI();

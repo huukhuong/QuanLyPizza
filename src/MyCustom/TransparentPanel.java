@@ -1,4 +1,4 @@
-package GUI;
+package MyCustom;
 
 import javax.swing.JPanel;
 
