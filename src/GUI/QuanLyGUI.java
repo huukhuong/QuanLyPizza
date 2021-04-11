@@ -34,6 +34,7 @@ public class QuanLyGUI extends JFrame {
     }
 
     JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang;
+    BanHangGUI BanHangPanel;
     JLabel btnClose, btnMinimize, lblBanHang, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang;
     final Color clLeftItem = new Color(63, 74, 89);
     final Color clLeftItemHover = new Color(72, 88, 107);
@@ -136,9 +137,9 @@ public class QuanLyGUI extends JFrame {
         pnCard.add(pnNhanVien, "4");
         pnCard.add(pnKhachHang, "5");
 
-        JPanel pnCTBanHang = new BanHangGUI();
+        BanHangPanel = new BanHangGUI();
         pnBanHang.setLayout(new BorderLayout());
-        pnBanHang.add(pnCTBanHang, BorderLayout.CENTER);
+        pnBanHang.add(BanHangPanel, BorderLayout.CENTER);
 
 //        addControlsNhapHang();
 //        addControlsSanPham();
@@ -279,6 +280,7 @@ public class QuanLyGUI extends JFrame {
     }
 
     private void thoatChuongTrinh() {
+        BanHangPanel.xuLyThoat();
         this.dispose();
     }
 
