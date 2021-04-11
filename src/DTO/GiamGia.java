@@ -3,24 +3,24 @@ package DTO;
 import java.util.Date;
 
 public class GiamGia {
-    private String maGiam;
+    private int maGiam;
     private Date ngayBD;
     private Date ngayKT;
 
     public GiamGia() {
     }
 
-    public GiamGia(String maGiam, Date ngayBD, Date ngayKT) {
+    public GiamGia(int maGiam, Date ngayBD, Date ngayKT) {
         this.maGiam = maGiam;
         this.ngayBD = ngayBD;
         this.ngayKT = ngayKT;
     }
 
-    public String getMaGiam() {
+    public int getMaGiam() {
         return maGiam;
     }
 
-    public void setMaGiam(String maGiam) {
+    public void setMaGiam(int maGiam) {
         this.maGiam = maGiam;
     }
 

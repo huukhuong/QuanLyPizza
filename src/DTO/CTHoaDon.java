@@ -1,8 +1,8 @@
 package DTO;
 
 public class CTHoaDon {
-    private String maHD;
-    private String maSP;
+    private int maHD;
+    private int maSP;
     private int soLuong;
     private int donGia;
     private int thanhTien;
@@ -10,7 +10,7 @@ public class CTHoaDon {
     public CTHoaDon() {
     }
 
-    public CTHoaDon(String maHD, String maSP, int soLuong, int donGia, int thanhTien) {
+    public CTHoaDon(int maHD, int maSP, int soLuong, int donGia, int thanhTien) {
         this.maHD = maHD;
         this.maSP = maSP;
         this.soLuong = soLuong;
@@ -18,19 +18,19 @@ public class CTHoaDon {
         this.thanhTien = thanhTien;
     }
 
-    public String getMaHD() {
+    public int getMaHD() {
         return maHD;
     }
 
-    public void setMaHD(String maHD) {
+    public void setMaHD(int maHD) {
         this.maHD = maHD;
     }
 
-    public String getMaSP() {
+    public int getMaSP() {
         return maSP;
     }
 
-    public void setMaSP(String maSP) {
+    public void setMaSP(int maSP) {
         this.maSP = maSP;
     }
 

@@ -1,7 +1,7 @@
 package DTO;
 
 public class KhachHang {
-    private String maKH;
+    private int maKH;
     private String hoTen;
     private String gioiTinh;
     private int tongChiTieu;
@@ -9,18 +9,18 @@ public class KhachHang {
     public KhachHang() {
     }
 
-    public KhachHang(String maKH, String hoTen, String gioiTinh, int tongChiTieu) {
+    public KhachHang(int maKH, String hoTen, String gioiTinh, int tongChiTieu) {
         this.maKH = maKH;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.tongChiTieu = tongChiTieu;
     }
 
-    public String getMaKH() {
+    public int getMaKH() {
         return maKH;
     }
 
-    public void setMaKH(String maKH) {
+    public void setMaKH(int maKH) {
         this.maKH = maKH;
     }
 

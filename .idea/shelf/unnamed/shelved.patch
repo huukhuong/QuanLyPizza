@@ -1,0 +1,82 @@
+Index: src/DAO/MyConnect.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package DAO;\r\n\r\nimport MyCustom.MyDialog;\r\nimport com.mysql.jdbc.Driver;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.SQLException;\r\nimport java.util.Properties;\r\n\r\npublic class MyConnect {\r\n\r\n    public static Connection conn = null;\r\n    private String dbName = \"quanlypizza\";\r\n    String userName = \"root\";\r\n    String password = \"\";\r\n\r\n    public MyConnect() {\r\n        String strConnect = \"jdbc:mysql://localhost/\" + dbName + \"?useUnicode=true&characterEncoding=utf-8\";\r\n        Properties pro = new Properties();\r\n        pro.put(\"user\", userName);\r\n        pro.put(\"password\", password);\r\n        try {\r\n            com.mysql.jdbc.Driver driver = new Driver();\r\n            conn = driver.connect(strConnect, pro);\r\n        } catch (SQLException ex) {\r\n            new MyDialog(\"Không kết nối được tới CSDL!\", MyDialog.ERROR_DIALOG);\r\n            System.exit(0);\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/DAO/MyConnect.java b/src/DAO/MyConnect.java
+--- a/src/DAO/MyConnect.java	(revision b7fed188d6a29296f67622821d92e77b54d1277b)
++++ b/src/DAO/MyConnect.java	(date 1618039062310)
+@@ -4,28 +4,46 @@
+ import com.mysql.jdbc.Driver;
+ 
+ import java.sql.Connection;
++import java.sql.PreparedStatement;
+ import java.sql.SQLException;
+ import java.util.Properties;
+ 
+ public class MyConnect {
+ 
+-    public static Connection conn = null;
+-    private String dbName = "quanlypizza";
+-    String userName = "root";
+-    String password = "";
++    private Connection conn = null;
++    private String dbName = "3ksshop";
++    private String userName = "root";
++    private String password = "";
+ 
+     public MyConnect() {
+-        String strConnect = "jdbc:mysql://localhost/" + dbName + "?useUnicode=true&characterEncoding=utf-8";
++        connect();
++    }
++
++    public void connect() {
++        String strConnect = "jdbc:mysql:3306//localhost/" + dbName + "?useUnicode=true&characterEncoding=utf-8";
+         Properties pro = new Properties();
+         pro.put("user", userName);
+         pro.put("password", password);
+         try {
+             com.mysql.jdbc.Driver driver = new Driver();
++            System.out.println(driver);
+             conn = driver.connect(strConnect, pro);
+         } catch (SQLException ex) {
+             new MyDialog("Không kết nối được tới CSDL!", MyDialog.ERROR_DIALOG);
+             System.exit(0);
+         }
+-
++    }
++
++    public PreparedStatement prepareStatement(String sql) {
++        PreparedStatement preparedStatement = null;
++        try {
++            preparedStatement = conn.prepareStatement(sql);
++            System.out.println("prep");
++        } catch(SQLException ex) {
++            new MyDialog("Không kết nối được tới CSDL!", MyDialog.ERROR_DIALOG);
++            System.exit(0);
++        }
++        System.out.println("prep");
++        return preparedStatement;
+     }
+ }
+Index: src/DAO/DangNhapDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package DAO;\r\n\r\nimport DTO.TaiKhoan;\r\n\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\r\npublic class DangNhapDAO {\r\n\r\n    public TaiKhoan dangNhap(TaiKhoan tk) {\r\n        try {\r\n            String sql = \"SELECT * FROM taikhoan WHERE TenDangNhap=? AND MatKhau=?\";\r\n            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);\r\n            pre.setString(1, tk.getTenDangNhap());\r\n            pre.setString(2, tk.getMatKhau());\r\n            ResultSet rs = pre.executeQuery();\r\n            TaiKhoan tkLogin = null;\r\n            if (rs.next()) {\r\n                tkLogin = tk;\r\n                tkLogin.setMaNhanVien(rs.getString(\"MaNV\"));\r\n                tkLogin.setQuyen(rs.getString(\"Quyen\"));\r\n            }\r\n            return tkLogin;\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n        return tk;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/DAO/DangNhapDAO.java b/src/DAO/DangNhapDAO.java
+--- a/src/DAO/DangNhapDAO.java	(revision b7fed188d6a29296f67622821d92e77b54d1277b)
++++ b/src/DAO/DangNhapDAO.java	(date 1618038457715)
+@@ -11,7 +11,7 @@
+     public TaiKhoan dangNhap(TaiKhoan tk) {
+         try {
+             String sql = "SELECT * FROM taikhoan WHERE TenDangNhap=? AND MatKhau=?";
+-            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
++            PreparedStatement pre = new MyConnect().prepareStatement(sql);
+             pre.setString(1, tk.getTenDangNhap());
+             pre.setString(2, tk.getMatKhau());
+             ResultSet rs = pre.executeQuery();

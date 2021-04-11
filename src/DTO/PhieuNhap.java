@@ -1,42 +1,42 @@
 package DTO;
 
 public class PhieuNhap {
-    private String maPN;
-    private String maNCC;
-    private String maNV;
+    private int maPN;
+    private int maNCC;
+    private int maNV;
     private String tongTien;
 
     public PhieuNhap() {
     }
 
-    public PhieuNhap(String maPN, String maNCC, String maNV, String tongTien) {
+    public PhieuNhap(int maPN, int maNCC, int maNV, String tongTien) {
         this.maPN = maPN;
         this.maNCC = maNCC;
         this.maNV = maNV;
         this.tongTien = tongTien;
     }
 
-    public String getMaPN() {
+    public int getMaPN() {
         return maPN;
     }
 
-    public void setMaPN(String maPN) {
+    public void setMaPN(int maPN) {
         this.maPN = maPN;
     }
 
-    public String getMaNCC() {
+    public int getMaNCC() {
         return maNCC;
     }
 
-    public void setMaNCC(String maNCC) {
+    public void setMaNCC(int maNCC) {
         this.maNCC = maNCC;
     }
 
-    public String getMaNV() {
+    public int getMaNV() {
         return maNV;
     }
 
-    public void setMaNV(String maNV) {
+    public void setMaNV(int maNV) {
         this.maNV = maNV;
     }
 

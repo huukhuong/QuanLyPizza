@@ -1,24 +1,24 @@
 package DTO;
 
 public class CTGiamGia {
-    private String maGiam;
+    private int maGiam;
     private String maSP;
     private int phanTramGiam;
 
     public CTGiamGia() {
     }
 
-    public CTGiamGia(String maGiam, String maSP, int phanTramGiam) {
+    public CTGiamGia(int maGiam, String maSP, int phanTramGiam) {
         this.maGiam = maGiam;
         this.maSP = maSP;
         this.phanTramGiam = phanTramGiam;
     }
 
-    public String getMaGiam() {
+    public int getMaGiam() {
         return maGiam;
     }
 
-    public void setMaGiam(String maGiam) {
+    public void setMaGiam(int maGiam) {
         this.maGiam = maGiam;
     }
 

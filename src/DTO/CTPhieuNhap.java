@@ -1,8 +1,8 @@
 package DTO;
 
 public class CTPhieuNhap {
-    private String maPN;
-    private String maSP;
+    private int maPN;
+    private int maSP;
     private int soLuong;
     private int donGia;
     private int thanhTien;
@@ -10,7 +10,7 @@ public class CTPhieuNhap {
     public CTPhieuNhap() {
     }
 
-    public CTPhieuNhap(String maPN, String maSP, int soLuong, int donGia, int thanhTien) {
+    public CTPhieuNhap(int maPN, int maSP, int soLuong, int donGia, int thanhTien) {
         this.maPN = maPN;
         this.maSP = maSP;
         this.soLuong = soLuong;
@@ -18,19 +18,19 @@ public class CTPhieuNhap {
         this.thanhTien = thanhTien;
     }
 
-    public String getMaPN() {
+    public int getMaPN() {
         return maPN;
     }
 
-    public void setMaPN(String maPN) {
+    public void setMaPN(int maPN) {
         this.maPN = maPN;
     }
 
-    public String getMaSP() {
+    public int getMaSP() {
         return maSP;
     }
 
-    public void setMaSP(String maSP) {
+    public void setMaSP(int maSP) {
         this.maSP = maSP;
     }
 

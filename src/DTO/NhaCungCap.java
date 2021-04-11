@@ -1,7 +1,7 @@
 package DTO;
 
 public class NhaCungCap {
-    private String maNCC;
+    private int maNCC;
     private String tenNCC;
     private String diaChi;
     private String dienThoai;
@@ -9,18 +9,18 @@ public class NhaCungCap {
     public NhaCungCap() {
     }
 
-    public NhaCungCap(String maNCC, String tenNCC, String diaChi, String dienThoai) {
+    public NhaCungCap(int maNCC, String tenNCC, String diaChi, String dienThoai) {
         this.maNCC = maNCC;
         this.tenNCC = tenNCC;
         this.diaChi = diaChi;
         this.dienThoai = dienThoai;
     }
 
-    public String getMaNCC() {
+    public int getMaNCC() {
         return maNCC;
     }
 
-    public void setMaNCC(String maNCC) {
+    public void setMaNCC(int maNCC) {
         this.maNCC = maNCC;
     }
 

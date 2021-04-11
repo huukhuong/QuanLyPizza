@@ -3,16 +3,16 @@ package DTO;
 import java.util.Date;
 
 public class HoaDon {
-    private String maHD;
-    private String maKH;
-    private String maNV;
+    private int maHD;
+    private int maKH;
+    private int maNV;
     private Date ngayLap;
     private int tongTien;
 
     public HoaDon() {
     }
 
-    public HoaDon(String maHD, String maKH, String maNV, Date ngayLap, int tongTien) {
+    public HoaDon(int maHD, int maKH, int maNV, Date ngayLap, int tongTien) {
         this.maHD = maHD;
         this.maKH = maKH;
         this.maNV = maNV;
@@ -20,27 +20,27 @@ public class HoaDon {
         this.tongTien = tongTien;
     }
 
-    public String getMaHD() {
+    public int getMaHD() {
         return maHD;
     }
 
-    public void setMaHD(String maHD) {
+    public void setMaHD(int maHD) {
         this.maHD = maHD;
     }
 
-    public String getMaKH() {
+    public int getMaKH() {
         return maKH;
     }
 
-    public void setMaKH(String maKH) {
+    public void setMaKH(int maKH) {
         this.maKH = maKH;
     }
 
-    public String getMaNV() {
+    public int getMaNV() {
         return maNV;
     }
 
-    public void setMaNV(String maNV) {
+    public void setMaNV(int maNV) {
         this.maNV = maNV;
     }
 
