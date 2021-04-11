@@ -561,6 +561,13 @@ public class BanHangGUI extends JPanel {
         }
     }
 
+    private void xuLyXoaSPGioHang(int row) {
+        int ma = Integer.parseInt(tblGioHang.getValueAt(row, 0) + "");
+        int soLuong = Integer.parseInt(tblGioHang.getValueAt(row, 2) + "");
+        spBUS.capNhatSoLuongSP(ma, soLuong);
+        dtmGioHang.removeRow(row);
+    }
+
     private void xuLyXuatHoaDonBanHang() {
 
     }
@@ -773,6 +780,13 @@ public class BanHangGUI extends JPanel {
                 vec.add(sp.getHinhAnh());
                 dtmSanPhamBan.addRow(vec);
             }
+        }
+    }
+
+    public void xuLyThoat() {
+        int rowCount = tblGioHang.getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            xuLyXoaSPGioHang(i);
         }
     }
 }
