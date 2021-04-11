@@ -18,7 +18,7 @@ public class DangNhapDAO {
             TaiKhoan tkLogin = null;
             if (rs.next()) {
                 tkLogin = tk;
-                tkLogin.setMaNhanVien(rs.getString("MaNV"));
+                tkLogin.setMaNhanVien(rs.getInt("MaNV"));
                 tkLogin.setQuyen(rs.getString("Quyen"));
             }
             return tkLogin;
