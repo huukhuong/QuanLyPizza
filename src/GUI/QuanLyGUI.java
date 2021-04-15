@@ -36,6 +36,7 @@ public class QuanLyGUI extends JFrame {
     JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang;
     BanHangGUI banHangPanel;
     NhapHangGUI nhapHangPanel;
+    SanPhamGUI sanPhamPanel;
     JLabel btnClose, btnMinimize, lblBanHang, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang;
     final Color clLeftItem = new Color(63, 74, 89);
     final Color clLeftItemHover = new Color(72, 88, 107);
@@ -144,7 +145,11 @@ public class QuanLyGUI extends JFrame {
         
         nhapHangPanel = new NhapHangGUI();
         pnNhapHang.setLayout(new BorderLayout());
-        pnNhapHang.add(nhapHangPanel);
+        pnNhapHang.add(nhapHangPanel, BorderLayout.CENTER);
+        
+        sanPhamPanel = new SanPhamGUI();
+        pnSanPham.setLayout(new BorderLayout());
+        pnSanPham.add(sanPhamPanel, BorderLayout.CENTER);
         
 //        addControlsSanPham();
 //        addControlsNhanVien();

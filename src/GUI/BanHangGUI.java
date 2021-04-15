@@ -44,6 +44,7 @@ public class BanHangGUI extends JPanel {
     JList<String> listHoaDon;
     JTable tblCTHoaDon;
     DefaultTableModel dtmCTHoaDon;
+    JButton btnReset;
 
     public BanHangGUI() {
         changLNF("Windows");
@@ -181,7 +182,11 @@ public class BanHangGUI extends JPanel {
         JPanel pnTitleThongTin = new TransparentPanel();
         JLabel lblTitleThongTin = new JLabel("Chi tiết sản phẩm", JLabel.LEFT);
         lblTitleThongTin.setFont(new Font("Arial", Font.BOLD, 28));
+        btnReset = new JButton(new ImageIcon("image/Refresh-icon.png"));
+        btnReset.setFocusPainted(false);
+        btnReset.setPreferredSize(new Dimension(40, 40));
         pnTitleThongTin.add(lblTitleThongTin);
+        pnTitleThongTin.add(btnReset);
         pnThongTinBanHang.add(pnTitleThongTin);
 
         JPanel pnLoaiSP = new TransparentPanel();
@@ -557,6 +562,13 @@ public class BanHangGUI extends JPanel {
     }
 
     private void addEventsBanHang() {
+        btnReset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyResetData();
+            }
+        });
+
         lblTabbedBanHang.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -785,6 +797,7 @@ public class BanHangGUI extends JPanel {
     }
 
     private void loadDataComboboxLoaiBanSP() {
+        cmbLoaiSPBanHang.removeAllItems();
         cmbLoaiSPBanHang.addItem("0 - Chọn loại");
         ArrayList<LoaiSP> dsl = loaiBUS.getDanhSachLoai();
 
@@ -796,6 +809,7 @@ public class BanHangGUI extends JPanel {
     }
 
     private void loadDataComboboxNhanVienBan() {
+        cmbNhanVienBan.removeAllItems();
         ArrayList<NhanVien> dsnv = nvBUS.getDanhSachNhanVien();
         if (dsnv != null) {
             for (NhanVien nv : dsnv) {
@@ -829,18 +843,21 @@ public class BanHangGUI extends JPanel {
 
     private void loadDataTableSanPhamBan() {
         changLNF("Windows");
-        spBUS.docListSanPham();
         dtmSanPhamBan.setRowCount(0);
-
-        String loai = cmbLoaiSPBanHang.getSelectedItem() + "";
-        String loaiArr[] = loai.split("-");
-        String loaiSP = loaiArr[0].trim();
-
         ArrayList<SanPham> dssp = null;
-        if (loaiSP.equals("0")) {
-            dssp = spBUS.getListSanPham();
+
+        if (cmbLoaiSPBanHang.getItemCount() > 0) {
+            String loai = cmbLoaiSPBanHang.getSelectedItem() + "";
+            String loaiArr[] = loai.split("-");
+            String loaiSP = loaiArr[0].trim();
+
+            if (loaiSP.equals("0")) {
+                dssp = spBUS.getListSanPham();
+            } else {
+                dssp = spBUS.getSanPhamTheoLoai(loaiSP);
+            }
         } else {
-            dssp = spBUS.getSanPhamTheoLoai(loaiSP);
+            dssp = spBUS.getListSanPham();
         }
 
         for (SanPham sp : dssp) {
@@ -1113,5 +1130,11 @@ public class BanHangGUI extends JPanel {
             txtDonGiaCT.setText(donGia);
             txtThanhTienCT.setText(thanhTien);
         }
+    }
+
+    private void xuLyResetData() {
+        loadDataComboboxLoaiBanSP();
+        cmbLoaiSPBanHang.setSelectedIndex(0);
+        loadDataComboboxNhanVienBan();
     }
 }

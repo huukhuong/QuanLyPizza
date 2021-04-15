@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 11, 2021 lúc 09:25 AM
+-- Thời gian đã tạo: Th4 15, 2021 lúc 04:06 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -29,9 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ctgiamgia` (
   `MaGiam` int(11) NOT NULL,
-  `MaSP` int(11) NOT NULL,
   `PhanTramGiam` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `ctgiamgia`
+--
+
+INSERT INTO `ctgiamgia` (`MaGiam`, `PhanTramGiam`) VALUES
+(1, 20);
 
 -- --------------------------------------------------------
 
@@ -46,6 +52,13 @@ CREATE TABLE `cthoadon` (
   `DonGia` int(11) NOT NULL,
   `ThanhTien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `cthoadon`
+--
+
+INSERT INTO `cthoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`) VALUES
+(1, 1, 2, 169000, 338000);
 
 -- --------------------------------------------------------
 
@@ -120,7 +133,8 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`MaKH`, `HoTen`, `GioiTinh`, `TongChiTieu`) VALUES
-(1, 'Nguyễn Văn An', 'Nam', 10000);
+(1, 'Nguyễn Văn An', 'Nam', 400000),
+(2, 'Trần Ngọc Bình', 'Nữ', 200000);
 
 -- --------------------------------------------------------
 
@@ -130,7 +144,7 @@ INSERT INTO `khachhang` (`MaKH`, `HoTen`, `GioiTinh`, `TongChiTieu`) VALUES
 
 CREATE TABLE `loai` (
   `MaLoai` int(11) NOT NULL,
-  `TenLoai` varchar(255) NOT NULL
+  `TenLoai` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -220,29 +234,29 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `MaLoai`, `SoLuong`, `DonViTinh`, `HinhAnh`, `DonGia`) VALUES
-(1, 'Pizza Hải Sản Pesto Xanh', 1, 50, 'Cái', 'pizza0.png', 169000),
-(3, 'Pizza Hải Sản Nhiệt Đới', 1, 50, 'Cái', 'pizza1.png', 129000),
-(4, 'Pizza Hải Sản Cocktail', 1, 50, 'Cái', 'pizza2.png', 119000),
+(1, 'Pizza Hải Sản Pesto Xanh', 1, 43, 'Cái', 'pizza0.png', 169000),
+(3, 'Pizza Hải Sản Nhiệt Đới', 1, 46, 'Cái', 'pizza1.png', 129000),
+(4, 'Pizza Hải Sản Cocktail', 1, 48, 'Cái', 'pizza2.png', 119000),
 (5, 'Pizza Tôm Cocktail', 1, 50, 'Cái', 'pizza3.png', 159000),
-(6, 'Pizza Aloha', 1, 50, 'Cái', 'pizza4.png', 119000),
-(7, 'Pizza Thịt Xông Khói', 1, 50, 'Cái', 'pizza5.png', 130000),
-(8, 'Pizza Thịt Nguội', 1, 50, 'Cái', 'pizza6.png', 149000),
-(9, 'Pizza Gà Nướng 3 Vị', 1, 50, 'Cái', 'pizza7.png', 129000),
-(10, 'Pepsi Lon 330ml', 2, 50, 'Lon', 'douong0.jpeg', 29000),
-(11, 'Pepsi chai 1.5l', 2, 50, 'Chai', 'douong1.jpeg', 39000),
-(12, '7Up lon 330ml', 2, 50, 'Lon', 'douong2.jpeg', 29000),
-(13, '7Up chai 1.5l', 2, 50, 'Chai', 'douong3.jpeg', 39000),
+(6, 'Pizza Aloha', 1, 49, 'Cái', 'pizza4.png', 119000),
+(7, 'Pizza Thịt Xông Khói', 1, 48, 'Cái', 'pizza5.png', 130000),
+(8, 'Pizza Thịt Nguội', 1, 49, 'Cái', 'pizza6.png', 149000),
+(9, 'Pizza Gà Nướng 3 Vị', 1, 47, 'Cái', 'pizza7.png', 129000),
 (14, 'Pizza hải sản Pesto gấp đôi nhân', 1, 50, 'Cái', 'pizza8.jpg', 239000),
 (15, 'Pizza gấp đôi nhân phủ cơn lốc hải sản', 1, 50, 'Cái', 'pizza9.jpg', 239000),
 (16, 'Pizza gấp đôi nhân phủ hải sản xốt tiêu đen', 1, 50, 'Cái', 'pizza10.jpg', 229000),
 (17, 'Pizza bò nướng tiêu đen', 1, 50, 'Cái', 'pizza11.jpg', 249000),
 (18, 'Pizza cá ngừ thanh cua', 1, 50, 'Cái', 'pizza12.jpg', 269000),
-(19, 'Pepsi No Calories Lon 330ml', 2, 50, 'Lon', 'douong4.jpg', 29000),
-(20, 'Mirinda Orange Lon 330ml', 2, 50, 'Lon', 'douong5.jpg', 29000),
-(21, 'Mirinda Soda Lon 330ml', 2, 50, 'Lon', 'douong6.jpg', 29000),
-(22, 'Aquafina 500ml', 2, 50, 'Lon', 'douong7.jpg', 20000),
-(23, 'Trà sữa trà đen', 2, 50, 'Ly', 'douong8.jpg', 35000),
-(24, 'Trà đào hạt chia', 2, 50, 'Ly', 'douong9.jpg', 35000);
+(33, 'Pepsi lon 330ml', 2, 120, 'Lon', 'douong0.jpeg', 19000),
+(34, 'Pepsi chai 1.5l', 2, 250, 'Chai', 'douong1.jpeg', 29000),
+(35, '7Up lon 330ml', 2, 100, 'Lon', 'douong2.jpeg', 19000),
+(36, '7Up chai 1.5l', 2, 130, 'Chai', 'douong3.jpeg', 29000),
+(37, 'Pepsi no calories 330ml', 2, 110, 'Lon', 'douong4.jpg', 19000),
+(38, 'Mirinda cam 330ml', 2, 80, 'Lon', 'douong5.jpg', 19000),
+(39, 'Mirinda kem soda 330ml', 2, 92, 'Lon', 'douong6.jpg', 19000),
+(40, 'Nước suối Aquafina', 2, 92, 'Chai', 'douong7.jpg', 10000),
+(41, 'Trà sữa trà đen', 2, 10, 'Ly', 'douong8.jpg', 25000),
+(42, 'Trà đào cam sả', 2, 19, 'Ly', 'douong9.jpg', 25000);
 
 -- --------------------------------------------------------
 
@@ -276,9 +290,7 @@ INSERT INTO `taikhoan` (`MaNV`, `TenDangNhap`, `MatKhau`, `Quyen`) VALUES
 -- Chỉ mục cho bảng `ctgiamgia`
 --
 ALTER TABLE `ctgiamgia`
-  ADD PRIMARY KEY (`MaGiam`,`MaSP`),
-  ADD KEY `ctgiamgia_ibfk_1` (`MaGiam`),
-  ADD KEY `ctgiamgia_ibfk_2` (`MaSP`);
+  ADD KEY `ctgiamgia_ibfk_1` (`MaGiam`);
 
 --
 -- Chỉ mục cho bảng `cthoadon`
@@ -374,13 +386,13 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `loai`
 --
 ALTER TABLE `loai`
-  MODIFY `MaLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MaLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `nhacungcap`
@@ -404,7 +416,7 @@ ALTER TABLE `phieunhap`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
@@ -420,8 +432,7 @@ ALTER TABLE `taikhoan`
 -- Các ràng buộc cho bảng `ctgiamgia`
 --
 ALTER TABLE `ctgiamgia`
-  ADD CONSTRAINT `ctgiamgia_ibfk_1` FOREIGN KEY (`MaGiam`) REFERENCES `giamgia` (`MaGiam`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ctgiamgia_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `ctgiamgia_ibfk_1` FOREIGN KEY (`MaGiam`) REFERENCES `giamgia` (`MaGiam`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `cthoadon`

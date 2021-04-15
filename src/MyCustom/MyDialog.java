@@ -175,8 +175,8 @@ public class MyDialog extends JDialog {
     }
 
     private int action;
-    final static int OK_OPTION = 1;
-    final static int CANCEL_OPTION = 2;
+    public final static int OK_OPTION = 1;
+    public final static int CANCEL_OPTION = 2;
 
     private void closeDialog() {
         this.setVisible(false);
