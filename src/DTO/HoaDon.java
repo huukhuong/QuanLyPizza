@@ -8,16 +8,17 @@ public class HoaDon {
     private int maNV;
     private Date ngayLap;
     private int tongTien;
-
+    private String ghiChu;
     public HoaDon() {
     }
 
-    public HoaDon(int maHD, int maKH, int maNV, Date ngayLap, int tongTien) {
+    public HoaDon(int maHD, int maKH, int maNV, Date ngayLap, int tongTien, String ghiChu) {
         this.maHD = maHD;
         this.maKH = maKH;
         this.maNV = maNV;
         this.ngayLap = ngayLap;
         this.tongTien = tongTien;
+        this.ghiChu = ghiChu;
     }
 
     public int getMaHD() {
@@ -59,4 +60,14 @@ public class HoaDon {
     public void setTongTien(int tongTien) {
         this.tongTien = tongTien;
     }
+
+    public String getGhiChu() {
+        return ghiChu;
+    }
+
+    public void setGhiChu(String ghiChu) {
+        this.ghiChu = ghiChu;
+    }
+    
+    
 }

@@ -27,4 +27,19 @@ public class DangNhapDAO {
         }
         return tk;
     }
+    
+    public boolean dangKy(TaiKhoan tk) {
+        boolean result = false;
+        try {
+            String sql = "INSERT INTO taikhoan WHERE TenDangNhap=? MatKhau=? Quyen=?";
+            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
+            pre.setString(1, tk.getTenDangNhap());
+            pre.setString(2, tk.getMatKhau());
+            pre.setString(3, tk.getQuyen());
+            result = pre.executeUpdate() > 0;
+        } catch(SQLException ex) {
+            return false;
+        }
+        return result;
+    }
 }

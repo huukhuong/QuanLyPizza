@@ -2,13 +2,13 @@ package DTO;
 
 public class CTGiamGia {
     private int maGiam;
-    private String maSP;
+    private int maSP;
     private int phanTramGiam;
 
     public CTGiamGia() {
     }
 
-    public CTGiamGia(int maGiam, String maSP, int phanTramGiam) {
+    public CTGiamGia(int maGiam, int maSP, int phanTramGiam) {
         this.maGiam = maGiam;
         this.maSP = maSP;
         this.phanTramGiam = phanTramGiam;
@@ -22,11 +22,11 @@ public class CTGiamGia {
         this.maGiam = maGiam;
     }
 
-    public String getMaSP() {
+    public int getMaSP() {
         return maSP;
     }
 
-    public void setMaSP(String maSP) {
+    public void setMaSP(int maSP) {
         this.maSP = maSP;
     }
 
