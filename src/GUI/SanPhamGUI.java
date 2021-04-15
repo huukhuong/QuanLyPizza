@@ -226,7 +226,7 @@ public class SanPhamGUI extends JPanel {
         dtmSanPham.addColumn("Tên SP");
         dtmSanPham.addColumn("Loại SP");
         dtmSanPham.addColumn("Đơn giá");
-        dtmSanPham.addColumn("Còn lại");
+        dtmSanPham.addColumn("Số lượng");
         dtmSanPham.addColumn("Đơn vị tính");
         dtmSanPham.addColumn("Ảnh");
         tblSanPham = new JTable(dtmSanPham);
@@ -531,6 +531,8 @@ public class SanPhamGUI extends JPanel {
             Vector vec = new Vector();
             vec.add(sp.getMaSP());
             vec.add(sp.getTenSP());
+            String tenLoai = loaiBUS.getTenLoai(sp.getMaLoai());
+            vec.add(tenLoai);
             vec.add(dcf.format(sp.getDonGia()));
             vec.add(dcf.format(sp.getSoLuong()));
             vec.add(sp.getDonViTinh());
