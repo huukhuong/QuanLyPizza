@@ -28,7 +28,7 @@ public class SanPhamDAO {
                 dssp.add(sp);
             }
             return dssp;
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
 
         return null;
@@ -109,7 +109,7 @@ public class SanPhamDAO {
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setInt(1, sp.getSoLuong());
             pre.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
 
     }

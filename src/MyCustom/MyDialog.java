@@ -179,7 +179,6 @@ public class MyDialog extends JDialog {
     final static int CANCEL_OPTION = 2;
 
     private void closeDialog() {
-        Main.changLNF("Nimbus");
         this.setVisible(false);
     }
 
