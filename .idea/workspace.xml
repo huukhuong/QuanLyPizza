@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f976327-fad3-4bbd-88ea-73e83ed1d1f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DTO/CTGiamGia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/CTGiamGia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/CTHoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/CTHoaDon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/CTPhieuNhap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/CTPhieuNhap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/GiamGia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/GiamGia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/HoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/HoaDon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/KhachHang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/NhaCungCap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/NhaCungCap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/PhieuNhap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/PhieuNhap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/TaiKhoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/TaiKhoan.java" afterDir="false" />
+    <list default="true" id="552e0956-fa0d-4f56-93a0-1bfa74959c30" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/DoAn_QuanLyBanPizza.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48_bin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/NhanVienGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_8_2021_3_28_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_8_2021_3_28_PM_[Default_Changelist]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_8_2021_3_28_PM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/unnamed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/unnamed/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/DangNhapBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/DangNhapBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/BanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BanHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/DangNhapGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DangNhapGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyLoaiGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyLoaiGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SanPhamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SanPhamGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TimKhachGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TimKhachGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TimMaGiamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TimMaGiamGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="huukhuong" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="DoAn_QuanLyBanPizza" />
-  </component>
-  <component name="ProjectId" id="1ospTU25fKt5rsXbWZiEz1Qv3WW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1rLB3u9mEJWx5KVQkNtlufIPLW1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GitHub/SmartPhone_Store_Manage_Java" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -72,20 +74,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3f976327-fad3-4bbd-88ea-73e83ed1d1f4" name="Default Changelist" comment="" />
-      <created>1614085160159</created>
+      <changelist id="552e0956-fa0d-4f56-93a0-1bfa74959c30" name="Default Changelist" comment="" />
+      <created>1618745293956</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1614085160159</updated>
+      <updated>1618745293956</updated>
     </task>
-    <task id="LOCAL-00001">
-      <created>1618040191721</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1618040191721</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,18 +93,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

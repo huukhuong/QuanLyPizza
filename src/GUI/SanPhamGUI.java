@@ -6,6 +6,7 @@ import DTO.LoaiSP;
 import DTO.SanPham;
 import static Main.Main.changLNF;
 import MyCustom.MyDialog;
+import MyCustom.MyTable;
 import MyCustom.TransparentPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -32,12 +33,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 
 public class SanPhamGUI extends JPanel {
@@ -51,7 +50,7 @@ public class SanPhamGUI extends JPanel {
     SanPhamBUS spBUS = new SanPhamBUS();
     LoaiBUS loaiBUS = new LoaiBUS();
     final Color colorPanel = new Color(247, 247, 247);
-    JTable tblSanPham;
+    MyTable tblSanPham;
     DefaultTableModel dtmSanPham;
     JTextField txtMa, txtTen, txtsoLuong, txtdonViTinh, txtdonGia, txtTimKiem;
     JComboBox<String> cmbLoai;
@@ -229,9 +228,7 @@ public class SanPhamGUI extends JPanel {
         dtmSanPham.addColumn("Số lượng");
         dtmSanPham.addColumn("Đơn vị tính");
         dtmSanPham.addColumn("Ảnh");
-        tblSanPham = new JTable(dtmSanPham);
-
-        customTable(tblSanPham);
+        tblSanPham = new MyTable(dtmSanPham);
 
         tblSanPham.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
         tblSanPham.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
@@ -375,27 +372,6 @@ public class SanPhamGUI extends JPanel {
         }
         return null;
     }
-
-    //<editor-fold defaultstate="collapsed" desc="Custom table">
-    private void customTable(JTable tbl) {
-        //======CUSTOM TABLE=======
-        tbl.setFocusable(false);
-        tbl.setIntercellSpacing(new Dimension(0, 0));
-        tbl.setRowHeight(25);
-        tbl.setSelectionBackground(new Color(50, 154, 114));
-        tbl.setSelectionForeground(Color.white);
-        tbl.setFont(new Font("Arial", Font.PLAIN, 16));
-
-        JTableHeader header = tbl.getTableHeader();
-        header.setBackground(new Color(242, 153, 74));
-        header.setFont(new Font("Arial", Font.BOLD, 16));
-        header.setOpaque(false);
-        header.setForeground(Color.WHITE);
-        header.setReorderingAllowed(false);
-        ((DefaultTableCellRenderer) header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        //======/CUSTOM TABLE/=======
-    }
-//</editor-fold>
 
     private void xuLyClickTblSanPham() {
         int row = tblSanPham.getSelectedRow();

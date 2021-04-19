@@ -3,6 +3,7 @@ package GUI;
 import BUS.KhachHangBUS;
 import DAO.MyConnect;
 import DTO.KhachHang;
+import MyCustom.MyTable;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -70,7 +71,7 @@ public class TimKhachGUI extends JDialog {
         dtmKhachHang.addColumn("Họ tên");
         dtmKhachHang.addColumn("Giới tính");
         dtmKhachHang.addColumn("Tổng chi tiêu");
-        tblKhachHang = new JTable(dtmKhachHang);
+        tblKhachHang = new MyTable(dtmKhachHang);
         JScrollPane scrKhachHang = new JScrollPane(tblKhachHang);
         pnTable.add(scrKhachHang, BorderLayout.CENTER);
         con.add(pnTable, BorderLayout.CENTER);
@@ -84,7 +85,6 @@ public class TimKhachGUI extends JDialog {
         pnButton.add(btnThoat);
         con.add(pnButton, BorderLayout.SOUTH);
 
-        customTable(tblKhachHang);
         btnChon.setPreferredSize(new Dimension(120, 40));
         btnThoat.setPreferredSize(btnChon.getPreferredSize());
 
@@ -156,26 +156,5 @@ public class TimKhachGUI extends JDialog {
             dtmKhachHang.addRow(vec);
         }
     }
-
-    //<editor-fold defaultstate="collapsed" desc="Custom table">
-    private void customTable(JTable tbl) {
-        //======CUSTOM TABLE=======
-        tbl.setFocusable(false);
-        tbl.setIntercellSpacing(new Dimension(0, 0));
-        tbl.setRowHeight(25);
-        tbl.setSelectionBackground(new Color(50, 154, 114));
-        tbl.setSelectionForeground(Color.white);
-        tbl.setFont(new Font("Arial", Font.PLAIN, 16));
-
-        JTableHeader header = tbl.getTableHeader();
-        header.setBackground(new Color(242, 153, 74));
-        header.setFont(new Font("Arial", Font.BOLD, 16));
-        header.setOpaque(false);
-        header.setForeground(Color.WHITE);
-        header.setReorderingAllowed(false);
-        ((DefaultTableCellRenderer) header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        //======/CUSTOM TABLE/=======
-    }
-//</editor-fold>
 
 }

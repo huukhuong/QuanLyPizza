@@ -4,22 +4,15 @@ import BUS.LoaiBUS;
 import DAO.MyConnect;
 import DTO.LoaiSP;
 import MyCustom.MyDialog;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import MyCustom.MyTable;
 import java.util.ArrayList;
 import java.util.Vector;
-import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
 
 public class QuanLyLoaiGUI extends javax.swing.JDialog {
 
     public static void main(String[] args) {
         new MyConnect();
-
         Main.Main.changLNF("Windows");
         new QuanLyLoaiGUI().setVisible(true);
     }
@@ -28,7 +21,6 @@ public class QuanLyLoaiGUI extends javax.swing.JDialog {
 
     public QuanLyLoaiGUI() {
         initComponents();
-        customTable(tblLoai);
         dtmLoai = new DefaultTableModel();
         dtmLoai.addColumn("Mã loại");
         dtmLoai.addColumn("Tên loại");
@@ -52,27 +44,6 @@ public class QuanLyLoaiGUI extends javax.swing.JDialog {
         }
     }
 
-    //<editor-fold defaultstate="collapsed" desc="Custom table">
-    private void customTable(JTable tbl) {
-        //======CUSTOM TABLE=======
-        tbl.setFocusable(false);
-        tbl.setIntercellSpacing(new Dimension(0, 0));
-        tbl.setRowHeight(25);
-        tbl.setSelectionBackground(new Color(50, 154, 114));
-        tbl.setSelectionForeground(Color.white);
-        tbl.setFont(new Font("Arial", Font.PLAIN, 16));
-
-        JTableHeader header = tbl.getTableHeader();
-        header.setBackground(new Color(242, 153, 74));
-        header.setFont(new Font("Arial", Font.BOLD, 16));
-        header.setOpaque(false);
-        header.setForeground(Color.WHITE);
-        header.setReorderingAllowed(false);
-        ((DefaultTableCellRenderer) header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        //======/CUSTOM TABLE/=======
-    }
-//</editor-fold>
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -81,7 +52,7 @@ public class QuanLyLoaiGUI extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         pnTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblLoai = new javax.swing.JTable();
+        tblLoai = new MyTable();
         jPanel3 = new javax.swing.JPanel();
         pnMaLoai = new javax.swing.JPanel();
         lblMaLoai = new javax.swing.JLabel();
@@ -258,7 +229,7 @@ public class QuanLyLoaiGUI extends javax.swing.JDialog {
     private javax.swing.JPanel pnMaLoai;
     private javax.swing.JPanel pnTable;
     private javax.swing.JPanel pnTenLoai;
-    private javax.swing.JTable tblLoai;
+    private MyTable tblLoai;
     private javax.swing.JTextField txtMaLoai;
     private javax.swing.JTextField txtTenLoai;
     // End of variables declaration//GEN-END:variables

@@ -192,11 +192,10 @@ public class DangNhapGUI extends JFrame {
     }
 
     private void xuLyDangNhap() {
-        TaiKhoan tk = DangNhapBUS.getTaiKhoanDangNhap(txtUser.getText(),
+        DangNhapBUS dangNhapBUS = new DangNhapBUS();
+        TaiKhoan tk = dangNhapBUS.getTaiKhoanDangNhap(txtUser.getText(),
                 txtPassword.getText());
-        if (tk == null) {
-
-        } else {
+        if (tk != null) {
             QuanLyGUI quanly = new QuanLyGUI();
             quanly.showWindow();
         }

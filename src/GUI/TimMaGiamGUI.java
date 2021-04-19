@@ -2,6 +2,7 @@ package GUI;
 
 import DAO.MyConnect;
 import DTO.GiamGia;
+import MyCustom.MyTable;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -38,7 +39,7 @@ public class TimMaGiamGUI extends JDialog {
     public TimMaGiamGUI() {
         addControls();
         addEvents();
-        
+
         this.setSize(500, 400);
         this.setModal(true);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -71,7 +72,7 @@ public class TimMaGiamGUI extends JDialog {
         dtmMaGiam.addColumn("Ngày bắt đầu");
         dtmMaGiam.addColumn("Ngày kết thúc");
         dtmMaGiam.addColumn("Trạng thái");
-        tblMaGiam = new JTable(dtmMaGiam);
+        tblMaGiam = new MyTable(dtmMaGiam);
         JScrollPane scrMaGiam = new JScrollPane(tblMaGiam);
         pnTable.add(scrMaGiam, BorderLayout.CENTER);
         con.add(pnTable, BorderLayout.CENTER);
@@ -85,7 +86,6 @@ public class TimMaGiamGUI extends JDialog {
         pnButton.add(btnThoat);
         con.add(pnButton, BorderLayout.SOUTH);
 
-        customTable(tblMaGiam);
         btnChon.setPreferredSize(new Dimension(120, 40));
         btnThoat.setPreferredSize(btnChon.getPreferredSize());
 
@@ -123,7 +123,7 @@ public class TimMaGiamGUI extends JDialog {
                 SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                 Date ngayBD = sdf.parse(tblMaGiam.getValueAt(row, 1) + "");
                 Date ngayKT = sdf.parse(tblMaGiam.getValueAt(row, 2) + "");
-                
+
                 maGiamTimDuoc = new GiamGia();
                 maGiamTimDuoc.setMaGiam(ma);
                 maGiamTimDuoc.setNgayBD(ngayBD);
@@ -140,32 +140,11 @@ public class TimMaGiamGUI extends JDialog {
     }
 
     private void loadDataLenTable() {
-        
+
     }
 
     private void loadDataLenTable(String tuKhoa) {
-        
-    }
 
-    //<editor-fold defaultstate="collapsed" desc="Custom table">
-    private void customTable(JTable tbl) {
-        //======CUSTOM TABLE=======
-        tbl.setFocusable(false);
-        tbl.setIntercellSpacing(new Dimension(0, 0));
-        tbl.setRowHeight(25);
-        tbl.setSelectionBackground(new Color(50, 154, 114));
-        tbl.setSelectionForeground(Color.white);
-        tbl.setFont(new Font("Arial", Font.PLAIN, 16));
-
-        JTableHeader header = tbl.getTableHeader();
-        header.setBackground(new Color(242, 153, 74));
-        header.setFont(new Font("Arial", Font.BOLD, 16));
-        header.setOpaque(false);
-        header.setForeground(Color.WHITE);
-        header.setReorderingAllowed(false);
-        ((DefaultTableCellRenderer) header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        //======/CUSTOM TABLE/=======
     }
-//</editor-fold>
 
 }

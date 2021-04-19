@@ -3,13 +3,16 @@ package GUI;
 import BUS.LoaiBUS;
 import BUS.NhanVienBUS;
 import BUS.SanPhamBUS;
-import DTO.HoaDon;
 import DTO.LoaiSP;
 import DTO.NhanVien;
 import DTO.SanPham;
+
 import static Main.Main.changLNF;
+
 import MyCustom.MyDialog;
+import MyCustom.MyTable;
 import MyCustom.TransparentPanel;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -33,7 +36,7 @@ public class BanHangGUI extends JPanel {
     final Color colorPanel = new Color(247, 247, 247);
     CardLayout cardBanHangGroup = new CardLayout();
     JPanel pnCardTabBanHang;
-    JTable tblBanHang, tblGioHang;
+    MyTable tblBanHang, tblGioHang;
     DefaultTableModel dtmSanPhamBan, dtmGioHang;
     JTextField txtMaSPBanHang, txtTenSPBanHang, txtDonGiaBanHang;
     JSpinner spnSoLuongBanHang;
@@ -42,7 +45,7 @@ public class BanHangGUI extends JPanel {
 
     JTextField txtMaHD, txtNgayLap, txtMaKH, txtMaNV, txtTongTien, txtGhiChu, txtMaHDCT, txtMaSPCT, txtSoLuongCT, txtDonGiaCT, txtThanhTienCT;
     JList<String> listHoaDon;
-    JTable tblCTHoaDon;
+    MyTable tblCTHoaDon;
     DefaultTableModel dtmCTHoaDon;
     JButton btnReset;
 
@@ -117,9 +120,7 @@ public class BanHangGUI extends JPanel {
         dtmSanPhamBan.addColumn("Còn lại");
         dtmSanPhamBan.addColumn("Đơn vị tính");
         dtmSanPhamBan.addColumn("Ảnh");
-        tblBanHang = new JTable(dtmSanPhamBan);
-
-        customTable(tblBanHang);
+        tblBanHang = new MyTable(dtmSanPhamBan);
 
         tblBanHang.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
         tblBanHang.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
@@ -154,9 +155,7 @@ public class BanHangGUI extends JPanel {
         dtmGioHang.addColumn("Đơn giá");
         dtmGioHang.addColumn("Thành tiền");
 
-        tblGioHang = new JTable(dtmGioHang);
-
-        customTable(tblGioHang);
+        tblGioHang = new MyTable(dtmGioHang);
 
         tblGioHang.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
         tblGioHang.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
@@ -543,8 +542,7 @@ public class BanHangGUI extends JPanel {
         dtmCTHoaDon.addColumn("Số lượng");
         dtmCTHoaDon.addColumn("Đơn giá");
         dtmCTHoaDon.addColumn("Thành tiền");
-        tblCTHoaDon = new JTable(dtmCTHoaDon);
-        customTable(tblCTHoaDon);
+        tblCTHoaDon = new MyTable(dtmCTHoaDon);
         JScrollPane scrCTHoaDon = new JScrollPane(tblCTHoaDon);
         pnCTHoaDonRight.add(scrCTHoaDon, BorderLayout.CENTER);
         loadDataTblCTHoaDon();
@@ -818,27 +816,6 @@ public class BanHangGUI extends JPanel {
         }
     }
 
-    //<editor-fold defaultstate="collapsed" desc="Custom table">
-    private void customTable(JTable tbl) {
-        //======CUSTOM TABLE=======
-        tbl.setFocusable(false);
-        tbl.setIntercellSpacing(new Dimension(0, 0));
-        tbl.setRowHeight(25);
-        tbl.setSelectionBackground(new Color(50, 154, 114));
-        tbl.setSelectionForeground(Color.white);
-        tbl.setFont(new Font("Arial", Font.PLAIN, 16));
-
-        JTableHeader header = tbl.getTableHeader();
-        header.setBackground(new Color(242, 153, 74));
-        header.setFont(new Font("Arial", Font.BOLD, 16));
-        header.setOpaque(false);
-        header.setForeground(Color.WHITE);
-        header.setReorderingAllowed(false);
-        ((DefaultTableCellRenderer) header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        //======/CUSTOM TABLE/=======
-    }
-//</editor-fold>
-
     DecimalFormat dcf = new DecimalFormat("###,###");
 
     private void loadDataTableSanPhamBan() {
@@ -953,6 +930,8 @@ public class BanHangGUI extends JPanel {
         txtDonGiaBanHang.setText("");
         spnSoLuongBanHang.setValue(0);
 
+        if (ma.trim().equalsIgnoreCase(""))
+            return;
         int key = Integer.parseInt(ma);
         for (int i = 0; i < tblGioHang.getRowCount(); i++) {
             int maTbl = Integer.parseInt(tblGioHang.getValueAt(i, 0) + "");
