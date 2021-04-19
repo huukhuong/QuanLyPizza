@@ -3,16 +3,18 @@ package DTO;
 public class NhanVien {
 
     private int maNV;
-    private String hoTen;
+    private String ho;
+    private String ten;
     private String gioiTinh;
     private String chucVu;
 
     public NhanVien() {
     }
 
-    public NhanVien(int maNV, String hoTen, String gioiTinh, String chucVu) {
+    public NhanVien(int maNV, String ho, String ten, String gioiTinh, String chucVu) {
         this.maNV = maNV;
-        this.hoTen = hoTen;
+        this.ho = ho;
+        this.ten = ten;
         this.gioiTinh = gioiTinh;
         this.chucVu = chucVu;
     }
@@ -25,12 +27,20 @@ public class NhanVien {
         this.maNV = maNV;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getHo() {
+        return ho;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setHo(String ho) {
+        this.ho = ho;
+    }
+
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
     }
 
     public String getGioiTinh() {
