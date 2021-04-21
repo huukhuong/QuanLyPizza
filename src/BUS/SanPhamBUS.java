@@ -3,6 +3,7 @@ package BUS;
 import DAO.SanPhamDAO;
 import DTO.SanPham;
 import MyCustom.MyDialog;
+
 import java.util.ArrayList;
 
 public class SanPhamBUS {
@@ -76,11 +77,11 @@ public class SanPhamBUS {
     }
 
     public boolean themSanPham(String ten,
-            String loai,
-            String soLuong,
-            String donViTinh,
-            String anh,
-            String donGia) {
+                               String loai,
+                               String soLuong,
+                               String donViTinh,
+                               String anh,
+                               String donGia) {
 
         if (ten.trim().equals("")) {
             new MyDialog("Tên SP không được để rỗng!", MyDialog.ERROR_DIALOG);
@@ -123,6 +124,34 @@ public class SanPhamBUS {
         return false;
     }
 
+    public boolean nhapSanPhamTuExcel(String ten,
+                                      String loai,
+                                      String soLuong,
+                                      String donViTinh,
+                                      String anh,
+                                      String donGia) {
+
+        try {
+            String[] loaiTmp = loai.split(" - ");
+            int maLoai = Integer.parseInt(loaiTmp[0]);
+            int soLuongSP = Integer.parseInt(soLuong);
+            donGia = donGia.replace(",", "");
+            int donGiaSP = Integer.parseInt(donGia);
+
+            SanPham sp = new SanPham();
+            sp.setTenSP(ten);
+            sp.setMaLoai(maLoai);
+            sp.setSoLuong(soLuongSP);
+            sp.setDonViTinh(donViTinh);
+            sp.setHinhAnh(anh);
+            sp.setDonGia(donGiaSP);
+
+            spDAO.nhapSanPhamTuExcel(sp);
+        } catch (Exception e) {
+        }
+        return false;
+    }
+
     public boolean xoaSanPham(String ma) {
         if (ma.trim().equals("")) {
             new MyDialog("Chưa chọn sản phẩm để xoá!", MyDialog.ERROR_DIALOG);
@@ -140,12 +169,12 @@ public class SanPhamBUS {
     }
 
     public boolean suaSanPham(String ma,
-            String ten,
-            String loai,
-            String soLuong,
-            String donViTinh,
-            String anh,
-            String donGia) {
+                              String ten,
+                              String loai,
+                              String soLuong,
+                              String donViTinh,
+                              String anh,
+                              String donGia) {
 
         try {
             if (ma.trim().equals("")) {

@@ -1,8 +1,11 @@
 package GUI;
 
+import BUS.GiamGiaBUS;
 import DAO.MyConnect;
 import DTO.GiamGia;
+import MyCustom.MyDialog;
 import MyCustom.MyTable;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -10,9 +13,15 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -35,6 +44,7 @@ public class TimMaGiamGUI extends JDialog {
     }
 
     public static GiamGia maGiamTimDuoc = null;
+    private GiamGiaBUS giamGiaBUS = new GiamGiaBUS();
 
     public TimMaGiamGUI() {
         addControls();
@@ -119,6 +129,11 @@ public class TimMaGiamGUI extends JDialog {
         int row = tblMaGiam.getSelectedRow();
         if (row > -1) {
             try {
+                if (tblMaGiam.getValueAt(row, 3).equals("Không hiệu lực")) {
+                    new MyDialog("Mã này đã hết hiệu lực!", MyDialog.ERROR_DIALOG);
+                    loadDataLenTable();
+                    return;
+                }
                 int ma = Integer.parseInt(tblMaGiam.getValueAt(row, 0) + "");
                 SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                 Date ngayBD = sdf.parse(tblMaGiam.getValueAt(row, 1) + "");
@@ -129,7 +144,6 @@ public class TimMaGiamGUI extends JDialog {
                 maGiamTimDuoc.setNgayBD(ngayBD);
                 maGiamTimDuoc.setNgayKT(ngayKT);
             } catch (ParseException ex) {
-                Logger.getLogger(TimMaGiamGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         xuLyThoat();
@@ -140,7 +154,25 @@ public class TimMaGiamGUI extends JDialog {
     }
 
     private void loadDataLenTable() {
+        dtmMaGiam.setRowCount(0);
+        giamGiaBUS.docDanhSach();
+        ArrayList<GiamGia> dsg = giamGiaBUS.getDanhSachGiamGia();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        for (GiamGia gg : dsg) {
+            Vector vec = new Vector();
+            vec.add(gg.getMaGiam());
+            vec.add(sdf.format(gg.getNgayBD()));
+            vec.add(sdf.format(gg.getNgayKT()));
 
+            Date now = new Date();
+            if (gg.getNgayBD().before(now) && gg.getNgayKT().after(now)) {
+                vec.add("Có hiệu lực");
+            } else {
+                vec.add("Không hiệu lực");
+            }
+
+            dtmMaGiam.addRow(vec);
+        }
     }
 
     private void loadDataLenTable(String tuKhoa) {

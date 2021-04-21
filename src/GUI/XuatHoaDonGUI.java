@@ -3,6 +3,8 @@ package GUI;
 import BUS.HoaDonBUS;
 import DAO.MyConnect;
 import Main.Main;
+import MyCustom.MyDialog;
+
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.print.PrinterException;
@@ -17,24 +19,9 @@ import javax.swing.JDialog;
 
 public class XuatHoaDonGUI extends JDialog {
 
-    public static void main(String[] args) {
-        new MyConnect();
-        ArrayList dsGioHang = new ArrayList();
-
-        Vector vec = new Vector();
-        vec.add(1);
-        vec.add("Pizza thịt nguội");
-        vec.add(2);
-        vec.add(139000);
-        vec.add(139000 * 2);
-        dsGioHang.add(vec);
-
-        Main.changLNF("Windows");
-        XuatHoaDonGUI ui = new XuatHoaDonGUI(dsGioHang, 0);
-        ui.setVisible(true);
-    }
-
     private HoaDonBUS hoadonBUS = new HoaDonBUS();
+    private TimKhachGUI timKhachUI = new TimKhachGUI();
+    private TimMaGiamGUI timMaUI = new TimMaGiamGUI();
 
     public XuatHoaDonGUI() {
         initComponents();
@@ -43,15 +30,19 @@ public class XuatHoaDonGUI extends JDialog {
         this.setModal(true);
         Image icon = Toolkit.getDefaultToolkit().getImage("image/ManagerUI/icon-app.png");
         this.setIconImage(icon);
+        txtTenKhach.setEditable(false);
+        txtMaGiam.setEditable(false);
     }
 
     private ArrayList<Vector> dsGioHang;
     private int tongTien;
+    private String nhanVien;
 
-    public XuatHoaDonGUI(ArrayList<Vector> dsGioHang, int tongTien) {
+    public XuatHoaDonGUI(ArrayList<Vector> dsGioHang, int tongTien, Object nhanVien) {
         this();
         this.tongTien = tongTien;
         this.dsGioHang = dsGioHang;
+        this.nhanVien = (String) nhanVien;
     }
 
     private void xuLyHienThiHoaDon() {
@@ -77,7 +68,7 @@ public class XuatHoaDonGUI extends JDialog {
                 + "</style>";
         hd += "<h1 style='text-align:center;'>HOÁ ĐƠN THANH TOÁN</h1>";
         hd += "Mã HD: " + "<br/>";
-        hd += "Nhân viên: " + "<br/>";
+        hd += "Nhân viên: " + nhanVien + "<br/>";
         hd += "Ngày lập: " + dtf.format(now) + "<br/>";
         hd += "Khách hàng: " + txtTenKhach.getText() + "<br/>";
         hd += "<div style='text-align:center;'>==========================================</div><br/>";
@@ -98,6 +89,12 @@ public class XuatHoaDonGUI extends JDialog {
             hd += "<td style='text-align:center;'>" + vec.get(3) + "</td>";
             hd += "<td style='text-align:center;'>" + vec.get(4) + "</td>";
             hd += "</tr>";
+        }
+        if (timMaUI.maGiamTimDuoc != null) {
+            int percent = 0;
+            // lấy phần trăm giảm
+//            int percent = timMaUI.maGiamTimDuoc.get;
+            tongTien = tongTien - (tongTien * percent / 100);
         }
         hd += "<tr>";
         hd += "<td style='text-align:center;'>" + "</td>";
@@ -189,88 +186,88 @@ public class XuatHoaDonGUI extends JDialog {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtMaGiam)
-                    .addComponent(txtTenKhach))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnTimKhach, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTimMaGiam, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel3))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtMaGiam)
+                                        .addComponent(txtTenKhach))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnTimKhach, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnTimMaGiam, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTenKhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnTimKhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(txtMaGiam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTimMaGiam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(txtTenKhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(btnTimKhach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(txtMaGiam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnTimMaGiam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
+    private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {
+        if (txtTenKhach.getText().equals("")) {
+            new MyDialog("Xin chọn khách hàng", MyDialog.ERROR_DIALOG);
+            return;
+        }
         xuLyHienThiHoaDon();
         btnInHoaDon.setEnabled(true);
         btnThanhToan.setEnabled(false);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDateTime now = LocalDateTime.now();
         hoadonBUS.luuHoaDon(dsGioHang, now, tongTien);
-    }//GEN-LAST:event_btnThanhToanActionPerformed
+    }
 
-    private void btnInHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInHoaDonActionPerformed
+    private void btnInHoaDonActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             if (!txtHoaDon.getText().equals("")) {
                 txtHoaDon.print();
                 this.dispose();
             }
         } catch (PrinterException ex) {
-            Logger.getLogger(XuatHoaDonGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnInHoaDonActionPerformed
+    }
 
-    private void btnTimKhachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKhachActionPerformed
-        TimKhachGUI timKhachUI = new TimKhachGUI();
+
+    private void btnTimKhachActionPerformed(java.awt.event.ActionEvent evt) {
         timKhachUI.setVisible(true);
         if (timKhachUI.khachHangTimDuoc != null) {
-            txtTenKhach.setText(timKhachUI.khachHangTimDuoc.getMaKH() + " - " + timKhachUI.khachHangTimDuoc.getHoTen());
-            txtTenKhach.setEnabled(false);
+            txtTenKhach.setText(timKhachUI.khachHangTimDuoc.getMaKH() + " - " + timKhachUI.khachHangTimDuoc.getHo() + " " + timKhachUI.khachHangTimDuoc.getTen());
         }
-    }//GEN-LAST:event_btnTimKhachActionPerformed
+    }
 
-    private void btnTimMaGiamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimMaGiamActionPerformed
-        // TODO add your handling code here:
-        TimMaGiamGUI timMaUI = new TimMaGiamGUI();
+
+    private void btnTimMaGiamActionPerformed(java.awt.event.ActionEvent evt) {
         timMaUI.setVisible(true);
         if (timMaUI.maGiamTimDuoc != null) {
             txtMaGiam.setText(timMaUI.maGiamTimDuoc.getMaGiam() + "");
-            txtMaGiam.setEnabled(false);
         }
-    }//GEN-LAST:event_btnTimMaGiamActionPerformed
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInHoaDon;

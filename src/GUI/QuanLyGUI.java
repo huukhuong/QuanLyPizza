@@ -323,6 +323,7 @@ public class QuanLyGUI extends JFrame {
 
     private void thoatChuongTrinh() {
         banHangPanel.xuLyThoat();
+        Main.Main.changLNF("Nimbus");
         this.dispose();
     }
 

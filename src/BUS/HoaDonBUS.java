@@ -11,6 +11,11 @@ public class HoaDonBUS {
     private ArrayList<HoaDon> listHoaDon;
     private HoaDonDAO hoaDonDAO = new HoaDonDAO();
 
+    public ArrayList<HoaDon> getListHoaDon() {
+        listHoaDon = hoaDonDAO.getListHoaDon();
+        return listHoaDon;
+    }
+
     public void luuHoaDon(ArrayList<Vector> dsGioHang, LocalDateTime now, int tongTien) {
         
     }

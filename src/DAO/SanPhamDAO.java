@@ -134,6 +134,25 @@ public class SanPhamDAO {
         return false;
     }
 
+    public boolean nhapSanPhamTuExcel(SanPham sp) {
+        try {
+            String sql = "INSERT INTO SanPham(TenSP, MaLoai, SoLuong, DonViTinh, HinhAnh, DonGia) "
+                    + "VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
+            pre.setString(1, sp.getTenSP());
+            pre.setInt(2, sp.getMaLoai());
+            pre.setInt(3, sp.getSoLuong());
+            pre.setString(4, sp.getDonViTinh());
+            pre.setString(5, sp.getHinhAnh());
+            pre.setInt(6, sp.getDonGia());
+
+            pre.execute();
+            return true;
+        } catch (SQLException e) {
+        }
+        return false;
+    }
+
     public boolean xoaSanPham(int maSP) {
         try {
             String sql = "DELETE FROM SanPham WHERE MaSP=" + maSP;

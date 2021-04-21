@@ -1,5 +1,6 @@
 package GUI;
 
+import Main.Main;
 import MyCustom.ImagePanel;
 import MyCustom.MyDialog;
 import BUS.DangNhapBUS;
@@ -13,19 +14,37 @@ public class DangNhapGUI extends JFrame {
 
     public DangNhapGUI() {
         this.setTitle("Đăng nhập");
-        this.setSize(443, 590);
+        this.setSize(440, 624);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setUndecorated(true);
         this.setBackground(new Color(0, 0, 0, 0));
         addControls();
+        xuLyTaiKhoanDaGhiNho();
         addEvents();
+    }
+
+    private void xuLyTaiKhoanDaGhiNho() {
+        DangNhapBUS dangNhapBUS = new DangNhapBUS();
+        String line = dangNhapBUS.getTaiKhoanGhiNho();
+        try {
+            String[] arr = line.split(" | ");
+            ckbRemember.setSelected(true);
+            txtUser.setText(arr[0]);
+            txtPassword.setText(arr[2]);
+            txtUser.requestFocus();
+        } catch (Exception e) {
+            txtUser.setText("");
+            txtPassword.setText("");
+            txtUser.requestFocus();
+        }
     }
 
     private JLabel btnExit, btnLogin, btnForgot;
     private JTextField txtUser;
     private JPasswordField txtPassword;
     private JPanel pnMain;
+    private JCheckBox ckbRemember;
 
     private void addControls() {
         Container con = getContentPane();
@@ -35,15 +54,15 @@ public class DangNhapGUI extends JFrame {
 
         btnExit = new JLabel(new ImageIcon("image/LoginUI/btn-close.png"));
         btnExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnExit.setBounds(395, 120, 28, 28);
+        btnExit.setBounds(399, 118, 40, 40);
 
         btnLogin = new JLabel(new ImageIcon("image/LoginUI/btn-login.png"));
         btnLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnLogin.setBounds(40, 448, 362, 55);
+        btnLogin.setBounds(24, 513, 392, 55);
 
         btnForgot = new JLabel(new ImageIcon("image/LoginUI/btn-forgot.png"));
         btnForgot.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnForgot.setBounds(140, 516, 166, 30);
+        btnForgot.setBounds(138, 575, 164, 30);
 
         Font fontTXT = new Font("", Font.BOLD, 18);
         txtUser = new JTextField();
@@ -52,7 +71,7 @@ public class DangNhapGUI extends JFrame {
         txtUser.setForeground(Color.WHITE);
         txtUser.setFont(fontTXT);
         txtUser.setHorizontalAlignment(JTextField.LEFT);
-        txtUser.setBounds(52, 290, 340, 45);
+        txtUser.setBounds(36, 302, 370, 50);
 
         txtPassword = new JPasswordField();
         txtPassword.setEchoChar('•');
@@ -61,11 +80,21 @@ public class DangNhapGUI extends JFrame {
         txtPassword.setForeground(Color.WHITE);
         txtPassword.setFont(fontTXT);
         txtPassword.setHorizontalAlignment(JTextField.LEFT);
-        txtPassword.setBounds(52, 375, 340, 45);
+        txtPassword.setBounds(36, 401, 370, 50);
+
+        Main.changLNF("Windows");
+        ckbRemember = new JCheckBox("Ghi nhớ đăng nhập");
+        ckbRemember.setFont(fontTXT);
+        ckbRemember.setOpaque(false);
+        ckbRemember.setForeground(Color.white);
+        ckbRemember.setBounds(28, 464, 290, 19);
+        ckbRemember.setFocusPainted(false);
+        Main.changLNF("Nimbus");
 
         pnMain.add(btnExit);
         pnMain.add(txtUser);
         pnMain.add(txtPassword);
+        pnMain.add(ckbRemember);
         pnMain.add(btnLogin);
         pnMain.add(btnForgot);
 
@@ -194,7 +223,7 @@ public class DangNhapGUI extends JFrame {
     private void xuLyDangNhap() {
         DangNhapBUS dangNhapBUS = new DangNhapBUS();
         TaiKhoan tk = dangNhapBUS.getTaiKhoanDangNhap(txtUser.getText(),
-                txtPassword.getText());
+                txtPassword.getText(), ckbRemember.isSelected());
         if (tk != null) {
             QuanLyGUI quanly = new QuanLyGUI();
             quanly.showWindow();

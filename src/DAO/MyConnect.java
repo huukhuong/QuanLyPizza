@@ -10,12 +10,15 @@ import java.util.Properties;
 public class MyConnect {
 
     public static Connection conn = null;
-    private String dbName = "quanlypizza";
-    String userName = "root";
-    String password = "";
+    private String severName;
+    private String dbName;
+    private String userName;
+    private String password;
 
     public MyConnect() {
-        String strConnect = "jdbc:mysql://localhost/" + dbName + "?useUnicode=true&characterEncoding=utf-8";
+        docFileText();
+
+        String strConnect = "jdbc:mysql://" + severName + "/" + dbName + "?useUnicode=true&characterEncoding=utf-8";
         Properties pro = new Properties();
         pro.put("user", userName);
         pro.put("password", password);
@@ -27,5 +30,13 @@ public class MyConnect {
             System.exit(0);
         }
 
+    }
+
+    private void docFileText() {
+        // Xử lý đọc file để lấy ra 4 tham số
+        severName = "localhost";
+        dbName = "quanlypizza";
+        userName = "root";
+        password = "";
     }
 }

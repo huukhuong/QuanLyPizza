@@ -6,23 +6,25 @@
 package DAO;
 
 import DTO.KhachHang;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 /**
- *
  * @author User
  */
 public class KhachHangDAO {
+
     public ArrayList<KhachHang> getListKhachHang() {
-        ArrayList<KhachHang> dskh = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM khachhang";
-            Statement stmt = MyConnect.conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while(rs.next()) {
+            String sql = "SELECT * FROM KhachHang";
+            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
+            ResultSet rs = pre.executeQuery();
+            ArrayList<KhachHang> dskh = new ArrayList<>();
+            while (rs.next()) {
                 KhachHang kh = new KhachHang();
                 kh.setMaKH(rs.getInt(1));
                 kh.setHo(rs.getString(2));
@@ -31,10 +33,10 @@ public class KhachHangDAO {
                 kh.setTongChiTieu(rs.getInt(5));
                 dskh.add(kh);
             }
+            return dskh;
         } catch (SQLException ex) {
-            return null;
         }
-        return dskh;
+        return null;
     }
 
     public KhachHang getKhachHang(int maKH) {
@@ -44,7 +46,7 @@ public class KhachHangDAO {
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, maKH);
             ResultSet rs = prep.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 kh = new KhachHang();
                 kh.setMaKH(rs.getInt(1));
                 kh.setHo(rs.getString(2));
@@ -61,7 +63,7 @@ public class KhachHangDAO {
     public boolean addKhachHang(KhachHang kh) {
         boolean result = false;
         try {
-            String sql = "INSERT INTO khachhang VALUES(?,?,?,?)";
+            String sql = "INSERT INTO khachhang VALUES(?,?,?,?,?)";
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, kh.getMaKH());
             prep.setString(2, kh.getHo());
@@ -69,7 +71,7 @@ public class KhachHangDAO {
             prep.setString(4, kh.getGioiTinh());
             prep.setInt(5, kh.getTongChiTieu());
             result = prep.executeUpdate() > 0;
-        } catch(SQLException ex) {
+        } catch (SQLException ex) {
             return false;
         }
         return result;
@@ -82,7 +84,7 @@ public class KhachHangDAO {
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, maKH);
             result = prep.executeUpdate() > 0;
-        } catch(SQLException ex) {
+        } catch (SQLException ex) {
             return false;
         }
         return result;
@@ -91,7 +93,7 @@ public class KhachHangDAO {
     public boolean updateKhachHang(int maKH, KhachHang kh) {
         boolean result = false;
         try {
-            String sql = "UPDATE khachhang SET MaKH=?, HoTen=?, GioiTinh=?, TongChiTieu=? WHERE MaKH=?";
+            String sql = "UPDATE khachhang SET MaKH=?, Ho=?, Ten=?, GioiTinh=?, TongChiTieu=? WHERE MaKH=?";
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, kh.getMaKH());
             prep.setString(2, kh.getHo());
@@ -100,7 +102,7 @@ public class KhachHangDAO {
             prep.setInt(5, kh.getTongChiTieu());
             prep.setInt(6, maKH);
             result = prep.executeUpdate() > 0;
-        } catch(SQLException ex) {
+        } catch (SQLException ex) {
             return false;
         }
         return result;
@@ -109,10 +111,10 @@ public class KhachHangDAO {
     public boolean updateTongChiTieu(int maKH, int tongChiTieu) {
         boolean result = false;
         try {
-            String sql = "UPDATE khachhang SET TongChiTieu="+tongChiTieu+" WHERE MaKH="+maKH;
+            String sql = "UPDATE khachhang SET TongChiTieu=" + tongChiTieu + " WHERE MaKH=" + maKH;
             Statement stmt = MyConnect.conn.createStatement();
             result = stmt.executeUpdate(sql) > 0;
-        } catch(SQLException ex) {
+        } catch (SQLException ex) {
             return false;
         }
         return result;

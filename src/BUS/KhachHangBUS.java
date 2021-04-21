@@ -3,6 +3,7 @@ package BUS;
 import DAO.KhachHangDAO;
 import DTO.KhachHang;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class KhachHangBUS {
 
@@ -18,8 +19,9 @@ public class KhachHangBUS {
         tuKhoa = tuKhoa.toLowerCase();
         ArrayList<KhachHang> dskh = new ArrayList<>();
         for (KhachHang kh : listKhachHang) {
-            String hoTen = kh.getHoTen().toLowerCase();
-            if (hoTen.contains(tuKhoa)) {
+            String ho = kh.getHo().toLowerCase();
+            String ten = kh.getTen().toLowerCase();
+            if (ho.contains(tuKhoa) || ten.contains(tuKhoa)) {
                 dskh.add(kh);
             }
         }

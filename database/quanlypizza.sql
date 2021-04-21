@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 15, 2021 lúc 04:06 PM
+-- Thời gian đã tạo: Th4 21, 2021 lúc 02:18 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -53,13 +53,6 @@ CREATE TABLE `cthoadon` (
   `ThanhTien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `cthoadon`
---
-
-INSERT INTO `cthoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`) VALUES
-(1, 1, 2, 169000, 338000);
-
 -- --------------------------------------------------------
 
 --
@@ -91,7 +84,8 @@ CREATE TABLE `giamgia` (
 --
 
 INSERT INTO `giamgia` (`MaGiam`, `NgayBD`, `NgayKT`) VALUES
-(1, '2021-04-03', '2021-04-30');
+(1, '2021-04-03', '2021-04-30'),
+(2, '2021-04-22', '2021-04-30');
 
 -- --------------------------------------------------------
 
@@ -113,7 +107,8 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `NgayLap`, `TongTien`, `GhiChu`) VALUES
-(1, 1, 1, '2021-04-03', 10000, 'Đã thanh toán');
+(1, 1, 1, '2021-04-03', 338000, 'Đã thanh toán'),
+(2, 3, 3, '2021-04-02', 468000, 'Đã thanh toán');
 
 -- --------------------------------------------------------
 
@@ -123,18 +118,21 @@ INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `NgayLap`, `TongTien`, `GhiChu`) V
 
 CREATE TABLE `khachhang` (
   `MaKH` int(11) NOT NULL,
-  `HoTen` varchar(255) NOT NULL,
+  `Ho` varchar(255) NOT NULL,
+  `Ten` varchar(255) NOT NULL,
   `GioiTinh` varchar(3) NOT NULL,
-  `TongChiTieu` int(11) NOT NULL
+  `TongChiTieu` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `khachhang`
 --
 
-INSERT INTO `khachhang` (`MaKH`, `HoTen`, `GioiTinh`, `TongChiTieu`) VALUES
-(1, 'Nguyễn Văn An', 'Nam', 400000),
-(2, 'Trần Ngọc Bình', 'Nữ', 200000);
+INSERT INTO `khachhang` (`MaKH`, `Ho`, `Ten`, `GioiTinh`, `TongChiTieu`) VALUES
+(1, 'Nguyễn Văn', 'An', 'Nam', 400000),
+(2, 'Trần Ngọc', 'Bình', 'Nữ', 200000),
+(3, 'Lê Thị', 'Giải', 'Nữ', 900000),
+(4, 'Hà Thanh', 'Thoát', 'Nam', 800000);
 
 -- --------------------------------------------------------
 
@@ -184,7 +182,8 @@ INSERT INTO `nhacungcap` (`MaNCC`, `TenNCC`, `DiaChi`, `DienThoai`) VALUES
 
 CREATE TABLE `nhanvien` (
   `MaNV` int(11) NOT NULL,
-  `HoTen` varchar(255) NOT NULL,
+  `Ho` varchar(255) NOT NULL,
+  `Ten` varchar(255) NOT NULL,
   `GioiTinh` varchar(3) NOT NULL,
   `ChucVu` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -193,12 +192,36 @@ CREATE TABLE `nhanvien` (
 -- Đang đổ dữ liệu cho bảng `nhanvien`
 --
 
-INSERT INTO `nhanvien` (`MaNV`, `HoTen`, `GioiTinh`, `ChucVu`) VALUES
-(0, 'Admin', 'NOT', 'Admin'),
-(1, 'Sau Đại Phát', 'Nam', 'Quản Lý'),
-(2, 'Trần Quang Vinh', 'Nam', 'Quản Lý'),
-(3, 'Trần Hữu Khương', 'Nam', 'Quản Lý'),
-(4, 'Nhữ Anh Tài', 'Nam', 'Nhân Viên');
+INSERT INTO `nhanvien` (`MaNV`, `Ho`, `Ten`, `GioiTinh`, `ChucVu`) VALUES
+(0, 'Admin', '', 'NOT', 'Admin'),
+(1, 'Sau Đại', 'Phát', 'Nam', 'Quản Lý'),
+(2, 'Trần Quang', 'Vinh', 'Nam', 'Quản Lý'),
+(3, 'Trần Hữu', 'Khương', 'Nam', 'Quản Lý'),
+(4, 'Nhữ Anh', 'Tài', 'Nam', 'Nhân Viên');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `phanquyen`
+--
+
+CREATE TABLE `phanquyen` (
+  `Quyen` varchar(10) NOT NULL,
+  `NhapHang` int(1) NOT NULL,
+  `QLSanPham` int(1) NOT NULL,
+  `QLNhanVien` int(1) NOT NULL,
+  `QLKhachHang` int(1) NOT NULL,
+  `ThongKe` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `phanquyen`
+--
+
+INSERT INTO `phanquyen` (`Quyen`, `NhapHang`, `QLSanPham`, `QLNhanVien`, `QLKhachHang`, `ThongKe`) VALUES
+('adm', 1, 1, 1, 1, 1),
+('nvi', 1, 0, 0, 1, 0),
+('qly', 1, 0, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -234,29 +257,28 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `MaLoai`, `SoLuong`, `DonViTinh`, `HinhAnh`, `DonGia`) VALUES
-(1, 'Pizza Hải Sản Pesto Xanh', 1, 43, 'Cái', 'pizza0.png', 169000),
-(3, 'Pizza Hải Sản Nhiệt Đới', 1, 46, 'Cái', 'pizza1.png', 129000),
-(4, 'Pizza Hải Sản Cocktail', 1, 48, 'Cái', 'pizza2.png', 119000),
-(5, 'Pizza Tôm Cocktail', 1, 50, 'Cái', 'pizza3.png', 159000),
-(6, 'Pizza Aloha', 1, 49, 'Cái', 'pizza4.png', 119000),
-(7, 'Pizza Thịt Xông Khói', 1, 48, 'Cái', 'pizza5.png', 130000),
-(8, 'Pizza Thịt Nguội', 1, 49, 'Cái', 'pizza6.png', 149000),
-(9, 'Pizza Gà Nướng 3 Vị', 1, 47, 'Cái', 'pizza7.png', 129000),
-(14, 'Pizza hải sản Pesto gấp đôi nhân', 1, 50, 'Cái', 'pizza8.jpg', 239000),
-(15, 'Pizza gấp đôi nhân phủ cơn lốc hải sản', 1, 50, 'Cái', 'pizza9.jpg', 239000),
-(16, 'Pizza gấp đôi nhân phủ hải sản xốt tiêu đen', 1, 50, 'Cái', 'pizza10.jpg', 229000),
-(17, 'Pizza bò nướng tiêu đen', 1, 50, 'Cái', 'pizza11.jpg', 249000),
-(18, 'Pizza cá ngừ thanh cua', 1, 50, 'Cái', 'pizza12.jpg', 269000),
-(33, 'Pepsi lon 330ml', 2, 120, 'Lon', 'douong0.jpeg', 19000),
-(34, 'Pepsi chai 1.5l', 2, 250, 'Chai', 'douong1.jpeg', 29000),
-(35, '7Up lon 330ml', 2, 100, 'Lon', 'douong2.jpeg', 19000),
-(36, '7Up chai 1.5l', 2, 130, 'Chai', 'douong3.jpeg', 29000),
-(37, 'Pepsi no calories 330ml', 2, 110, 'Lon', 'douong4.jpg', 19000),
-(38, 'Mirinda cam 330ml', 2, 80, 'Lon', 'douong5.jpg', 19000),
-(39, 'Mirinda kem soda 330ml', 2, 92, 'Lon', 'douong6.jpg', 19000),
-(40, 'Nước suối Aquafina', 2, 92, 'Chai', 'douong7.jpg', 10000),
-(41, 'Trà sữa trà đen', 2, 10, 'Ly', 'douong8.jpg', 25000),
-(42, 'Trà đào cam sả', 2, 19, 'Ly', 'douong9.jpg', 25000);
+(67, 'Pizza Hải Sản Pesto Xanh', 1, 43, 'Cái', 'pizza0.png', 169000),
+(68, 'Pizza Hải Sản Nhiệt Đới', 1, 46, 'Cái', 'pizza1.png', 129000),
+(69, 'Pizza Hải Sản Cocktail', 1, 48, 'Cái', 'pizza2.png', 119000),
+(70, 'Pizza Tôm Cocktail', 1, 50, 'Cái', 'pizza3.png', 159000),
+(71, 'Pizza Aloha', 1, 49, 'Cái', 'pizza4.png', 119000),
+(72, 'Pizza Thịt Xông Khói', 1, 48, 'Cái', 'pizza5.png', 130000),
+(73, 'Pizza Thịt Nguội', 1, 49, 'Cái', 'pizza6.png', 149000),
+(74, 'Pizza Gà Nướng 3 Vị', 1, 47, 'Cái', 'pizza7.png', 129000),
+(75, 'Pizza hải sản Pesto gấp đôi nhân', 1, 50, 'Cái', 'pizza8.jpg', 239000),
+(76, 'Pizza gấp đôi nhân phủ cơn lốc hải sản', 1, 50, 'Cái', 'pizza9.jpg', 239000),
+(77, 'Pizza gấp đôi nhân phủ hải sản xốt tiêu đen', 1, 50, 'Cái', 'pizza10.jpg', 229000),
+(78, 'Pizza bò nướng tiêu đen', 1, 50, 'Cái', 'pizza11.jpg', 249000),
+(79, 'Pizza cá ngừ thanh cua', 1, 50, 'Cái', 'pizza12.jpg', 269000),
+(80, 'Pepsi lon 330ml', 2, 120, 'Lon', 'douong0.jpeg', 19000),
+(81, 'Pepsi chai 1.5l', 2, 250, 'Chai', 'douong1.jpeg', 29000),
+(82, '7Up lon 330ml', 2, 100, 'Lon', 'douong2.jpeg', 19000),
+(83, '7Up chai 1.5l', 2, 130, 'Chai', 'douong3.jpeg', 29000),
+(84, 'Pepsi no calories 330ml', 2, 110, 'Lon', 'douong4.jpg', 19000),
+(85, 'Mirinda cam 330ml', 2, 80, 'Lon', 'douong5.jpg', 19000),
+(86, 'Mirinda kem soda 330ml', 2, 92, 'Lon', 'douong6.jpg', 19000),
+(87, 'Nước suối Aquafina', 2, 92, 'Chai', 'douong7.jpg', 10000),
+(88, 'Trà sữa trà đen', 2, 9, 'Ly', 'douong8.jpg', 25000);
 
 -- --------------------------------------------------------
 
@@ -268,7 +290,7 @@ CREATE TABLE `taikhoan` (
   `MaNV` int(11) NOT NULL,
   `TenDangNhap` varchar(255) NOT NULL,
   `MatKhau` varchar(255) NOT NULL,
-  `Quyen` varchar(3) NOT NULL
+  `Quyen` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -277,10 +299,10 @@ CREATE TABLE `taikhoan` (
 
 INSERT INTO `taikhoan` (`MaNV`, `TenDangNhap`, `MatKhau`, `Quyen`) VALUES
 (0, 'admin', 'admin', 'adm'),
-(1, 'ql01', 'ql01', 'mng'),
-(2, 'ql02', 'ql02', 'mng'),
-(3, 'ql03', 'ql03', 'mng'),
-(4, 'nv01', 'nv01', 'sta');
+(1, 'ql01', 'ql01', 'qly'),
+(2, 'ql02', 'ql02', 'qly'),
+(3, 'ql03', 'ql03', 'qly'),
+(4, 'nv01', 'nv01', 'nvi');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -346,6 +368,12 @@ ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
+-- Chỉ mục cho bảng `phanquyen`
+--
+ALTER TABLE `phanquyen`
+  ADD PRIMARY KEY (`Quyen`);
+
+--
 -- Chỉ mục cho bảng `phieunhap`
 --
 ALTER TABLE `phieunhap`
@@ -364,7 +392,8 @@ ALTER TABLE `sanpham`
 -- Chỉ mục cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  ADD PRIMARY KEY (`MaNV`);
+  ADD PRIMARY KEY (`MaNV`),
+  ADD KEY `Quyen` (`Quyen`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -374,19 +403,19 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT cho bảng `giamgia`
 --
 ALTER TABLE `giamgia`
-  MODIFY `MaGiam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MaGiam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `loai`
@@ -416,7 +445,7 @@ ALTER TABLE `phieunhap`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
@@ -472,7 +501,8 @@ ALTER TABLE `sanpham`
 -- Các ràng buộc cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `taikhoan_ibfk_2` FOREIGN KEY (`Quyen`) REFERENCES `phanquyen` (`Quyen`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

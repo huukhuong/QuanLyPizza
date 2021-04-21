@@ -1,11 +1,8 @@
 package GUI;
 
-import BUS.LoaiBUS;
-import BUS.NhanVienBUS;
-import BUS.SanPhamBUS;
-import DTO.LoaiSP;
-import DTO.NhanVien;
-import DTO.SanPham;
+import BUS.*;
+import DAO.CTHoaDonDAO;
+import DTO.*;
 
 import static Main.Main.changLNF;
 
@@ -29,6 +26,7 @@ public class BanHangGUI extends JPanel {
     private SanPhamBUS spBUS = new SanPhamBUS();
     private NhanVienBUS nvBUS = new NhanVienBUS();
     private LoaiBUS loaiBUS = new LoaiBUS();
+    private HoaDonBUS hoaDonBUS = new HoaDonBUS();
 
     JLabel lblTabbedBanHang, lblTabbedHoaDon;
     final ImageIcon tabbedSelected = new ImageIcon("image/ManagerUI/tabbed-btn--selected.png");
@@ -47,7 +45,7 @@ public class BanHangGUI extends JPanel {
     JList<String> listHoaDon;
     MyTable tblCTHoaDon;
     DefaultTableModel dtmCTHoaDon;
-    JButton btnReset;
+    JButton btnReset, btnResetCTHoaDon;
 
     public BanHangGUI() {
         changLNF("Windows");
@@ -484,7 +482,11 @@ public class BanHangGUI extends JPanel {
         JLabel lblTitleCTHD = new JLabel("CHI TIẾT HOÁ ĐƠN");
         JPanel pnTitleCT = new TransparentPanel();
         lblTitleCTHD.setFont(new Font("Tahoma", Font.BOLD, 28));
+
+        btnResetCTHoaDon = new JButton(new ImageIcon("image/Refresh-icon.png"));
+        btnResetCTHoaDon.setPreferredSize(new Dimension(40, 40));
         pnTitleCT.add(lblTitleCTHD);
+        pnTitleCT.add(btnResetCTHoaDon);
         pnTopCTHoaDonRight.add(pnTitleCT);
 
         JPanel pnMaHDCT = new TransparentPanel();
@@ -792,6 +794,13 @@ public class BanHangGUI extends JPanel {
             public void mouseExited(MouseEvent e) {
             }
         });
+
+        btnResetCTHoaDon.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadDataTblCTHoaDon();
+            }
+        });
     }
 
     private void loadDataComboboxLoaiBanSP() {
@@ -811,7 +820,7 @@ public class BanHangGUI extends JPanel {
         ArrayList<NhanVien> dsnv = nvBUS.getDanhSachNhanVien();
         if (dsnv != null) {
             for (NhanVien nv : dsnv) {
-                cmbNhanVienBan.addItem(nv.getMaNV() + " - " + nv.getHoTen());
+                cmbNhanVienBan.addItem(nv.getMaNV() + " - " + nv.getHo() + " " + nv.getTen());
             }
         }
     }
@@ -988,6 +997,7 @@ public class BanHangGUI extends JPanel {
     private void xuLyXuatHoaDonBanHang() {
         ArrayList<Vector> dsGioHang = new ArrayList<>();
         int row = tblGioHang.getRowCount();
+        if (row == 0) return;
         int tongTien = 0;
         for (int i = 0; i < row; i++) {
             Vector vec = new Vector();
@@ -1000,7 +1010,7 @@ public class BanHangGUI extends JPanel {
             dsGioHang.add(vec);
         }
 
-        XuatHoaDonGUI hoaDonUI = new XuatHoaDonGUI(dsGioHang, tongTien);
+        XuatHoaDonGUI hoaDonUI = new XuatHoaDonGUI(dsGioHang, tongTien, cmbNhanVienBan.getSelectedItem());
         hoaDonUI.setVisible(true);
     }
 
@@ -1043,29 +1053,18 @@ public class BanHangGUI extends JPanel {
     private void loadDataListHoaDon() {
         // fake data, đổ back-end sau
         DefaultListModel<String> listModel = new DefaultListModel<>();
-        listModel.addElement("1 - 10/10/2019");
-        listModel.addElement("2 - 11/10/2019");
-        listModel.addElement("3 - 12/10/2019");
-        listModel.addElement("4 - 13/10/2019");
-        listModel.addElement("1 - 10/10/2019");
-        listModel.addElement("2 - 11/10/2019");
-        listModel.addElement("3 - 12/10/2019");
-        listModel.addElement("4 - 13/10/2019");
-        listModel.addElement("1 - 10/10/2019");
-        listModel.addElement("2 - 11/10/2019");
-        listModel.addElement("3 - 12/10/2019");
-        listModel.addElement("4 - 13/10/2019");
-        listModel.addElement("1 - 10/10/2019");
-        listModel.addElement("2 - 11/10/2019");
-        listModel.addElement("3 - 12/10/2019");
-        listModel.addElement("4 - 13/10/2019");
-        listHoaDon.setModel(listModel);
+        ArrayList<HoaDon> dshd = hoaDonBUS.getListHoaDon();
+        if (dshd != null) {
+            for (HoaDon hd : dshd) {
+                listModel.addElement(hd.getMaHD() + " | " + hd.getNgayLap());
+            }
+            listHoaDon.setModel(listModel);
+        }
     }
 
     private void xuLyHienCTHoaDon() {
         String hoaDon = listHoaDon.getSelectedValue();
-        String[] stMaHD = hoaDon.split(" - ");
-        int maHD = Integer.parseInt(stMaHD[0]);
+        String[] stMaHD = hoaDon.split(" | ");
 
         // đợi BUS, DAO
         txtMaHD.setText("");
@@ -1076,22 +1075,40 @@ public class BanHangGUI extends JPanel {
         txtGhiChu.setText("");
 
         // Gọi hiển thị data trên tblCTHoaDon
-        loadDataTblCTHoaDon(maHD);
+        loadDataTblCTHoaDon(stMaHD[0]);
     }
 
     private void loadDataTblCTHoaDon() {
         // Gọi BUS DAO
         dtmCTHoaDon.setRowCount(0);
-        Vector<String> vec = new Vector<>();
-        vec.add("0");
-        vec.add("1");
-        vec.add("2");
-        vec.add("3");
-        vec.add("4");
-        dtmCTHoaDon.addRow(vec);
+        CTHoaDonBUS ctHDBUS = new CTHoaDonBUS();
+        ArrayList<CTHoaDon> listCTHoaDon = ctHDBUS.getListCTHoaDon();
+
+        for (CTHoaDon ct : listCTHoaDon) {
+            Vector<String> vec = new Vector<>(); //hd sp dongia thanhtien
+            vec.add(ct.getMaHD() + "");
+            vec.add(ct.getMaSP() + "");
+            vec.add(ct.getSoLuong() + "");
+            vec.add(dcf.format(ct.getDonGia()));
+            vec.add(dcf.format(ct.getThanhTien()));
+            dtmCTHoaDon.addRow(vec);
+        }
     }
 
-    private void loadDataTblCTHoaDon(int maHD) {
+    private void loadDataTblCTHoaDon(String maHD) {
+        dtmCTHoaDon.setRowCount(0);
+        CTHoaDonBUS ctHDBUS = new CTHoaDonBUS();
+        ArrayList<CTHoaDon> listCTHoaDon = ctHDBUS.getListCTHoaDonTheoMaHD(maHD);
+
+        for (CTHoaDon ct : listCTHoaDon) {
+            Vector<String> vec = new Vector<>(); //hd sp dongia thanhtien
+            vec.add(ct.getMaHD() + "");
+            vec.add(ct.getMaSP() + "");
+            vec.add(ct.getSoLuong() + "");
+            vec.add(dcf.format(ct.getDonGia()));
+            vec.add(dcf.format(ct.getThanhTien()));
+            dtmCTHoaDon.addRow(vec);
+        }
     }
 
     private void xuLyClickTblCTHoaDon() {
