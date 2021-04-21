@@ -1,443 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ConnectVariable.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export/sanPham.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/LoginUI/background-logina.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/excel-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/remember.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BUS/CTHoaDonBUS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BUS/GiamGiaBUS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/CTHoaDonDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/GiamGiaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyCustom/XuLyFileExcel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/SparseBitSet-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/commons-codec-1.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/commons-collections4-4.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/commons-compress-1.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/commons-math3-3.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/curvesapi-1.06.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/mysql-connector-java-5.1.48-bin.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-examples-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-excelant-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-integration-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-ooxml-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-ooxml-full-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-ooxml-lite-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/poi-scratchpad-5.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/xmlbeans-4.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DoAn_QuanLyBanPizza.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48_bin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48_bin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="Done nhập xuất Excel + nhớ login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoAn_QuanLyBanPizza.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DoAn_QuanLyBanPizza.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/CHANGES" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/COPYING" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/mysql-connector-java-5.1.48.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/FabricCommunicationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/FabricConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/FabricStateResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/HashShardMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/RangeShardMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/Response.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ServerGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ServerMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ServerRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ShardIndex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ShardMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ShardMappingFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ShardTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/ShardingType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/hibernate/FabricMultiTenantConnectionProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/ErrorReportingExceptionInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/FabricMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/FabricMySQLConnectionProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/FabricMySQLConnectionProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/FabricMySQLDataSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/FabricMySQLDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/JDBC4FabricMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/jdbc/JDBC4FabricMySQLConnectionProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/proto/xmlrpc/AuthenticatedXmlRpcMethodCaller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/proto/xmlrpc/DigestAuthentication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/proto/xmlrpc/InternalXmlRpcMethodCaller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/proto/xmlrpc/ResultSetParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/proto/xmlrpc/XmlRpcClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/proto/xmlrpc/XmlRpcMethodCaller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Array.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Data.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Fault.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/MethodCall.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/MethodResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Param.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Params.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/ResponseParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Struct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/base/Value.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/fabric/xmlrpc/exceptions/MySQLFabricException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/AbandonedConnectionCleanupThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/AssertionFailedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/AuthenticationPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/BalanceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/BestResponseTimeBalanceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Blob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/BlobFromLocator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Buffer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/BufferRow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ByteArrayRow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/CacheAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/CacheAdapterFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/CachedResultSetMetaData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/CallableStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/CharsetMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Charsets.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Clob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/CommunicationsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/CompressedInputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Connection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionFeatureNotAvailableException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionGroupManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionLifecycleInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionPropertiesImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ConnectionPropertiesTransform.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/DatabaseMetaData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/DatabaseMetaDataUsingInfoSchema.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/DocsConnectionPropsHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/EscapeProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/EscapeProcessorResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/EscapeTokenizer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ExceptionInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ExportControlled.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Extension.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/FailoverConnectionProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Field.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/IterateBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC42CallableStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC42Helper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC42PreparedStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC42ResultSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC42ServerPreparedStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC42UpdatableResultSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4CallableStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4ClientInfoProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4ClientInfoProviderSP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4CommentClientInfoProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4Connection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4DatabaseMetaData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4DatabaseMetaDataUsingInfoSchema.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4MultiHostMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4MySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4MysqlSQLXML.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4NClob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4PreparedStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4PreparedStatementHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4ReplicationMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4ResultSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4ServerPreparedStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/JDBC4UpdatableResultSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/LicenseConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/LoadBalanceExceptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/LoadBalancedAutoCommitInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/LoadBalancedConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/LoadBalancedConnectionProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/LocalizedErrorMessages.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Messages.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MiniAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MultiHostConnectionProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MultiHostMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MysqlDataTruncation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MysqlDefs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MysqlErrorNumbers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MysqlIO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MysqlParameterMetadata.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/MysqlSavepoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NamedPipeSocketFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NdbLoadBalanceExceptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NetworkResources.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NoSubInterceptorWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NonRegisteringDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NonRegisteringReplicationDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NotImplemented.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/NotUpdatable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/OperationNotSupportedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/OutputStreamWatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/PacketTooBigException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ParameterBindings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/PerConnectionLRUFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/PerVmServerConfigCacheFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/PingTarget.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/PreparedStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ProfilerEventHandlerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/RandomBalanceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ReflectiveStatementInterceptorAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ReplicationConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ReplicationConnectionGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ReplicationConnectionGroupManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ReplicationConnectionProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ReplicationDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ReplicationMySQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ResultSetImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ResultSetInternalMethods.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ResultSetMetaData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ResultSetRow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/RowData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/RowDataCursor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/RowDataDynamic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/RowDataStatic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/SQLError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Security.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/SequentialBalanceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ServerAffinityStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/ServerPreparedStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/SingleByteCharsetConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/SocketFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/SocketMetadata.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/SocksProxySocketFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/StandardLoadBalanceExceptionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/StandardSocketFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Statement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/StatementImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/StatementInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/StatementInterceptorV2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/StreamingNotifiable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/StringUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/TimeUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/TimeZoneMapping.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/UpdatableResultSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/V1toV2StatementInterceptorAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/WatchableOutputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/WatchableWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/Wrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/WriterWatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/authentication/CachingSha2PasswordPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/authentication/MysqlClearPasswordPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/authentication/MysqlNativePasswordPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/authentication/MysqlOldPasswordPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/authentication/Sha256PasswordPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/configs/3-0-Compat.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/configs/5-0-Compat.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/configs/clusterBase.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/configs/coldFusion.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/configs/fullDebug.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/configs/maxPerformance.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/configs/solarisMaxPerformance.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/DeadlockTimeoutRollbackMarker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLIntegrityConstraintViolationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLInvalidAuthorizationSpecException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLNonTransientConnectionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLNonTransientException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLQueryInterruptedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLStatementCancelledException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLSyntaxErrorException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLTimeoutException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLTransactionRollbackException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLTransientConnectionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/MySQLTransientException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/CommunicationsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLIntegrityConstraintViolationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLInvalidAuthorizationSpecException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLNonTransientConnectionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLNonTransientException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLQueryInterruptedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLSyntaxErrorException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLTimeoutException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLTransactionRollbackException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLTransientConnectionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/exceptions/jdbc4/MySQLTransientException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/integration/c3p0/MysqlConnectionTester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/integration/jboss/ExtendedMysqlExceptionSorter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/integration/jboss/MysqlValidConnectionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/interceptors/ResultSetScannerInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/interceptors/ServerStatusDiffInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/interceptors/SessionAssociationInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC42CallableStatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC42PreparedStatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC4CallableStatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC4ConnectionWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC4MysqlPooledConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC4MysqlXAConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC4PreparedStatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC4StatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/JDBC4SuspendableXAConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlConnectionPoolDataSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSourceFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlXAConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlXADataSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlXAException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/MysqlXid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/SuspendableXAConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jdbc2/optional/WrapperBase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jmx/LoadBalanceConnectionGroupManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jmx/LoadBalanceConnectionGroupManagerMBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jmx/ReplicationGroupManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/jmx/ReplicationGroupManagerMBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/log/Jdk14Logger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/log/Log.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/log/LogFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/log/LogUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/log/NullLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/log/Slf4JLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/log/StandardLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/profiler/LoggingProfilerEventHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/profiler/ProfilerEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/profiler/ProfilerEventHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/Base64Decoder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/BaseBugReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/ErrorMappingsDocGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/LRUCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/PropertiesDocGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/ReadAheadInputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/ResultSetUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/ServerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/TimezoneDump.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/com/mysql/jdbc/util/VersionFSHierarchyMaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/demo/fabric/Client1_Fabric.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/demo/fabric/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/demo/fabric/EmployeesDataSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/demo/fabric/EmployeesJdbc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/demo/fabric/HibernateFabric.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/demo/fabric/resources/com/mysql/fabric/demo/employee.hbm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/doc/sources/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/lib/c3p0-0.9.1-pre6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/lib/c3p0-0.9.1-pre6.src.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/lib/jboss-common-jdbc-wrapper-src.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/lib/jboss-common-jdbc-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/lib/slf4j-api-1.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/org/gjt/mm/mysql/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/BaseStatementInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/BaseTestCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/BufferingLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/UnreliableSocketFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/BaseFabricTestCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/SetupFabricTestsuite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/TestAdminCommands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/TestDumpCommands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/TestResultSetParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/TestShardMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/TestXmlRpcCore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/jdbc/TestBasicConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/jdbc/TestFabricMySQLConnectionSharding.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/jdbc/TestHABasics.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/jdbc/TestHashSharding.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/fabric/jdbc/TestRegressions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/perf/BasePerfTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/perf/LoadStorePerfTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/perf/RetrievalPerfTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/BlobRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/CachedRowsetTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/CallableStatementRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/CharsetRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/ConnectionRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/DataSourceRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/EscapeProcessorRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/MetaDataRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/MicroPerformanceRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/NumbersRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/PooledConnectionRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/ResultSetRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/StatementRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/StressRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/StringRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/SubqueriesRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/SyntaxRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/UtilsRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/jdbc4/ConnectionRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/jdbc4/ExceptionSubclassesTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/jdbc4/MetaDataRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/jdbc4/StatementRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/jdbc42/ConnectionRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/jdbc42/ResultSetRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/regression/jdbc42/StatementRegressionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/BlobTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/CallableStatementTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/CharsetTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/ConnectionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/DataSourceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/DateTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/EscapeProcessingTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/MetadataTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/MiniAdminTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/MultiHostConnectionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/NumbersTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/ReadOnlyCallableStatementTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/ResultSetTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/SSLTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/ServerControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/SimpleTransformer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/SplitDBdotNameTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/StatementsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/StringUtilsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/TestBug57662Logger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/TestLifecycleInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/TransactionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/TraversalTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/UpdatabilityTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/UtilsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/XATest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/jdbc4/StatementsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/jdbc42/ConnectionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/jdbc42/ResultSetTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/jdbc42/StatementsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/simple/tb2-data.txt.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/ca-cert.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/ca-key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/ca-truststore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/certs_howto.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/client-cert.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/client-key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/client-keystore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/mykey.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/mykey.pub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/server-cert.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL-connector-java-5.1.48/src/testsuite/ssl-test-certs/server-key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/quanlypizza.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/quanlypizza.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/LoginUI/background-login.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LoginUI/background-login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/DangNhapBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/DangNhapBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/HoaDonBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/HoaDonBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/KhachHangBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/KhachHangBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/SanPhamBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/SanPhamBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/HoaDonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/HoaDonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/KhachHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/KhachHangDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/MyConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/MyConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/SanPhamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/SanPhamDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/HoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/HoaDon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/BanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BanHangGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/DangNhapGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DangNhapGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/SanPhamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SanPhamGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/TimKhachGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TimKhachGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/TimMaGiamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/TimMaGiamGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testProject.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -499,6 +65,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyConnect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DAO.MyConnect" />
+      <module name="DoAn_QuanLyBanPizza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TimMaGiamGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.TimMaGiamGUI" />
       <module name="DoAn_QuanLyBanPizza" />
@@ -528,6 +107,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MyConnect" />
         <item itemvalue="Application.XuLyFileExcel" />
         <item itemvalue="Application.TimMaGiamGUI" />
       </list>
@@ -542,6 +122,14 @@
       <option name="presentableId" value="Default" />
       <updated>1618838166860</updated>
     </task>
+    <task id="LOCAL-00001" summary="Done nhập xuất Excel + nhớ login">
+      <created>1619007739144</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619007739144</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,5 +146,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Done nhập xuất Excel + nhớ login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done nhập xuất Excel + nhớ login" />
   </component>
 </project>
