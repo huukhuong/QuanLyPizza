@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 21, 2021 lúc 02:18 PM
+-- Thời gian đã tạo: Th4 22, 2021 lúc 06:55 AM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -24,24 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `ctgiamgia`
---
-
-CREATE TABLE `ctgiamgia` (
-  `MaGiam` int(11) NOT NULL,
-  `PhanTramGiam` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `ctgiamgia`
---
-
-INSERT INTO `ctgiamgia` (`MaGiam`, `PhanTramGiam`) VALUES
-(1, 20);
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `cthoadon`
 --
 
@@ -52,6 +34,21 @@ CREATE TABLE `cthoadon` (
   `DonGia` int(11) NOT NULL,
   `ThanhTien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `cthoadon`
+--
+
+INSERT INTO `cthoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`) VALUES
+(16, 113, 1, 119000, 119000),
+(16, 114, 1, 159000, 159000),
+(16, 128, 1, 19000, 19000),
+(16, 129, 2, 19000, 19000),
+(17, 111, 3, 169000, 507000),
+(17, 121, 2, 229000, 458000),
+(17, 123, 1, 269000, 269000),
+(17, 125, 2, 29000, 58000),
+(17, 128, 4, 19000, 76000);
 
 -- --------------------------------------------------------
 
@@ -75,6 +72,9 @@ CREATE TABLE `ctphieunhap` (
 
 CREATE TABLE `giamgia` (
   `MaGiam` int(11) NOT NULL,
+  `TenGiamGia` text NOT NULL,
+  `PhanTramGiam` int(11) NOT NULL,
+  `DieuKien` int(11) NOT NULL,
   `NgayBD` date NOT NULL,
   `NgayKT` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -83,9 +83,9 @@ CREATE TABLE `giamgia` (
 -- Đang đổ dữ liệu cho bảng `giamgia`
 --
 
-INSERT INTO `giamgia` (`MaGiam`, `NgayBD`, `NgayKT`) VALUES
-(1, '2021-04-03', '2021-04-30'),
-(2, '2021-04-22', '2021-04-30');
+INSERT INTO `giamgia` (`MaGiam`, `TenGiamGia`, `PhanTramGiam`, `DieuKien`, `NgayBD`, `NgayKT`) VALUES
+(1, 'Không giảm giá', 0, 0, '2020-01-01', '2042-12-31'),
+(2, 'Giảm 20% đơn hàng từ 150.000đ', 20, 150000, '2021-04-22', '2021-05-13');
 
 -- --------------------------------------------------------
 
@@ -107,8 +107,8 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `NgayLap`, `TongTien`, `GhiChu`) VALUES
-(1, 1, 1, '2021-04-03', 338000, 'Đã thanh toán'),
-(2, 3, 3, '2021-04-02', 468000, 'Đã thanh toán');
+(16, 3, 0, '2021-04-22', 252800, 'Đã thanh toán'),
+(17, 4, 0, '2021-04-22', 1094400, 'Đã thanh toán');
 
 -- --------------------------------------------------------
 
@@ -257,28 +257,28 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `MaLoai`, `SoLuong`, `DonViTinh`, `HinhAnh`, `DonGia`) VALUES
-(67, 'Pizza Hải Sản Pesto Xanh', 1, 43, 'Cái', 'pizza0.png', 169000),
-(68, 'Pizza Hải Sản Nhiệt Đới', 1, 46, 'Cái', 'pizza1.png', 129000),
-(69, 'Pizza Hải Sản Cocktail', 1, 48, 'Cái', 'pizza2.png', 119000),
-(70, 'Pizza Tôm Cocktail', 1, 50, 'Cái', 'pizza3.png', 159000),
-(71, 'Pizza Aloha', 1, 49, 'Cái', 'pizza4.png', 119000),
-(72, 'Pizza Thịt Xông Khói', 1, 48, 'Cái', 'pizza5.png', 130000),
-(73, 'Pizza Thịt Nguội', 1, 49, 'Cái', 'pizza6.png', 149000),
-(74, 'Pizza Gà Nướng 3 Vị', 1, 47, 'Cái', 'pizza7.png', 129000),
-(75, 'Pizza hải sản Pesto gấp đôi nhân', 1, 50, 'Cái', 'pizza8.jpg', 239000),
-(76, 'Pizza gấp đôi nhân phủ cơn lốc hải sản', 1, 50, 'Cái', 'pizza9.jpg', 239000),
-(77, 'Pizza gấp đôi nhân phủ hải sản xốt tiêu đen', 1, 50, 'Cái', 'pizza10.jpg', 229000),
-(78, 'Pizza bò nướng tiêu đen', 1, 50, 'Cái', 'pizza11.jpg', 249000),
-(79, 'Pizza cá ngừ thanh cua', 1, 50, 'Cái', 'pizza12.jpg', 269000),
-(80, 'Pepsi lon 330ml', 2, 120, 'Lon', 'douong0.jpeg', 19000),
-(81, 'Pepsi chai 1.5l', 2, 250, 'Chai', 'douong1.jpeg', 29000),
-(82, '7Up lon 330ml', 2, 100, 'Lon', 'douong2.jpeg', 19000),
-(83, '7Up chai 1.5l', 2, 130, 'Chai', 'douong3.jpeg', 29000),
-(84, 'Pepsi no calories 330ml', 2, 110, 'Lon', 'douong4.jpg', 19000),
-(85, 'Mirinda cam 330ml', 2, 80, 'Lon', 'douong5.jpg', 19000),
-(86, 'Mirinda kem soda 330ml', 2, 92, 'Lon', 'douong6.jpg', 19000),
-(87, 'Nước suối Aquafina', 2, 92, 'Chai', 'douong7.jpg', 10000),
-(88, 'Trà sữa trà đen', 2, 9, 'Ly', 'douong8.jpg', 25000);
+(111, 'Pizza Hải Sản Pesto Xanh', 1, 38, 'Cái', 'pizza0.png', 169000),
+(112, 'Pizza Hải Sản Nhiệt Đới', 1, 45, 'Cái', 'pizza1.png', 129000),
+(113, 'Pizza Hải Sản Cocktail', 1, 47, 'Cái', 'pizza2.png', 119000),
+(114, 'Pizza Tôm Cocktail', 1, 48, 'Cái', 'pizza3.png', 159000),
+(115, 'Pizza Aloha', 1, 49, 'Cái', 'pizza4.png', 119000),
+(116, 'Pizza Thịt Xông Khói', 1, 48, 'Cái', 'pizza5.png', 130000),
+(117, 'Pizza Thịt Nguội', 1, 49, 'Cái', 'pizza6.png', 149000),
+(118, 'Pizza Gà Nướng 3 Vị', 1, 45, 'Cái', 'pizza7.png', 129000),
+(119, 'Pizza hải sản Pesto gấp đôi nhân', 1, 49, 'Cái', 'pizza8.jpg', 239000),
+(120, 'Pizza gấp đôi nhân phủ cơn lốc hải sản', 1, 48, 'Cái', 'pizza9.jpg', 239000),
+(121, 'Pizza gấp đôi nhân phủ hải sản xốt tiêu đen', 1, 46, 'Cái', 'pizza10.jpg', 229000),
+(122, 'Pizza bò nướng tiêu đen', 1, 48, 'Cái', 'pizza11.jpg', 249000),
+(123, 'Pizza cá ngừ thanh cua', 1, 49, 'Cái', 'pizza12.jpg', 269000),
+(124, 'Pepsi lon 330ml', 2, 120, 'Lon', 'douong0.jpeg', 19000),
+(125, 'Pepsi chai 1.5l', 2, 248, 'Chai', 'douong1.jpeg', 29000),
+(126, '7Up lon 330ml', 2, 100, 'Lon', 'douong2.jpeg', 19000),
+(127, '7Up chai 1.5l', 2, 130, 'Chai', 'douong3.jpeg', 29000),
+(128, 'Pepsi no calories 330ml', 2, 105, 'Lon', 'douong4.jpg', 19000),
+(129, 'Mirinda cam 330ml', 2, 78, 'Lon', 'douong5.jpg', 19000),
+(130, 'Mirinda kem soda 330ml', 2, 92, 'Lon', 'douong6.jpg', 19000),
+(131, 'Nước suối Aquafina', 2, 92, 'Chai', 'douong7.jpg', 10000),
+(132, 'Trà sữa trà đen', 2, 25, 'Ly', 'douong8.jpg', 25000);
 
 -- --------------------------------------------------------
 
@@ -307,12 +307,6 @@ INSERT INTO `taikhoan` (`MaNV`, `TenDangNhap`, `MatKhau`, `Quyen`) VALUES
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `ctgiamgia`
---
-ALTER TABLE `ctgiamgia`
-  ADD KEY `ctgiamgia_ibfk_1` (`MaGiam`);
 
 --
 -- Chỉ mục cho bảng `cthoadon`
@@ -409,7 +403,7 @@ ALTER TABLE `giamgia`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
@@ -433,7 +427,7 @@ ALTER TABLE `nhacungcap`
 -- AUTO_INCREMENT cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `MaNV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `MaNV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `phieunhap`
@@ -445,7 +439,7 @@ ALTER TABLE `phieunhap`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
@@ -456,12 +450,6 @@ ALTER TABLE `taikhoan`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
-
---
--- Các ràng buộc cho bảng `ctgiamgia`
---
-ALTER TABLE `ctgiamgia`
-  ADD CONSTRAINT `ctgiamgia_ibfk_1` FOREIGN KEY (`MaGiam`) REFERENCES `giamgia` (`MaGiam`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `cthoadon`
