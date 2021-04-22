@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="Done nhập xuất Excel + nhớ login">
+    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="Thêm đọc dữ liệu Connect từ file">
+      <change afterPath="$PROJECT_DIR$/export/hoaDon_21-4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export/nhanVien.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export/sanPham.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/export/sanPham.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/CTHoaDonBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/CTHoaDonBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/HoaDonBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/HoaDonBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/NhanVienBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/NhanVienBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/PhanQuyenBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/PhanQuyenBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/CTHoaDonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/CTHoaDonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/GiamGiaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/GiamGiaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/HoaDonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/HoaDonDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/MyConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/MyConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/NhanVienDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/NhanVienDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/PhanQuyenDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PhanQuyenDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTO/CTGiamGia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTO/GiamGia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/GiamGia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/BanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyBanHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/DangNhapGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DangNhapGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/NhanVienGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyNhanVienGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/NhapHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyNhapHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainQuanLyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SanPhamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLySanPhamGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TimKhachGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DlgTimKhachGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/TimMaGiamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DlgTimMaGiamGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/MyTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/MyTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +71,39 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/libs/poi-examples-5.0.0.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DoAnJava" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.25146887" />
     <property name="project.structure.side.proportion" value="0.31985942" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="DlgTimMaGiamGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.DlgTimMaGiamGUI" />
+      <module name="DoAn_QuanLyBanPizza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HoaDonDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DAO.HoaDonDAO" />
+      <module name="DoAn_QuanLyBanPizza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="DoAn_QuanLyBanPizza" />
@@ -78,19 +130,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimMaGiamGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI.TimMaGiamGUI" />
-      <module name="DoAn_QuanLyBanPizza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="XuLyFileExcel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyCustom.XuLyFileExcel" />
       <module name="DoAn_QuanLyBanPizza" />
@@ -107,9 +146,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HoaDonDAO" />
         <item itemvalue="Application.MyConnect" />
+        <item itemvalue="Application.DlgTimMaGiamGUI" />
         <item itemvalue="Application.XuLyFileExcel" />
-        <item itemvalue="Application.TimMaGiamGUI" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619007739144</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Thêm đọc dữ liệu Connect từ file">
+      <created>1619009070720</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619009070720</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +194,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Done nhập xuất Excel + nhớ login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done nhập xuất Excel + nhớ login" />
+    <MESSAGE value="Thêm đọc dữ liệu Connect từ file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thêm đọc dữ liệu Connect từ file" />
   </component>
 </project>

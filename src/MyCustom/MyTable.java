@@ -33,5 +33,9 @@ public class MyTable extends JTable {
     public MyTable(DefaultTableModel dtm) {
         this();
         this.setModel(dtm);
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        this.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+
     }
 }

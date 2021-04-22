@@ -225,7 +225,7 @@ public class DangNhapGUI extends JFrame {
         TaiKhoan tk = dangNhapBUS.getTaiKhoanDangNhap(txtUser.getText(),
                 txtPassword.getText(), ckbRemember.isSelected());
         if (tk != null) {
-            QuanLyGUI quanly = new QuanLyGUI();
+            MainQuanLyGUI quanly = new MainQuanLyGUI();
             quanly.showWindow();
         }
     }

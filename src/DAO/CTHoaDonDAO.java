@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * @author User
  */
 public class CTHoaDonDAO {
+
     public ArrayList<CTHoaDon> getListCTHoaDon() {
         ArrayList<CTHoaDon> dscthd = new ArrayList<>();
         try {
@@ -33,7 +34,6 @@ public class CTHoaDonDAO {
                 dscthd.add(cthd);
             }
         } catch(SQLException ex) {
-
         }
         return dscthd;
     }
@@ -92,6 +92,7 @@ public class CTHoaDonDAO {
             prep.setInt(5, cthd.getThanhTien());
             result = prep.executeUpdate() > 0;
         } catch(SQLException ex) {
+            ex.printStackTrace();
             return false;
         }
         return result;

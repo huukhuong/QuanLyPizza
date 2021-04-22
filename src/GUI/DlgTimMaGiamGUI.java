@@ -7,23 +7,17 @@ import MyCustom.MyDialog;
 import MyCustom.MyTable;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -33,24 +27,24 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumnModel;
 
-public class TimMaGiamGUI extends JDialog {
+public class DlgTimMaGiamGUI extends JDialog {
 
     public static void main(String[] args) {
         Main.Main.changLNF("Windows");
         new MyConnect();
-        new TimMaGiamGUI().setVisible(true);
+        new DlgTimMaGiamGUI().setVisible(true);
     }
 
     public static GiamGia maGiamTimDuoc = null;
     private GiamGiaBUS giamGiaBUS = new GiamGiaBUS();
 
-    public TimMaGiamGUI() {
+    public DlgTimMaGiamGUI() {
         addControls();
         addEvents();
 
-        this.setSize(500, 400);
+        this.setSize(750, 500);
         this.setModal(true);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -78,9 +72,12 @@ public class TimMaGiamGUI extends JDialog {
         JPanel pnTable = new JPanel();
         pnTable.setLayout(new BorderLayout());
         dtmMaGiam = new DefaultTableModel();
-        dtmMaGiam.addColumn("Mã giảm");
-        dtmMaGiam.addColumn("Ngày bắt đầu");
-        dtmMaGiam.addColumn("Ngày kết thúc");
+        dtmMaGiam.addColumn("Mã");
+        dtmMaGiam.addColumn("Chương trình");
+        dtmMaGiam.addColumn("% KM");
+        dtmMaGiam.addColumn("Điều kiện");
+        dtmMaGiam.addColumn("Bắt đầu");
+        dtmMaGiam.addColumn("Kết thúc");
         dtmMaGiam.addColumn("Trạng thái");
         tblMaGiam = new MyTable(dtmMaGiam);
         JScrollPane scrMaGiam = new JScrollPane(tblMaGiam);
@@ -95,6 +92,18 @@ public class TimMaGiamGUI extends JDialog {
         pnButton.add(btnChon);
         pnButton.add(btnThoat);
         con.add(pnButton, BorderLayout.SOUTH);
+
+        TableColumnModel columnModelBanHang = tblMaGiam.getColumnModel();
+        columnModelBanHang.getColumn(0).setPreferredWidth(56);
+        columnModelBanHang.getColumn(1).setPreferredWidth(213);
+        columnModelBanHang.getColumn(2).setPreferredWidth(30);
+        columnModelBanHang.getColumn(3).setPreferredWidth(62);
+        columnModelBanHang.getColumn(4).setPreferredWidth(58);
+        columnModelBanHang.getColumn(5).setPreferredWidth(61);
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        tblMaGiam.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
+        tblMaGiam.getColumnModel().getColumn(3).setCellRenderer(rightRenderer);
 
         btnChon.setPreferredSize(new Dimension(120, 40));
         btnThoat.setPreferredSize(btnChon.getPreferredSize());
@@ -135,12 +144,21 @@ public class TimMaGiamGUI extends JDialog {
                     return;
                 }
                 int ma = Integer.parseInt(tblMaGiam.getValueAt(row, 0) + "");
+                String ten = tblMaGiam.getValueAt(row, 1) + "";
+                int phanTram = Integer.parseInt(tblMaGiam.getValueAt(row, 2) + "");
+                String dieuKienst = tblMaGiam.getValueAt(row, 3) + "";
+                dieuKienst = dieuKienst.replace(">", "");
+                dieuKienst = dieuKienst.replace(",", "");
+                int dieuKien = Integer.parseInt(dieuKienst);
                 SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-                Date ngayBD = sdf.parse(tblMaGiam.getValueAt(row, 1) + "");
-                Date ngayKT = sdf.parse(tblMaGiam.getValueAt(row, 2) + "");
+                Date ngayBD = sdf.parse(tblMaGiam.getValueAt(row, 4) + "");
+                Date ngayKT = sdf.parse(tblMaGiam.getValueAt(row, 5) + "");
 
                 maGiamTimDuoc = new GiamGia();
                 maGiamTimDuoc.setMaGiam(ma);
+                maGiamTimDuoc.setTenGiamGia(ten);
+                maGiamTimDuoc.setPhanTramGiam(phanTram);
+                maGiamTimDuoc.setDieuKien(dieuKien);
                 maGiamTimDuoc.setNgayBD(ngayBD);
                 maGiamTimDuoc.setNgayKT(ngayKT);
             } catch (ParseException ex) {
@@ -158,9 +176,13 @@ public class TimMaGiamGUI extends JDialog {
         giamGiaBUS.docDanhSach();
         ArrayList<GiamGia> dsg = giamGiaBUS.getDanhSachGiamGia();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        DecimalFormat dcf = new DecimalFormat(">###,###");
         for (GiamGia gg : dsg) {
             Vector vec = new Vector();
             vec.add(gg.getMaGiam());
+            vec.add(gg.getTenGiamGia());
+            vec.add(gg.getPhanTramGiam());
+            vec.add(dcf.format(gg.getDieuKien()));
             vec.add(sdf.format(gg.getNgayBD()));
             vec.add(sdf.format(gg.getNgayKT()));
 
@@ -176,7 +198,13 @@ public class TimMaGiamGUI extends JDialog {
     }
 
     private void loadDataLenTable(String tuKhoa) {
-
+        TableColumnModel columnModelBanHang = tblMaGiam.getColumnModel();
+        System.out.println(columnModelBanHang.getColumn(0).getPreferredWidth());
+        System.out.println(columnModelBanHang.getColumn(1).getPreferredWidth());
+        System.out.println(columnModelBanHang.getColumn(2).getPreferredWidth());
+        System.out.println(columnModelBanHang.getColumn(3).getPreferredWidth());
+        System.out.println(columnModelBanHang.getColumn(4).getPreferredWidth());
+        System.out.println(columnModelBanHang.getColumn(5).getPreferredWidth());
     }
 
 }

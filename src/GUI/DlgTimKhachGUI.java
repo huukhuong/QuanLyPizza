@@ -6,7 +6,6 @@ import DTO.KhachHang;
 import MyCustom.MyTable;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -21,22 +20,20 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
 
-public class TimKhachGUI extends JDialog {
+public class DlgTimKhachGUI extends JDialog {
 
     public static void main(String[] args) {
         Main.Main.changLNF("Windows");
         new MyConnect();
-        new TimKhachGUI().setVisible(true);
+        new DlgTimKhachGUI().setVisible(true);
     }
 
     private KhachHangBUS khachHangBUS = new KhachHangBUS();
     public static KhachHang khachHangTimDuoc = null;
 
-    public TimKhachGUI() {
+    public DlgTimKhachGUI() {
         addControls();
         addEvents();
 

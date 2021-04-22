@@ -39,9 +39,9 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-public class SanPhamGUI extends JPanel {
+public class QuanLySanPhamGUI extends JPanel {
 
-    public SanPhamGUI() {
+    public QuanLySanPhamGUI() {
         changLNF("Windows");
         addControlsSanPham();
         addEventsSanPham();

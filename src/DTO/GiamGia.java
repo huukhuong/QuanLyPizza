@@ -3,15 +3,22 @@ package DTO;
 import java.util.Date;
 
 public class GiamGia {
+
     private int maGiam;
+    private String tenGiamGia;
+    private int phanTramGiam;
+    private int dieuKien;
     private Date ngayBD;
     private Date ngayKT;
 
     public GiamGia() {
     }
 
-    public GiamGia(int maGiam, Date ngayBD, Date ngayKT) {
+    public GiamGia(int maGiam, String tenGiamGia, int phanTramGiam, int dieuKien, Date ngayBD, Date ngayKT) {
         this.maGiam = maGiam;
+        this.tenGiamGia = tenGiamGia;
+        this.phanTramGiam = phanTramGiam;
+        this.dieuKien = dieuKien;
         this.ngayBD = ngayBD;
         this.ngayKT = ngayKT;
     }
@@ -22,6 +29,30 @@ public class GiamGia {
 
     public void setMaGiam(int maGiam) {
         this.maGiam = maGiam;
+    }
+
+    public String getTenGiamGia() {
+        return tenGiamGia;
+    }
+
+    public void setTenGiamGia(String tenGiamGia) {
+        this.tenGiamGia = tenGiamGia;
+    }
+
+    public int getPhanTramGiam() {
+        return phanTramGiam;
+    }
+
+    public void setPhanTramGiam(int phanTramGiam) {
+        this.phanTramGiam = phanTramGiam;
+    }
+
+    public int getDieuKien() {
+        return dieuKien;
+    }
+
+    public void setDieuKien(int dieuKien) {
+        this.dieuKien = dieuKien;
     }
 
     public Date getNgayBD() {

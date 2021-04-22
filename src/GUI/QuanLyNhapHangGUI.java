@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class NhapHangGUI extends JPanel {
+public class QuanLyNhapHangGUI extends JPanel {
 
     JLabel lblTabbedNhapHang, lblTabbedPhieuNhap;
     final ImageIcon tabbedSelected = new ImageIcon("image/ManagerUI/tabbed-btn--selected.png");
@@ -25,7 +25,7 @@ public class NhapHangGUI extends JPanel {
     CardLayout cardNhapHangGroup = new CardLayout();
     JPanel pnCardTabNhapHang;
 
-    public NhapHangGUI() {
+    public QuanLyNhapHangGUI() {
         changLNF("Windows");
         addControlsNhapHang();
         addEventsNhapHang();

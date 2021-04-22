@@ -9,16 +9,16 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class QuanLyGUI extends JFrame {
+public class MainQuanLyGUI extends JFrame {
 
     public static void main(String[] args) {
         new MyConnect();
         changLNF("Windows");
-        QuanLyGUI ui = new QuanLyGUI();
+        MainQuanLyGUI ui = new MainQuanLyGUI();
         ui.showWindow();
     }
 
-    public QuanLyGUI() {
+    public MainQuanLyGUI() {
         this.setSize(1280, 900);
         addControls();
         addEvents();
@@ -36,10 +36,10 @@ public class QuanLyGUI extends JFrame {
     }
 
     JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang, pnThongKe;
-    BanHangGUI banHangPanel;
-    NhapHangGUI nhapHangPanel;
-    SanPhamGUI sanPhamPanel;
-    NhanVienGUI nhanVienPanel;
+    QuanLyBanHangGUI banHangPanel;
+    QuanLyNhapHangGUI nhapHangPanel;
+    QuanLySanPhamGUI sanPhamPanel;
+    QuanLyNhanVienGUI nhanVienPanel;
     JLabel btnClose, btnMinimize, lblBanHang, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe;
     final Color clLeftItem = new Color(63, 74, 89);
     final Color clLeftItemHover = new Color(72, 88, 107);
@@ -148,7 +148,7 @@ public class QuanLyGUI extends JFrame {
         pnCard.add(pnKhachHang, "5");
         pnCard.add(pnThongKe, "6");
 
-        banHangPanel = new BanHangGUI();
+        banHangPanel = new QuanLyBanHangGUI();
         pnBanHang.setLayout(new BorderLayout());
         pnBanHang.add(banHangPanel, BorderLayout.CENTER);
 
@@ -156,21 +156,21 @@ public class QuanLyGUI extends JFrame {
         PhanQuyen quyen = PhanQuyenBUS.quyenTK;
 
         if (quyen.getNhapHang() == 1) {
-            nhapHangPanel = new NhapHangGUI();
+            nhapHangPanel = new QuanLyNhapHangGUI();
             pnNhapHang.setLayout(new BorderLayout());
             pnNhapHang.add(nhapHangPanel, BorderLayout.CENTER);
             lblNhapHang.setVisible(true);
         }
 
         if (quyen.getQlSanPham() == 1) {
-            sanPhamPanel = new SanPhamGUI();
+            sanPhamPanel = new QuanLySanPhamGUI();
             pnSanPham.setLayout(new BorderLayout());
             pnSanPham.add(sanPhamPanel, BorderLayout.CENTER);
             lblSanPham.setVisible(true);
         }
 
         if (quyen.getQlNhanVien() == 1) {
-            nhanVienPanel = new NhanVienGUI();
+            nhanVienPanel = new QuanLyNhanVienGUI();
             pnNhanVien.setLayout(new BorderLayout());
             pnNhanVien.add(nhanVienPanel, BorderLayout.CENTER);
             lblNhanVien.setVisible(true);
@@ -197,7 +197,7 @@ public class QuanLyGUI extends JFrame {
     int xMouse, yMouse;
 
     private void addEvents() {
-        pnTitle.addMouseMotionListener(new MouseMotionListener() {
+        this.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 moverFrame(e.getXOnScreen(), e.getYOnScreen());

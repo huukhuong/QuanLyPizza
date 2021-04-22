@@ -3,8 +3,6 @@ package Main;
 import DAO.MyConnect;
 import GUI.DangNhapGUI;
 
-import javax.swing.*;
-
 public class Main {
 
     public static void main(String[] args) {

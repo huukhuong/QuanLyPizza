@@ -21,7 +21,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 import javax.swing.text.*;
 
-public class BanHangGUI extends JPanel {
+public class QuanLyBanHangGUI extends JPanel {
 
     private SanPhamBUS spBUS = new SanPhamBUS();
     private NhanVienBUS nvBUS = new NhanVienBUS();
@@ -47,7 +47,7 @@ public class BanHangGUI extends JPanel {
     DefaultTableModel dtmCTHoaDon;
     JButton btnReset, btnResetCTHoaDon;
 
-    public BanHangGUI() {
+    public QuanLyBanHangGUI() {
         changLNF("Windows");
         addControlsBanHang();
         addEventsBanHang();
@@ -1012,6 +1012,9 @@ public class BanHangGUI extends JPanel {
 
         XuatHoaDonGUI hoaDonUI = new XuatHoaDonGUI(dsGioHang, tongTien, cmbNhanVienBan.getSelectedItem());
         hoaDonUI.setVisible(true);
+        if(hoaDonUI.checkBanHang) {
+            dtmGioHang.setRowCount(0);
+        }
     }
 
     private void xuLyClickTblGioHang() {

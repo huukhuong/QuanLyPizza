@@ -18,8 +18,11 @@ public class GiamGiaDAO {
             while(rs.next()) {
                 GiamGia gg = new GiamGia();
                 gg.setMaGiam(rs.getInt(1));
-                gg.setNgayBD(rs.getDate(2));
-                gg.setNgayKT(rs.getDate(3));
+                gg.setTenGiamGia(rs.getString(2));
+                gg.setPhanTramGiam(rs.getInt(3));
+                gg.setDieuKien(rs.getInt(4));
+                gg.setNgayBD(rs.getDate(5));
+                gg.setNgayKT(rs.getDate(6));
                 dsgg.add(gg);
             }
             return dsgg;

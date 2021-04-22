@@ -1,6 +1,7 @@
 package DAO;
 
 import DTO.NhanVien;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,35 +55,63 @@ public class NhanVienDAO {
         return nv;
     }
 
-    public boolean updateNhanVien(int maNV, NhanVien nv) {
-        boolean result=false;
+    public boolean updateNhanVien(NhanVien nv) {
+        boolean result = false;
         try {
-            String sql = "UPDATE nhanvien SET MaNV=?, HoTen=?, GioiTinh=?, ChucVu=? WHERE MaNV=?";
+            String sql = "UPDATE nhanvien SET Ho=?, Ten=?, GioiTinh=?, ChucVu=? WHERE MaNV=?";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
-            pre.setInt(1, nv.getMaNV());
-            pre.setString(2, nv.getHo());
-            pre.setString(3, nv.getTen());
-            pre.setString(4, nv.getGioiTinh());
-            pre.setString(5, nv.getChucVu());
-            pre.setInt(6, maNV);
+            pre.setString(1, nv.getHo());
+            pre.setString(2, nv.getTen());
+            pre.setString(3, nv.getGioiTinh());
+            pre.setString(4, nv.getChucVu());
+            pre.setInt(5, nv.getMaNV());
             result = pre.executeUpdate() > 0;
-        } catch(SQLException ex) {
+        } catch (SQLException ex) {
             return false;
         }
         return result;
     }
 
     public boolean deleteNhanVien(int maNV) {
-        boolean result=false;
+        boolean result = false;
         try {
             String sql = "DELETE FROM nhanvien WHERE MaNV=?";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setInt(1, maNV);
             result = pre.executeUpdate() > 0;
-        } catch(SQLException ex) {
+        } catch (SQLException ex) {
             return false;
         }
         return result;
     }
 
+    public boolean themNhanVien(NhanVien nv) {
+        boolean result = false;
+        try {
+            String sql = "INSERT INTO NhanVien(Ho, Ten, GioiTinh, ChucVu) " +
+                    "VALUES(?, ?, ?, ?)";
+            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
+            pre.setString(1, nv.getHo());
+            pre.setString(2, nv.getTen());
+            pre.setString(3, nv.getGioiTinh());
+            pre.setString(4, nv.getChucVu());
+            result = pre.executeUpdate() > 0;
+        } catch (SQLException ex) {
+            return false;
+        }
+        return result;
+    }
+
+    public void nhapExcel(NhanVien nv) {
+        try {
+            String sql = "INSERT INTO NhanVien(Ho, Ten, GioiTinh, ChucVu) " +
+                    "VALUES(?, ?, ?, ?)";
+            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
+            pre.setString(1, nv.getHo());
+            pre.setString(2, nv.getTen());
+            pre.setString(3, nv.getGioiTinh());
+            pre.setString(4, nv.getChucVu());
+        } catch (SQLException ex) {
+        }
+    }
 }
