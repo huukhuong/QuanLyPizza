@@ -20,7 +20,7 @@ public class KhachHangDAO {
 
     public ArrayList<KhachHang> getListKhachHang() {
         try {
-            String sql = "SELECT * FROM KhachHang";
+            String sql = "SELECT * FROM KhachHang WHERE TinhTrang=1";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
             ArrayList<KhachHang> dskh = new ArrayList<>();
@@ -42,7 +42,7 @@ public class KhachHangDAO {
     public KhachHang getKhachHang(int maKH) {
         KhachHang kh = null;
         try {
-            String sql = "SELECT * FROM khachhang WHERE MaKH=?";
+            String sql = "SELECT * FROM khachhang WHERE MaKH=? AND TinhTrang=1";
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, maKH);
             ResultSet rs = prep.executeQuery();
@@ -63,7 +63,7 @@ public class KhachHangDAO {
     public boolean addKhachHang(KhachHang kh) {
         boolean result = false;
         try {
-            String sql = "INSERT INTO khachhang VALUES(?,?,?,?,?)";
+            String sql = "INSERT INTO khachhang VALUES(?,?,?,?,?,1)";
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, kh.getMaKH());
             prep.setString(2, kh.getHo());
@@ -80,7 +80,7 @@ public class KhachHangDAO {
     public boolean deleteKhachHang(int maKH) {
         boolean result = false;
         try {
-            String sql = "DELETE FROM khachhang WHERE MaKH=?";
+            String sql = "UPDATE khachhang SET TinhTrang=0 WHERE MaKH=?";
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, maKH);
             result = prep.executeUpdate() > 0;
@@ -93,14 +93,12 @@ public class KhachHangDAO {
     public boolean updateKhachHang(int maKH, KhachHang kh) {
         boolean result = false;
         try {
-            String sql = "UPDATE khachhang SET MaKH=?, Ho=?, Ten=?, GioiTinh=?, TongChiTieu=? WHERE MaKH=?";
+            String sql = "UPDATE khachhang SET Ho=?, Ten=?, GioiTinh=? WHERE MaKH=?";
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
-            prep.setInt(1, kh.getMaKH());
-            prep.setString(2, kh.getHo());
-            prep.setString(3, kh.getTen());
-            prep.setString(4, kh.getGioiTinh());
-            prep.setInt(5, kh.getTongChiTieu());
-            prep.setInt(6, maKH);
+            prep.setString(1, kh.getHo());
+            prep.setString(2, kh.getTen());
+            prep.setString(3, kh.getGioiTinh());
+            prep.setInt(4, maKH);
             result = prep.executeUpdate() > 0;
         } catch (SQLException ex) {
             return false;

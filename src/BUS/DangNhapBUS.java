@@ -26,7 +26,7 @@ public class DangNhapBUS {
         TaiKhoan account = dangNhapDAO.dangNhap(tk);
 
         if (account == null) {
-            MyDialog dlg = new MyDialog("Sai thông tin đăng nhập!",
+            MyDialog dlg = new MyDialog("Sai thông tin đăng nhập hoặc tài khoản đã bị khoá!",
                     MyDialog.ERROR_DIALOG);
         } else {
             PhanQuyenBUS phanQuyenBUS = new PhanQuyenBUS();

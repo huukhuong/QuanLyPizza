@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 22, 2021 lúc 06:55 AM
+-- Thời gian đã tạo: Th4 23, 2021 lúc 07:32 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -121,18 +121,24 @@ CREATE TABLE `khachhang` (
   `Ho` varchar(255) NOT NULL,
   `Ten` varchar(255) NOT NULL,
   `GioiTinh` varchar(3) NOT NULL,
-  `TongChiTieu` int(11) NOT NULL DEFAULT 0
+  `TongChiTieu` int(11) NOT NULL DEFAULT 0,
+  `TinhTrang` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `khachhang`
 --
 
-INSERT INTO `khachhang` (`MaKH`, `Ho`, `Ten`, `GioiTinh`, `TongChiTieu`) VALUES
-(1, 'Nguyễn Văn', 'An', 'Nam', 400000),
-(2, 'Trần Ngọc', 'Bình', 'Nữ', 200000),
-(3, 'Lê Thị', 'Giải', 'Nữ', 900000),
-(4, 'Hà Thanh', 'Thoát', 'Nam', 800000);
+INSERT INTO `khachhang` (`MaKH`, `Ho`, `Ten`, `GioiTinh`, `TongChiTieu`, `TinhTrang`) VALUES
+(1, 'Nguyễn Văn', 'An', 'Nam', 400000, 1),
+(2, 'Trần Ngọc', 'Bình', 'Nữ', 200000, 1),
+(3, 'Lê Thị', 'Giải', 'Nữ', 900000, 1),
+(4, 'Hà Thanh', 'Thoát', 'Nam', 800000, 1),
+(7, 'Trịnh Thị', 'Yên', 'Nữ', 0, 1),
+(8, 'Trương Đình', 'Vui', 'Nam', 0, 1),
+(9, 'Lại Thị Ngọc', 'Miền', 'Nữ', 0, 1),
+(10, 'Trần Quang', 'Cực', 'Nam', 0, 1),
+(11, 'Nguyễn Ngọc', 'Lạc', 'Nam', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -193,11 +199,15 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`MaNV`, `Ho`, `Ten`, `GioiTinh`, `ChucVu`) VALUES
-(0, 'Admin', '', 'NOT', 'Admin'),
+(0, 'Admin', '', '', 'Admin'),
 (1, 'Sau Đại', 'Phát', 'Nam', 'Quản Lý'),
 (2, 'Trần Quang', 'Vinh', 'Nam', 'Quản Lý'),
 (3, 'Trần Hữu', 'Khương', 'Nam', 'Quản Lý'),
-(4, 'Nhữ Anh', 'Tài', 'Nam', 'Nhân Viên');
+(4, 'Nhữ Quốc Anh', 'Tài', 'Nam', 'Nhân Viên'),
+(12, 'Trịnh Thu', 'Huyền', 'Nữ', 'Nhân Viên'),
+(13, 'Nguyễn Ngọc Mai', 'Linh', 'Nữ', 'Nhân Viên'),
+(14, 'Hà Văn', 'Hùng', 'Nam', 'Nhân Viên'),
+(15, 'Lê Thị Thuý', 'Diễm', 'Nữ', 'Quản Lý');
 
 -- --------------------------------------------------------
 
@@ -206,7 +216,7 @@ INSERT INTO `nhanvien` (`MaNV`, `Ho`, `Ten`, `GioiTinh`, `ChucVu`) VALUES
 --
 
 CREATE TABLE `phanquyen` (
-  `Quyen` varchar(10) NOT NULL,
+  `Quyen` varchar(255) NOT NULL,
   `NhapHang` int(1) NOT NULL,
   `QLSanPham` int(1) NOT NULL,
   `QLNhanVien` int(1) NOT NULL,
@@ -219,9 +229,10 @@ CREATE TABLE `phanquyen` (
 --
 
 INSERT INTO `phanquyen` (`Quyen`, `NhapHang`, `QLSanPham`, `QLNhanVien`, `QLKhachHang`, `ThongKe`) VALUES
-('adm', 1, 1, 1, 1, 1),
-('nvi', 1, 0, 0, 1, 0),
-('qly', 1, 0, 1, 1, 1);
+('Default', 0, 0, 0, 0, 0),
+('Nhân viên', 0, 0, 0, 1, 0),
+('Quản lý', 1, 0, 1, 1, 1),
+('Quản trị', 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -290,19 +301,20 @@ CREATE TABLE `taikhoan` (
   `MaNV` int(11) NOT NULL,
   `TenDangNhap` varchar(255) NOT NULL,
   `MatKhau` varchar(255) NOT NULL,
-  `Quyen` varchar(10) NOT NULL
+  `Quyen` varchar(255) NOT NULL,
+  `TrangThai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`MaNV`, `TenDangNhap`, `MatKhau`, `Quyen`) VALUES
-(0, 'admin', 'admin', 'adm'),
-(1, 'ql01', 'ql01', 'qly'),
-(2, 'ql02', 'ql02', 'qly'),
-(3, 'ql03', 'ql03', 'qly'),
-(4, 'nv01', 'nv01', 'nvi');
+INSERT INTO `taikhoan` (`MaNV`, `TenDangNhap`, `MatKhau`, `Quyen`, `TrangThai`) VALUES
+(0, 'admin', 'admin', 'Quản trị', 1),
+(1, 'ql01', 'ql01', 'Quản lý', 1),
+(2, 'ql02', 'ql02', 'Quản lý', 1),
+(3, 'ql03', 'ql03', 'Quản lý', 1),
+(4, 'nv01', 'nv01', 'Nhân viên', 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -387,7 +399,7 @@ ALTER TABLE `sanpham`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`MaNV`),
-  ADD KEY `Quyen` (`Quyen`);
+  ADD KEY `taikhoan_ibfk_2` (`Quyen`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -409,7 +421,7 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `loai`
@@ -427,7 +439,7 @@ ALTER TABLE `nhacungcap`
 -- AUTO_INCREMENT cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `MaNV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `MaNV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `phieunhap`
@@ -490,7 +502,7 @@ ALTER TABLE `sanpham`
 --
 ALTER TABLE `taikhoan`
   ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `taikhoan_ibfk_2` FOREIGN KEY (`Quyen`) REFERENCES `phanquyen` (`Quyen`);
+  ADD CONSTRAINT `taikhoan_ibfk_2` FOREIGN KEY (`Quyen`) REFERENCES `phanquyen` (`Quyen`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

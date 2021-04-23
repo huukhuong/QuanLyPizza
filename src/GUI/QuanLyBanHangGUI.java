@@ -107,9 +107,15 @@ public class QuanLyBanHangGUI extends JPanel {
         JPanel pnTableBanHang = new TransparentPanel();
         pnTableBanHang.setLayout(new BorderLayout());
 
+        JPanel pnTitleBanHang = new TransparentPanel();
         JLabel lblTitleBanHang = new JLabel("Danh sách sản phẩm");
         lblTitleBanHang.setFont(new Font("Arial", Font.BOLD, 28));
-        pnTableBanHang.add(lblTitleBanHang, BorderLayout.NORTH);
+        btnReset = new JButton(new ImageIcon("image/Refresh-icon.png"));
+        btnReset.setFocusPainted(false);
+        btnReset.setPreferredSize(new Dimension(40, 40));
+        pnTitleBanHang.add(lblTitleBanHang);
+        pnTitleBanHang.add(btnReset);
+        pnTableBanHang.add(pnTitleBanHang, BorderLayout.NORTH);
 
         dtmSanPhamBan = new DefaultTableModel();
         dtmSanPhamBan.addColumn("Mã SP");
@@ -179,11 +185,7 @@ public class QuanLyBanHangGUI extends JPanel {
         JPanel pnTitleThongTin = new TransparentPanel();
         JLabel lblTitleThongTin = new JLabel("Chi tiết sản phẩm", JLabel.LEFT);
         lblTitleThongTin.setFont(new Font("Arial", Font.BOLD, 28));
-        btnReset = new JButton(new ImageIcon("image/Refresh-icon.png"));
-        btnReset.setFocusPainted(false);
-        btnReset.setPreferredSize(new Dimension(40, 40));
         pnTitleThongTin.add(lblTitleThongTin);
-        pnTitleThongTin.add(btnReset);
         pnThongTinBanHang.add(pnTitleThongTin);
 
         JPanel pnLoaiSP = new TransparentPanel();

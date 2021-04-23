@@ -40,6 +40,7 @@ public class MainQuanLyGUI extends JFrame {
     QuanLyNhapHangGUI nhapHangPanel;
     QuanLySanPhamGUI sanPhamPanel;
     QuanLyNhanVienGUI nhanVienPanel;
+    QuanLyKhachHangGUI khachHangPanel;
     JLabel btnClose, btnMinimize, lblBanHang, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe;
     final Color clLeftItem = new Color(63, 74, 89);
     final Color clLeftItemHover = new Color(72, 88, 107);
@@ -177,7 +178,9 @@ public class MainQuanLyGUI extends JFrame {
         }
 
         if (quyen.getQlKhachHang() == 1) {
-
+            khachHangPanel = new QuanLyKhachHangGUI();
+            pnKhachHang.setLayout(new BorderLayout());
+            pnKhachHang.add(khachHangPanel, BorderLayout.CENTER);
             lblKhachHang.setVisible(true);
         }
 

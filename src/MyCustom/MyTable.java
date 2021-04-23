@@ -8,6 +8,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableRowSorter;
 
 public class MyTable extends JTable {
 
@@ -29,7 +30,7 @@ public class MyTable extends JTable {
         ((DefaultTableCellRenderer) header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
         //======/CUSTOM TABLE/=======
     }
-    
+
     public MyTable(DefaultTableModel dtm) {
         this();
         this.setModel(dtm);
@@ -37,5 +38,8 @@ public class MyTable extends JTable {
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         this.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
 
+        //SORT HEADER TABLE
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(dtm);
+        this.setRowSorter(sorter);
     }
 }

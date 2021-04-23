@@ -4,12 +4,10 @@ import static Main.Main.changLNF;
 
 import BUS.NhanVienBUS;
 import BUS.PhanQuyenBUS;
+import BUS.TaiKhoanBUS;
 import DTO.NhanVien;
 import DTO.PhanQuyen;
-import MyCustom.MyDialog;
-import MyCustom.MyTable;
-import MyCustom.TransparentPanel;
-import MyCustom.XuLyFileExcel;
+import MyCustom.*;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -32,6 +30,7 @@ public class QuanLyNhanVienGUI extends JPanel {
         changLNF("Windows");
         addControlsNhanVien();
         addEventsNhanVien();
+        addEventsPhanQuyen();
     }
 
     private PhanQuyenBUS phanQuyenBUS = new PhanQuyenBUS();
@@ -47,7 +46,7 @@ public class QuanLyNhanVienGUI extends JPanel {
     JComboBox<String> cmbGioiTinh;
     MyTable tblNhanVien;
     DefaultTableModel dtmNhanVien;
-    JButton btnReset, btnThemNV, btnSuaNV, btnXoaNV, btnTimNV, btnCapTaiKhoan, btnResetMatKhau, btnXuatExcel, btnNhapExcel;
+    JButton btnReset, btnThemNV, btnSuaNV, btnXoaNV, btnTimNV, btnCapTaiKhoan, btnResetMatKhau, btnXoaTaiKhoan, btnXuatExcel, btnNhapExcel;
 
     private void addControlsNhanVien() {
         this.setLayout(new BorderLayout());
@@ -95,7 +94,7 @@ public class QuanLyNhanVienGUI extends JPanel {
         =========================================================================
          */
         JPanel pnNhanVien = new TransparentPanel();
-        pnNhanVien.setLayout(new BorderLayout());
+        pnNhanVien.setLayout(new BoxLayout(pnNhanVien, BoxLayout.Y_AXIS));
 
         JPanel pnTopNV = new TransparentPanel();
         pnTopNV.setLayout(new BoxLayout(pnTopNV, BoxLayout.Y_AXIS));
@@ -228,27 +227,116 @@ public class QuanLyNhanVienGUI extends JPanel {
         btnXuatExcel.setPreferredSize(btnSize);
         btnNhapExcel.setPreferredSize(btnSize);
 
-        pnTopNV.add(pnButton);
-        pnNhanVien.add(pnTopNV, BorderLayout.NORTH);
+        JPanel pnButton2 = new TransparentPanel();
+        btnCapTaiKhoan = new JButton("Cấp tài khoản");
+        btnResetMatKhau = new JButton("Mật khẩu/Quyền");
+        btnXoaTaiKhoan = new JButton("Khoá tài khoản");
+        btnCapTaiKhoan.setIcon(new ImageIcon("image/icons8_man_with_key_32px.png"));
+        btnResetMatKhau.setIcon(new ImageIcon("image/icons8_password_reset_32px.png"));
+        btnXoaTaiKhoan.setIcon(new ImageIcon("image/icons8_denied_32px.png"));
+        btnCapTaiKhoan.setFont(fontButton);
+        btnResetMatKhau.setFont(fontButton);
+        btnXoaTaiKhoan.setFont(fontButton);
+        pnButton2.add(btnCapTaiKhoan);
+        pnButton2.add(btnResetMatKhau);
+        pnButton2.add(btnXoaTaiKhoan);
 
+        pnNhanVien.add(pnTopNV);
+        pnNhanVien.add(pnButton);
+        pnNhanVien.add(pnButton2);
         //===================TABLE NHÂN VIÊN=====================
+        JPanel pnTableNhanVien = new TransparentPanel();
+        pnTableNhanVien.setLayout(new BorderLayout());
         dtmNhanVien = new DefaultTableModel();
         dtmNhanVien.addColumn("Mã NV");
         dtmNhanVien.addColumn("Họ đệm");
         dtmNhanVien.addColumn("Tên");
         dtmNhanVien.addColumn("Giới tính");
         dtmNhanVien.addColumn("Chức vụ");
-
         tblNhanVien = new MyTable(dtmNhanVien);
         JScrollPane scrTblNhanVien = new JScrollPane(tblNhanVien);
-        pnNhanVien.add(scrTblNhanVien, BorderLayout.CENTER);
+        pnTableNhanVien.add(scrTblNhanVien, BorderLayout.CENTER);
+        pnNhanVien.add(scrTblNhanVien);
         /*
         =========================================================================
                                     PANEL QUYỀN
         =========================================================================
          */
         JPanel pnPhanQuyen = new TransparentPanel();
+        pnPhanQuyen.setLayout(new BoxLayout(pnPhanQuyen, BoxLayout.Y_AXIS));
 
+        JPanel pnTitlePhanQuyen = new TransparentPanel();
+        JLabel lblTitlePhanQuyen = new JLabel("<html><h1>Quản lý phân quyền</h1></html>");
+        pnTitlePhanQuyen.add(lblTitlePhanQuyen);
+        pnPhanQuyen.add(pnTitlePhanQuyen);
+
+        JPanel pnCmbQuyen = new TransparentPanel();
+        JLabel lblCmbQuyen = new JLabel("<html><b>Nhóm quyền:</b></html>");
+        lblCmbQuyen.setFont(font);
+        cmbQuyen = new JComboBox<String>();
+        cmbQuyen.setFont(font);
+        pnCmbQuyen.add(lblCmbQuyen);
+        pnCmbQuyen.add(cmbQuyen);
+        pnPhanQuyen.add(pnCmbQuyen);
+
+        JPanel pnCheckNhapHang = new TransparentPanel();
+        ckbNhapHang = new JCheckBox("Quản lý nhập hàng.");
+        ckbNhapHang.setFont(font);
+        pnCheckNhapHang.add(ckbNhapHang);
+        pnPhanQuyen.add(pnCheckNhapHang);
+
+        JPanel pnCheckQLSanPham = new TransparentPanel();
+        ckbQLSanPham = new JCheckBox("Quản lý sản phẩm.");
+        ckbQLSanPham.setFont(font);
+        pnCheckQLSanPham.add(ckbQLSanPham);
+        pnPhanQuyen.add(pnCheckQLSanPham);
+
+        JPanel pnCheckQLNhanVien = new TransparentPanel();
+        ckbQLNhanVien = new JCheckBox("Quản lý nhân viên.");
+        ckbQLNhanVien.setFont(font);
+        pnCheckQLNhanVien.add(ckbQLNhanVien);
+        pnPhanQuyen.add(pnCheckQLNhanVien);
+
+        JPanel pnCheckQLKhachHang = new TransparentPanel();
+        ckbQLKhachHang = new JCheckBox("Quản lý khách hàng.");
+        ckbQLKhachHang.setFont(font);
+        pnCheckQLKhachHang.add(ckbQLKhachHang);
+        pnPhanQuyen.add(pnCheckQLKhachHang);
+
+        JPanel pnCheckQLThongKe = new TransparentPanel();
+        ckbThongKe = new JCheckBox("Quản lý thống kê.");
+        ckbThongKe.setFont(font);
+        pnCheckQLThongKe.add(ckbThongKe);
+        pnPhanQuyen.add(pnCheckQLThongKe);
+
+        Dimension ckbSize = ckbQLKhachHang.getPreferredSize();
+        cmbQuyen.setPreferredSize(ckbSize);
+        ckbNhapHang.setPreferredSize(ckbSize);
+        ckbQLSanPham.setPreferredSize(ckbSize);
+        ckbQLNhanVien.setPreferredSize(ckbSize);
+        ckbQLKhachHang.setPreferredSize(ckbSize);
+        ckbThongKe.setPreferredSize(ckbSize);
+
+        JPanel pnButtonQuyen = new TransparentPanel();
+        btnThemQuyen = new JButton("Thêm quyền");
+        btnSuaQuyen = new JButton("Sửa quyền");
+        btnXoaQuyen = new JButton("Xoá quyền");
+        btnThemQuyen.setFont(font);
+        btnSuaQuyen.setFont(font);
+        btnXoaQuyen.setFont(font);
+        btnThemQuyen.setIcon(new ImageIcon("image/add-icon.png"));
+        btnSuaQuyen.setIcon(new ImageIcon("image/Pencil-icon.png"));
+        btnXoaQuyen.setIcon(new ImageIcon("image/delete-icon.png"));
+        pnButtonQuyen.add(btnThemQuyen);
+        pnButtonQuyen.add(btnSuaQuyen);
+        pnButtonQuyen.add(btnXoaQuyen);
+        btnSuaQuyen.setPreferredSize(btnThemQuyen.getPreferredSize());
+        btnXoaQuyen.setPreferredSize(btnThemQuyen.getPreferredSize());
+        pnPhanQuyen.add(pnButtonQuyen);
+
+        JPanel pnImage = new ImagePanel("image/backgroundManagerment.jpg");
+        pnImage.setPreferredSize(new Dimension(w, 450));
+        pnPhanQuyen.add(pnImage);
         //========================
         pnCardTabNhanVien = new JPanel(cardNhanVienGroup);
         pnCardTabNhanVien.add(pnNhanVien, "1");
@@ -256,7 +344,12 @@ public class QuanLyNhanVienGUI extends JPanel {
         this.add(pnCardTabNhanVien);
 
         loadDataTblNhanVien();
+        loadDataCmbQuyen();
     }
+
+    JComboBox<String> cmbQuyen;
+    JCheckBox ckbNhapHang, ckbQLSanPham, ckbQLNhanVien, ckbQLKhachHang, ckbThongKe;
+    JButton btnSuaQuyen, btnThemQuyen, btnXoaQuyen;
 
 
     private void addEventsNhanVien() {
@@ -385,6 +478,179 @@ public class QuanLyNhanVienGUI extends JPanel {
                 xuLyNhapExcel();
             }
         });
+
+        btnCapTaiKhoan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyCapTaiKhoan();
+            }
+        });
+
+        btnResetMatKhau.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyResetMatKhau();
+            }
+        });
+
+        btnXoaTaiKhoan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyKhoaTaiKhoan();
+            }
+        });
+
+        btnReset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadDataTblNhanVien();
+                txtMaNV.setText("");
+                txtHo.setText("");
+                txtTen.setText("");
+                txtChucVu.setText("");
+                txtTimNV.setText("");
+                cmbGioiTinh.setSelectedIndex(0);
+            }
+        });
+    }
+
+    private void addEventsPhanQuyen() {
+        cmbQuyen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyHienThiChiTietQuyen();
+            }
+        });
+        btnThemQuyen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyThemQuyen();
+            }
+        });
+        btnSuaQuyen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLySuaQuyen();
+            }
+        });
+        btnXoaQuyen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyXoaQuyen();
+            }
+        });
+    }
+
+    private void xuLyXoaQuyen() {
+        if (cmbQuyen.getSelectedIndex() < 1) {
+            new MyDialog("Chưa chọn nhóm quyền để xoá!", MyDialog.ERROR_DIALOG);
+            return;
+        }
+        MyDialog dlg = new MyDialog("Bạn có chắc chắn muốn xoá?", MyDialog.WARNING_DIALOG);
+        if (dlg.getAction() == MyDialog.CANCEL_OPTION)
+            return;
+        String tenQuyen = cmbQuyen.getSelectedItem() + "";
+        boolean flag = phanQuyenBUS.xoaQuyen(tenQuyen);
+        if (flag) {
+            loadDataCmbQuyen();
+        }
+    }
+
+    private void xuLyThemQuyen() {
+        String tenQuyen = JOptionPane.showInputDialog("Nhập tên quyền");
+
+        boolean flag = phanQuyenBUS.themQuyen(tenQuyen);
+        if (flag) {
+            loadDataCmbQuyen();
+        }
+    }
+
+    private void xuLySuaQuyen() {
+        if (cmbQuyen.getSelectedIndex() < 1) {
+            new MyDialog("Chưa chọn nhóm quyền để sửa!", MyDialog.ERROR_DIALOG);
+            return;
+        }
+        String tenQuyen = cmbQuyen.getSelectedItem() + "";
+        int nhapHang = ckbNhapHang.isSelected() ? 1 : 0;
+        int sanPham = ckbQLSanPham.isSelected() ? 1 : 0;
+        int nhanVien = ckbQLNhanVien.isSelected() ? 1 : 0;
+        int khachHang = ckbQLKhachHang.isSelected() ? 1 : 0;
+        int thongKe = ckbThongKe.isSelected() ? 1 : 0;
+
+        boolean flag = phanQuyenBUS.suaQuyen(tenQuyen, nhapHang, sanPham, nhanVien, khachHang, thongKe);
+        if (flag) {
+            loadDataCmbQuyen();
+        }
+    }
+
+    private void xuLyHienThiChiTietQuyen() {
+        ArrayList<PhanQuyen> dsq = phanQuyenBUS.getListQuyen();
+        PhanQuyen phanQuyen = new PhanQuyen();
+        for (PhanQuyen pq : dsq) {
+            if (pq.getQuyen().equals(cmbQuyen.getSelectedItem())) {
+                phanQuyen.setQuyen(pq.getQuyen());
+                phanQuyen.setNhapHang(pq.getNhapHang());
+                phanQuyen.setQlSanPham(pq.getQlSanPham());
+                phanQuyen.setQlNhanVien(pq.getQlNhanVien());
+                phanQuyen.setQlKhachHang(pq.getQlKhachHang());
+                phanQuyen.setThongKe(pq.getThongKe());
+                break;
+            }
+        }
+        ckbNhapHang.setSelected(false);
+        ckbQLSanPham.setSelected(false);
+        ckbQLNhanVien.setSelected(false);
+        ckbQLKhachHang.setSelected(false);
+        ckbThongKe.setSelected(false);
+        if (phanQuyen.getNhapHang() == 1) {
+            ckbNhapHang.setSelected(true);
+        }
+        if (phanQuyen.getQlSanPham() == 1) {
+            ckbQLSanPham.setSelected(true);
+        }
+        if (phanQuyen.getQlNhanVien() == 1) {
+            ckbQLNhanVien.setSelected(true);
+        }
+        if (phanQuyen.getQlKhachHang() == 1) {
+            ckbQLKhachHang.setSelected(true);
+        }
+        if (phanQuyen.getThongKe() == 1) {
+            ckbThongKe.setSelected(true);
+        }
+    }
+
+    private void loadDataCmbQuyen() {
+        phanQuyenBUS.docDanhSachQuyen();
+        ArrayList<PhanQuyen> dsq = phanQuyenBUS.getListQuyen();
+        cmbQuyen.removeAllItems();
+        cmbQuyen.addItem("Chọn quyền");
+        for (PhanQuyen pq : dsq) {
+            cmbQuyen.addItem(pq.getQuyen());
+        }
+    }
+
+    private void xuLyResetMatKhau() {
+        String maNV = txtMaNV.getText();
+        if (maNV.trim().equals("")) {
+            new MyDialog("Hãy chọn nhân viên!", MyDialog.ERROR_DIALOG);
+            return;
+        }
+        DlgQuyen_MatKhau dialog = new DlgQuyen_MatKhau(maNV);
+        dialog.setVisible(true);
+    }
+
+    private void xuLyCapTaiKhoan() {
+        if (txtMaNV.getText().trim().equals("")) {
+            new MyDialog("Hãy chọn nhân viên!", MyDialog.ERROR_DIALOG);
+            return;
+        }
+        DlgCapTaiKhoan dialog = new DlgCapTaiKhoan(txtMaNV.getText());
+        dialog.setVisible(true);
+    }
+
+    private void xuLyKhoaTaiKhoan() {
+        TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
+        taiKhoanBUS.khoaTaiKhoan(txtMaNV.getText());
     }
 
     private void xuLyNhapExcel() {
