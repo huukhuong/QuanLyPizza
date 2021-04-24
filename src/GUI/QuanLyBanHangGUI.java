@@ -561,6 +561,8 @@ public class QuanLyBanHangGUI extends JPanel {
         loadDataTableSanPhamBan();
         txtTenSPBanHang.requestFocus();
         lblAnhSP.setIcon(getAnhSP(""));
+
+        cmbNhanVienBan.setEnabled(false);
     }
 
     private void addEventsBanHang() {
@@ -825,6 +827,14 @@ public class QuanLyBanHangGUI extends JPanel {
                 cmbNhanVienBan.addItem(nv.getMaNV() + " - " + nv.getHo() + " " + nv.getTen());
             }
         }
+
+        for (int i = 0; i < cmbNhanVienBan.getItemCount(); i++) {
+            String[] cmbValue = cmbNhanVienBan.getItemAt(i).split(" - ");
+            if (cmbValue[0].equals(DangNhapBUS.taiKhoanLogin.getMaNhanVien() + "")) {
+                cmbNhanVienBan.setSelectedIndex(i);
+                break;
+            }
+        }
     }
 
     DecimalFormat dcf = new DecimalFormat("###,###");
@@ -1014,7 +1024,7 @@ public class QuanLyBanHangGUI extends JPanel {
 
         XuatHoaDonGUI hoaDonUI = new XuatHoaDonGUI(dsGioHang, tongTien, cmbNhanVienBan.getSelectedItem());
         hoaDonUI.setVisible(true);
-        if(hoaDonUI.checkBanHang) {
+        if (hoaDonUI.checkBanHang) {
             dtmGioHang.setRowCount(0);
         }
     }

@@ -76,6 +76,9 @@ public class HoaDonDAO {
     public boolean addHoaDon(HoaDon hd) {
         boolean result = false;
         try {
+            String sql1 = "UPDATE KhachHang SET TongChiTieu=TongChiTieu+" + hd.getTongTien() + " WHERE MaKH=" + hd.getMaKH();
+            Statement st = MyConnect.conn.createStatement();
+            st.executeUpdate(sql1);
             String sql = "INSERT INTO hoadon(MaKH, MaNV, NgayLap, TongTien, GhiChu) VALUES(?, ?, ?, ?, ?)";
             PreparedStatement prep = MyConnect.conn.prepareStatement(sql);
             prep.setInt(1, hd.getMaKH());
@@ -114,8 +117,8 @@ public class HoaDonDAO {
             String sql = "SELECT MAX(maHD) FROM hoadon";
             Statement st = MyConnect.conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            if(rs.next())
-            return rs.getInt(1);
+            if (rs.next())
+                return rs.getInt(1);
         } catch (Exception e) {
             e.printStackTrace();
         }

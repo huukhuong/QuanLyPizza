@@ -338,7 +338,7 @@ public class XuatHoaDonGUI extends JDialog {
             String thanhTien = vec.get(4) + "";
             ctHoaDonBUS.addCTHoaDon(maSP, soLuong, donGia, thanhTien);
         }
-
+        btnThanhToan.setEnabled(false);
         checkBanHang = true;
     }
 

@@ -192,7 +192,6 @@ public class DlgTimMaGiamGUI extends JDialog {
             } else {
                 vec.add("Không hiệu lực");
             }
-
             dtmMaGiam.addRow(vec);
         }
     }

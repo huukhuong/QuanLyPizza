@@ -3,7 +3,9 @@ package GUI;
 import BUS.PhanQuyenBUS;
 import DAO.MyConnect;
 import DTO.PhanQuyen;
+
 import static Main.Main.changLNF;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -28,20 +30,21 @@ public class MainQuanLyGUI extends JFrame {
         Image icon = Toolkit.getDefaultToolkit().getImage("image/ManagerUI/icon-app.png");
         this.setIconImage(icon);
 
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setUndecorated(true);
         this.setLocationRelativeTo(null);
         this.setTitle("Phần mềm quản lý cửa hàng pizza");
         this.setVisible(true);
     }
 
-    JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang, pnThongKe;
+    JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnKhuyenMai, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang, pnThongKe;
     QuanLyBanHangGUI banHangPanel;
+    QuanLyKhuyenMaiGUI khuyenMaiPanel;
     QuanLyNhapHangGUI nhapHangPanel;
     QuanLySanPhamGUI sanPhamPanel;
     QuanLyNhanVienGUI nhanVienPanel;
     QuanLyKhachHangGUI khachHangPanel;
-    JLabel btnClose, btnMinimize, lblBanHang, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe;
+    JLabel btnClose, btnMinimize, lblBanHang, lblKhuyenMai, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe;
     final Color clLeftItem = new Color(63, 74, 89);
     final Color clLeftItemHover = new Color(72, 88, 107);
     final Color clLeftItemSelected = new Color(51, 202, 187);
@@ -100,6 +103,7 @@ public class MainQuanLyGUI extends JFrame {
         pnMenuLeft.add(lblAvatar);
 
         lblBanHang = new JLabel(new ImageIcon("image/ManagerUI/lblBanHang.png"));
+        lblKhuyenMai = new JLabel(new ImageIcon("image/ManagerUI/lblKhuyenMai.png"));
         lblNhapHang = new JLabel(new ImageIcon("image/ManagerUI/lblNhapHang.png"));
         lblSanPham = new JLabel(new ImageIcon("image/ManagerUI/lblSanPham.png"));
         lblNhanVien = new JLabel(new ImageIcon("image/ManagerUI/lblNhanVien.png"));
@@ -108,10 +112,11 @@ public class MainQuanLyGUI extends JFrame {
 
         listMenuLeft = new ArrayList<>();
         listMenuLeft.add(lblBanHang);
-        listMenuLeft.add(lblNhapHang);
+        listMenuLeft.add(lblKhuyenMai);
         listMenuLeft.add(lblSanPham);
         listMenuLeft.add(lblNhanVien);
         listMenuLeft.add(lblKhachHang);
+        listMenuLeft.add(lblNhapHang);
         listMenuLeft.add(lblThongKe);
 
         for (JLabel lbl : listMenuLeft) {
@@ -125,6 +130,7 @@ public class MainQuanLyGUI extends JFrame {
 
         lblBanHang.setBackground(clLeftItemSelected);
         lblBanHang.setVisible(true);
+        lblKhuyenMai.setVisible(true);
 
         pnMain.add(pnMenuLeft, BorderLayout.WEST);
 
@@ -136,6 +142,7 @@ public class MainQuanLyGUI extends JFrame {
         pnCard = new JPanel(cardMenuLeftGroup);
 
         pnBanHang = new JPanel();
+        pnKhuyenMai = new JPanel();
         pnNhapHang = new JPanel();
         pnSanPham = new JPanel();
         pnNhanVien = new JPanel();
@@ -143,15 +150,20 @@ public class MainQuanLyGUI extends JFrame {
         pnThongKe = new JPanel();
 
         pnCard.add(pnBanHang, "1");
-        pnCard.add(pnNhapHang, "2");
-        pnCard.add(pnSanPham, "3");
-        pnCard.add(pnNhanVien, "4");
-        pnCard.add(pnKhachHang, "5");
-        pnCard.add(pnThongKe, "6");
+        pnCard.add(pnKhuyenMai, "2");
+        pnCard.add(pnNhapHang, "3");
+        pnCard.add(pnSanPham, "4");
+        pnCard.add(pnNhanVien, "5");
+        pnCard.add(pnKhachHang, "6");
+        pnCard.add(pnThongKe, "7");
 
         banHangPanel = new QuanLyBanHangGUI();
         pnBanHang.setLayout(new BorderLayout());
         pnBanHang.add(banHangPanel, BorderLayout.CENTER);
+
+        khuyenMaiPanel = new QuanLyKhuyenMaiGUI();
+        pnKhuyenMai.setLayout(new BorderLayout());
+        pnKhuyenMai.add(khuyenMaiPanel, BorderLayout.CENTER);
 
         //======XỬ LÝ PHÂN QUYỀN=======
         PhanQuyen quyen = PhanQuyenBUS.quyenTK;
@@ -276,16 +288,18 @@ public class MainQuanLyGUI extends JFrame {
                     String cardName = "";
                     if (lbl == lblBanHang) {
                         cardName = "1";
-                    } else if (lbl == lblNhapHang) {
+                    } else if (lbl == lblKhuyenMai) {
                         cardName = "2";
-                    } else if (lbl == lblSanPham) {
+                    } else if (lbl == lblNhapHang) {
                         cardName = "3";
-                    } else if (lbl == lblNhanVien) {
+                    } else if (lbl == lblSanPham) {
                         cardName = "4";
-                    } else if (lbl == lblKhachHang) {
+                    } else if (lbl == lblNhanVien) {
                         cardName = "5";
-                    } else {
+                    } else if (lbl == lblKhachHang) {
                         cardName = "6";
+                    } else {
+                        cardName = "7";
                     }
                     cardMenuLeftGroup.show(pnCard, cardName);
                 }
@@ -327,7 +341,7 @@ public class MainQuanLyGUI extends JFrame {
     private void thoatChuongTrinh() {
         banHangPanel.xuLyThoat();
         Main.Main.changLNF("Nimbus");
-        this.dispose();
+        System.exit(0);
     }
 
 }

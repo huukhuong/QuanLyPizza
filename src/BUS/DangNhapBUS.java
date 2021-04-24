@@ -11,11 +11,11 @@ public class DangNhapBUS {
 
     private final static int EMPTY_ERROR = 1;
     private final static int WRONG_ERROR = 2;
+    public static TaiKhoan taiKhoanLogin = null;
 
     public TaiKhoan getTaiKhoanDangNhap(String user, String password, boolean selected) {
         if (kiemTraDangNhap(user, password) == EMPTY_ERROR) {
-            MyDialog dlg = new MyDialog("Không được để trống thông tin!",
-                    MyDialog.ERROR_DIALOG);
+            new MyDialog("Không được để trống thông tin!", MyDialog.ERROR_DIALOG);
             return null;
         }
         TaiKhoan tk = new TaiKhoan();
@@ -24,16 +24,15 @@ public class DangNhapBUS {
 
         DangNhapDAO dangNhapDAO = new DangNhapDAO();
         TaiKhoan account = dangNhapDAO.dangNhap(tk);
+        taiKhoanLogin = account;
 
         if (account == null) {
-            MyDialog dlg = new MyDialog("Sai thông tin đăng nhập hoặc tài khoản đã bị khoá!",
-                    MyDialog.ERROR_DIALOG);
+            new MyDialog("Sai thông tin đăng nhập hoặc tài khoản đã bị khoá!", MyDialog.ERROR_DIALOG);
         } else {
             PhanQuyenBUS phanQuyenBUS = new PhanQuyenBUS();
             phanQuyenBUS.kiemTraQuyen(account.getQuyen());
             xuLyGhiNhoDangNhap(user, password, selected);
-            MyDialog dlg = new MyDialog("Đăng nhập thành công!",
-                    MyDialog.SUCCESS_DIALOG);
+            new MyDialog("Đăng nhập thành công!", MyDialog.SUCCESS_DIALOG);
         }
         return account;
     }

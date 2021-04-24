@@ -46,7 +46,7 @@ public class DlgTimKhachGUI extends JDialog {
     private JTextField txtTuKhoa;
     private JTable tblKhachHang;
     private DefaultTableModel dtmKhachHang;
-    private JButton btnChon, btnThoat;
+    private JButton btnChon, btnThemKhach;
 
     private void addControls() {
         Container con = getContentPane();
@@ -77,15 +77,15 @@ public class DlgTimKhachGUI extends JDialog {
 
         JPanel pnButton = new JPanel();
         btnChon = new JButton("Chọn");
-        btnThoat = new JButton("Thoát");
+        btnThemKhach = new JButton("Thêm khách");
         btnChon.setFont(font);
-        btnThoat.setFont(font);
+        btnThemKhach.setFont(font);
         pnButton.add(btnChon);
-        pnButton.add(btnThoat);
+        pnButton.add(btnThemKhach);
         con.add(pnButton, BorderLayout.SOUTH);
 
         btnChon.setPreferredSize(new Dimension(120, 40));
-        btnThoat.setPreferredSize(btnChon.getPreferredSize());
+        btnThemKhach.setPreferredSize(btnChon.getPreferredSize());
 
         loadDataLenTable();
     }
@@ -105,10 +105,10 @@ public class DlgTimKhachGUI extends JDialog {
             }
         });
 
-        btnThoat.addActionListener(new ActionListener() {
+        btnThemKhach.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                xuLyThoat();
+                xuLyThemKhach();
             }
         });
     }
@@ -124,17 +124,22 @@ public class DlgTimKhachGUI extends JDialog {
 
             khachHangTimDuoc = new KhachHang(ma, ho, ten, gioiTinh, tongChiTieu);
         }
-        xuLyThoat();
+        this.dispose();
     }
 
-    private void xuLyThoat() {
-        dispose();
+    private void xuLyThemKhach() {
+        DlgThemKhachHang dlg = new DlgThemKhachHang();
+        dlg.setVisible(true);
+        if (dlg.checkThemKhach) {
+            khachHangBUS.docDanhSach();
+            loadDataLenTable();
+        }
     }
 
     private void loadDataLenTable() {
         dtmKhachHang.setRowCount(0);
         ArrayList<KhachHang> dskh = khachHangBUS.getListKhachHang();
-        if (dskh != null)
+        if (dskh != null) {
             for (KhachHang kh : dskh) {
                 Vector vec = new Vector();
                 vec.add(kh.getMaKH());
@@ -144,6 +149,7 @@ public class DlgTimKhachGUI extends JDialog {
                 vec.add(kh.getTongChiTieu());
                 dtmKhachHang.addRow(vec);
             }
+        }
     }
 
     private void loadDataLenTable(String tuKhoa) {
