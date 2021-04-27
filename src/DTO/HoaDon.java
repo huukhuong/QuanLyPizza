@@ -69,6 +69,4 @@ public class HoaDon {
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
-
-
 }

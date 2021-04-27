@@ -21,22 +21,22 @@ public class MainQuanLyGUI extends JFrame {
     }
 
     public MainQuanLyGUI() {
+        this.setTitle("Phần mềm quản lý cửa hàng pizza");
         this.setSize(1280, 900);
+        Image icon = Toolkit.getDefaultToolkit().getImage("image/ManagerUI/icon-app.png");
+        this.setIconImage(icon);
         addControls();
         addEvents();
     }
 
     public void showWindow() {
-        Image icon = Toolkit.getDefaultToolkit().getImage("image/ManagerUI/icon-app.png");
-        this.setIconImage(icon);
-
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setUndecorated(true);
         this.setLocationRelativeTo(null);
-        this.setTitle("Phần mềm quản lý cửa hàng pizza");
         this.setVisible(true);
     }
 
+    JLabel btnDoiMatKhau;
     JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnKhuyenMai, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang, pnThongKe;
     QuanLyBanHangGUI banHangPanel;
     QuanLyKhuyenMaiGUI khuyenMaiPanel;
@@ -44,6 +44,8 @@ public class MainQuanLyGUI extends JFrame {
     QuanLySanPhamGUI sanPhamPanel;
     QuanLyNhanVienGUI nhanVienPanel;
     QuanLyKhachHangGUI khachHangPanel;
+    QuanLyThongKeGUI thongKePanel;
+
     JLabel btnClose, btnMinimize, lblBanHang, lblKhuyenMai, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe;
     final Color clLeftItem = new Color(63, 74, 89);
     final Color clLeftItemHover = new Color(72, 88, 107);
@@ -69,9 +71,11 @@ public class MainQuanLyGUI extends JFrame {
         pnTitle.setPreferredSize(new Dimension(width, 46));
         pnTitle.setBackground(new Color(242, 153, 74));
 
-        JLabel lblIconApp = new JLabel(new ImageIcon("image/ManagerUI/icon-app.png"));
-        lblIconApp.setBounds(7, 7, 32, 32);
-        pnTitle.add(lblIconApp);
+        btnDoiMatKhau = new JLabel(new ImageIcon("image/ManagerUI/icons8_gear_46px.png"));
+        btnDoiMatKhau.setToolTipText("Đổi mật khẩu");
+        btnDoiMatKhau.setBounds(0, 0, 46, 46);
+        btnDoiMatKhau.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        pnTitle.add(btnDoiMatKhau);
 
         JLabel lblTitleText = new JLabel(new ImageIcon("image/ManagerUI/title-text.png"));
         lblTitleText.setBounds(width / 2 - 428 / 2, 3, 428, 38);
@@ -157,6 +161,7 @@ public class MainQuanLyGUI extends JFrame {
         pnCard.add(pnKhachHang, "6");
         pnCard.add(pnThongKe, "7");
 
+        //==========ADD PANEL BÁN HÀNG + KHUYẾN MÃI (Ko phân quyền)==========
         banHangPanel = new QuanLyBanHangGUI();
         pnBanHang.setLayout(new BorderLayout());
         pnBanHang.add(banHangPanel, BorderLayout.CENTER);
@@ -197,7 +202,9 @@ public class MainQuanLyGUI extends JFrame {
         }
 
         if (quyen.getThongKe() == 1) {
-
+            thongKePanel = new QuanLyThongKeGUI();
+            pnThongKe.setLayout(new BorderLayout());
+            pnThongKe.add(thongKePanel, BorderLayout.CENTER);
             lblThongKe.setVisible(true);
         }
         pnMain.add(pnCard);
@@ -222,6 +229,33 @@ public class MainQuanLyGUI extends JFrame {
             public void mouseMoved(MouseEvent e) {
                 xMouse = e.getX();
                 yMouse = e.getY();
+            }
+        });
+
+        btnDoiMatKhau.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new DlgDoiMatKhau().setVisible(true);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                btnDoiMatKhau.setOpaque(true);
+                btnDoiMatKhau.setBackground(clLeftItemHover);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                btnDoiMatKhau.setOpaque(false);
+                btnDoiMatKhau.setBackground(new Color(0, 0, 0, 0));
             }
         });
 

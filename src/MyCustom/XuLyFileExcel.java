@@ -115,6 +115,10 @@ public class XuLyFileExcel {
                     Row row = sheet.getRow(i);
                     Vector vec = new Vector();
                     for (int j = 0; j < row.getLastCellNum(); j++) {
+                        if (dtmtbl.getColumnCount() != row.getLastCellNum()) {
+                            new MyDialog("Nhập file thất bại!", MyDialog.ERROR_DIALOG);
+                            return;
+                        }
                         Cell cell = row.getCell(j);
                         vec.add(cell.getStringCellValue());
                     }

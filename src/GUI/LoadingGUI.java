@@ -31,8 +31,10 @@ public class LoadingGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (time >= 0) {
                     time--;
+                    if (time == 0) {
+                        quanLyGUI = new MainQuanLyGUI();
+                    }
                 } else {
-                    MainQuanLyGUI quanLyGUI = new MainQuanLyGUI();
                     quanLyGUI.showWindow();
                     thoatFrame();
                 }
@@ -42,6 +44,8 @@ public class LoadingGUI extends JFrame {
         time = 100;
         timer.start();
     }
+
+    MainQuanLyGUI quanLyGUI = null;
 
     private void thoatFrame() {
         time = 0;

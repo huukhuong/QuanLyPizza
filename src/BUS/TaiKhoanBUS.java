@@ -1,6 +1,7 @@
 package BUS;
 
 import DAO.TaiKhoanDAO;
+import DTO.TaiKhoan;
 import MyCustom.MyDialog;
 
 public class TaiKhoanBUS {
@@ -11,7 +12,7 @@ public class TaiKhoanBUS {
         int maNV = Integer.parseInt(ma);
         return taiKhoanDAO.getTenDangNhapTheoMa(maNV);
     }
-    
+
     public String getQuyenTheoMa(String ma) {
         int maNV = Integer.parseInt(ma);
         return taiKhoanDAO.getQuyenTheoMa(maNV);
@@ -36,7 +37,7 @@ public class TaiKhoanBUS {
             new MyDialog("Đặt lại thất bại!", MyDialog.ERROR_DIALOG);
         }
     }
-    
+
     public boolean kiemTraTrungTenDangNhap(String tenDangNhap) {
         return taiKhoanDAO.kiemTraTrungTenDangNhap(tenDangNhap);
     }
@@ -49,7 +50,7 @@ public class TaiKhoanBUS {
         }
         if (kiemTraTrungTenDangNhap(tenDangNhap)) {
             MyDialog dlg = new MyDialog("Tên đăng nhập bị trùng! Có thể tài khoản bị khoá, thực hiện mở khoá?", MyDialog.WARNING_DIALOG);
-            if(dlg.getAction() == MyDialog.OK_OPTION) {
+            if (dlg.getAction() == MyDialog.OK_OPTION) {
                 moKhoaTaiKhoan(ma);
                 return true;
             }
@@ -73,7 +74,7 @@ public class TaiKhoanBUS {
             new MyDialog("Khoá tài khoản thất bại!", MyDialog.ERROR_DIALOG);
         }
     }
-    
+
     public void moKhoaTaiKhoan(String ma) {
         int maNV = Integer.parseInt(ma);
         boolean flag = taiKhoanDAO.moKhoaTaiKhoan(maNV);
@@ -82,6 +83,20 @@ public class TaiKhoanBUS {
         } else {
             new MyDialog("Mở khoá tài khoản thất bại!", MyDialog.ERROR_DIALOG);
         }
+    }
+
+    public boolean doiMatKhau(String matKhauCu, String matKhauMoi, String nhapLaiMatKhau) {
+        if(!matKhauMoi.equals(nhapLaiMatKhau)) {
+            new MyDialog("Mật khẩu mới không khớp!", MyDialog.ERROR_DIALOG);
+            return false;
+        }
+        boolean flag = taiKhoanDAO.doiMatKhau(matKhauCu, matKhauMoi);
+        if (flag) {
+            new MyDialog("Đổi thành công!", MyDialog.SUCCESS_DIALOG);
+        } else {
+            new MyDialog("Mật khẩu cũ nhập sai!", MyDialog.ERROR_DIALOG);
+        }
+        return flag;
     }
 
 }

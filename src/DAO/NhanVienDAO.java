@@ -1,6 +1,7 @@
 package DAO;
 
 import DTO.NhanVien;
+import MyCustom.MyDialog;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -102,16 +103,19 @@ public class NhanVienDAO {
         return result;
     }
 
-    public void nhapExcel(NhanVien nv) {
+    public boolean nhapExcel(NhanVien nv) {
         try {
-            String sql = "INSERT INTO NhanVien(Ho, Ten, GioiTinh, ChucVu) " +
+            String sql = "DELETE * FROM NhanVien; " +
+                    "INSERT INTO NhanVien(Ho, Ten, GioiTinh, ChucVu) " +
                     "VALUES(?, ?, ?, ?)";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setString(1, nv.getHo());
             pre.setString(2, nv.getTen());
             pre.setString(3, nv.getGioiTinh());
             pre.setString(4, nv.getChucVu());
+            return true;
         } catch (SQLException ex) {
         }
+        return false;
     }
 }

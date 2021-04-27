@@ -654,6 +654,10 @@ public class QuanLyNhanVienGUI extends JPanel {
     }
 
     private void xuLyNhapExcel() {
+        MyDialog dlg = new MyDialog("Dữ liệu cũ sẽ bị xoá, tiếp tục?", MyDialog.WARNING_DIALOG);
+        if (dlg.getAction() != MyDialog.OK_OPTION)
+            return;
+
         XuLyFileExcel nhapExcel = new XuLyFileExcel();
         nhapExcel.nhapExcel(tblNhanVien);
 
@@ -665,6 +669,7 @@ public class QuanLyNhanVienGUI extends JPanel {
             String chucVu = tblNhanVien.getValueAt(i, 4) + "";
 
             nhanVienBUS.nhapExcel(ho, ten, gioiTinh, chucVu);
+
         }
     }
 

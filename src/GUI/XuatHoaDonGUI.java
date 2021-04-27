@@ -339,6 +339,8 @@ public class XuatHoaDonGUI extends JDialog {
             ctHoaDonBUS.addCTHoaDon(maSP, soLuong, donGia, thanhTien);
         }
         btnThanhToan.setEnabled(false);
+        btnTimMaGiam.setEnabled(false);
+        btnTimKhach.setEnabled(false);
         checkBanHang = true;
     }
 

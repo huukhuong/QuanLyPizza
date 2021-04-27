@@ -136,7 +136,8 @@ public class SanPhamDAO {
 
     public boolean nhapSanPhamTuExcel(SanPham sp) {
         try {
-            String sql = "INSERT INTO SanPham(TenSP, MaLoai, SoLuong, DonViTinh, HinhAnh, DonGia) "
+            String sql = "DELETE * FROM SanPham; " +
+                    "INSERT INTO SanPham(TenSP, MaLoai, SoLuong, DonViTinh, HinhAnh, DonGia) "
                     + "VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setString(1, sp.getTenSP());

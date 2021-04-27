@@ -4,7 +4,6 @@ import DAO.GiamGiaDAO;
 import DTO.GiamGia;
 import MyCustom.MyDialog;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 

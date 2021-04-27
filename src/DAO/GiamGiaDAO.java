@@ -5,7 +5,6 @@ import DTO.GiamGia;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class GiamGiaDAO {

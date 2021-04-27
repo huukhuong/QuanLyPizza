@@ -2,6 +2,7 @@ package BUS;
 
 import DAO.HoaDonDAO;
 import DTO.HoaDon;
+import MyCustom.MyDialog;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -33,5 +34,47 @@ public class HoaDonBUS {
 
     public int getMaHoaDonMoiNhat() {
         return hoaDonDAO.getMaHoaDonMoiNhat();
+    }
+
+    public HoaDon getHoaDon(String maHD) {
+        int ma = Integer.parseInt(maHD);
+        for (HoaDon hd : listHoaDon) {
+            if (hd.getMaHD() == ma)
+                return hd;
+        }
+        return null;
+    }
+
+    public ArrayList<HoaDon> getListHoaDonTheoGia(String min, String max) {
+        try {
+            int minPrice = Integer.parseInt(min);
+            int maxPrice = Integer.parseInt(max);
+            ArrayList<HoaDon> dshd = new ArrayList<>();
+            for (HoaDon hd : listHoaDon) {
+                if (hd.getTongTien() > minPrice && hd.getTongTien() < maxPrice)
+                    dshd.add(hd);
+            }
+            return dshd;
+        } catch (Exception e) {
+            new MyDialog("Hãy nhập khoảng giá hợp lệ", MyDialog.ERROR_DIALOG);
+        }
+        return null;
+    }
+
+    public ArrayList<HoaDon> getListHoaDonTheoNgay(String min, String max) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Date minDate = sdf.parse(min);
+            Date maxDate = sdf.parse(max);
+
+            java.sql.Date dateMin = new java.sql.Date(minDate.getTime());
+            java.sql.Date dateMax = new java.sql.Date(maxDate.getTime());
+
+            ArrayList<HoaDon> dshd = hoaDonDAO.getListHoaDon(dateMin, dateMax);
+            return dshd;
+        } catch (Exception e) {
+            new MyDialog("Hãy nhập khoảng ngày hợp lệ!", MyDialog.ERROR_DIALOG);
+        }
+        return null;
     }
 }

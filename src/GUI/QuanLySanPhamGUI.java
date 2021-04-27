@@ -364,6 +364,10 @@ public class QuanLySanPhamGUI extends JPanel {
     }
 
     private void xuLyNhapFileExcel() {
+        MyDialog dlg = new MyDialog("Dữ liệu cũ sẽ bị xoá, tiếp tục?", MyDialog.WARNING_DIALOG);
+        if (dlg.getAction() != MyDialog.OK_OPTION)
+            return;
+
         XuLyFileExcel nhapFile = new XuLyFileExcel();
         nhapFile.nhapExcel(tblSanPham);
 
