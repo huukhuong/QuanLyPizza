@@ -11,13 +11,16 @@ package DTO;
  */
 public class ThongKe {
     public int soLuongSP;
+    public int soLuongKH;
+    public int soLuongNV;
     public int[] tongThuQuy;
-
     public ThongKe() {
     }
 
-    public ThongKe(int soLuongSP, int[] tongThuQuy) {
+    public ThongKe(int soLuongSP, int soLuongKH, int soLuongNV, int[] tongThuQuy) {
         this.soLuongSP = soLuongSP;
+        this.soLuongKH = soLuongKH;
+        this.soLuongNV = soLuongNV;
         this.tongThuQuy = tongThuQuy;
     }
 
@@ -29,6 +32,22 @@ public class ThongKe {
         this.soLuongSP = soLuongSP;
     }
 
+    public int getSoLuongKH() {
+        return soLuongKH;
+    }
+
+    public void setSoLuongKH(int soLuongKH) {
+        this.soLuongKH = soLuongKH;
+    }
+
+    public int getSoLuongNV() {
+        return soLuongNV;
+    }
+
+    public void setSoLuongNV(int soLuongNV) {
+        this.soLuongNV = soLuongNV;
+    }
+
     public int[] getTongThuQuy() {
         return tongThuQuy;
     }
@@ -36,6 +55,5 @@ public class ThongKe {
     public void setTongThuQuy(int[] tongThuQuy) {
         this.tongThuQuy = tongThuQuy;
     }
-    
     
 }

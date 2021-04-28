@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.Year;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,14 +17,14 @@ import java.time.Year;
  * @author User
  */
 public class ThongKeDAO {
-    public ThongKe getThongKe() {
+    public ThongKe getThongKe(int nam) {
         ThongKe thongKe = new ThongKe();
         int[] tongThuQuy = new int[4];
         thongKe.setSoLuongSP(getTongSoLuongSP());
-        tongThuQuy[0] = getTongThuQuy(1);
-        tongThuQuy[1] = getTongThuQuy(2);
-        tongThuQuy[2] = getTongThuQuy(3);
-        tongThuQuy[3] = getTongThuQuy(4);
+        tongThuQuy[0] = getTongThuQuy(nam, 1);
+        tongThuQuy[1] = getTongThuQuy(nam, 2);
+        tongThuQuy[2] = getTongThuQuy(nam, 3);
+        tongThuQuy[3] = getTongThuQuy(nam, 4);
         thongKe.setTongThuQuy(tongThuQuy);
         return thongKe;
     }
@@ -43,12 +42,13 @@ public class ThongKeDAO {
         return 0;  
     }
     
-    private int getTongThuQuy(int soThuTu) {
-        int namBatDau = Year.now().getValue();
-        int namKetThuc = namBatDau;
+    private String[] getDateString(int nam, int quy) {
+        int namBatDau = nam;
+        int namKetThuc = nam;
         int thangBatDau = 1;
         int thangKetThuc = 4;
-        switch(soThuTu) {
+        String[] kq = new String[2];
+        switch(quy) {
             case 1:
                 thangBatDau = 1;
                 thangKetThuc = 4;
@@ -65,16 +65,49 @@ public class ThongKeDAO {
         }
         String strBatDau = Integer.toString(namBatDau) + Integer.toString(thangBatDau) + "01";
         String strKetThuc = Integer.toString(namKetThuc) + Integer.toString(thangKetThuc) + "01";
+        kq[0] = strBatDau;
+        kq[1] = strKetThuc;
+        return kq;
+    }
+    
+    private int getTongThuQuy(int nam,int quy) {     
+        String[] dateString = getDateString(nam, quy);
         try {
             PreparedStatement prep = MyConnect.conn.prepareStatement("SELECT SUM(TongTien) FROM hoadon "
                     + "WHERE NgayLap >= ? AND NgayLap < ?");
-            prep.setString(1, strBatDau);
-            prep.setString(2, strKetThuc);
+            prep.setString(1, dateString[0]);
+            prep.setString(2, dateString[1]);
             ResultSet rs = prep.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);
             }
         } catch (SQLException ex) {
+            return -1;
+        }
+        return 0;
+    }
+    
+    private int getSoLuongNhanVien() {
+        try {
+            Statement stmt = MyConnect.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM nhanvien");
+            while(rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch(SQLException ex) {
+            return -1;
+        }
+        return 0;
+    }
+    
+    private int getSoLuongKhachHang() {
+        try {
+            Statement stmt = MyConnect.conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM khachhang");
+            while(rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch(SQLException ex) {
             return -1;
         }
         return 0;

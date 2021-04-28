@@ -17,7 +17,7 @@ public class ThongKeBUS {
     public ThongKeBUS() {
     }
     
-    public ThongKe thongKe() {
-        return thongKeDAO.getThongKe();
+    public ThongKe thongKe(int nam) {
+        return thongKeDAO.getThongKe(nam);
     }
 }
