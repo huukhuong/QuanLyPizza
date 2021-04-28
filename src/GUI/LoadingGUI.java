@@ -31,7 +31,7 @@ public class LoadingGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (time >= 0) {
                     time--;
-                    if (time == 0) {
+                    if (time == 60) {
                         quanLyGUI = new MainQuanLyGUI();
                     }
                 } else {

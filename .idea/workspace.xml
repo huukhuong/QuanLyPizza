@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="fix bug bán hàng, xong Khuyến mãi">
-      <change afterPath="$PROJECT_DIR$/image/ManagerUI/icons8_gear_46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/ManagerUI/thongKeDoanhThu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/ManagerUI/thongKeKhachHang.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/ManagerUI/thongKeMon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/ManagerUI/thongKeNhanVien.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/DlgDoiMatKhau.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/DlgDoiMatKhau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/QuanLyThongKeGUI.java" afterDir="false" />
+    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="base nhẹ thống kê">
+      <change afterPath="$PROJECT_DIR$/image/ManagerUI/bangThongKe.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/hoaDon_21-4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/export/hoaDon_21-4.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/sanPham.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/export/sanPham.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/GiamGiaBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/GiamGiaBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/HoaDonBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/HoaDonBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/NhanVienBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/NhanVienBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/TaiKhoanBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/TaiKhoanBUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/GiamGiaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/GiamGiaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/HoaDonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/HoaDonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/MyConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/MyConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/NhanVienDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/NhanVienDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/SanPhamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/SanPhamDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/TaiKhoanDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/TaiKhoanDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTO/HoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/HoaDon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/LoadingGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoadingGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/MainQuanLyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainQuanLyGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyBanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyBanHangGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyNhanVienGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyNhanVienGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLySanPhamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLySanPhamGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyCustom/XuLyFileExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/XuLyFileExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyThongKeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyThongKeGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619277252600</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="base nhẹ thống kê">
+      <created>1619543193917</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619543193918</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +216,7 @@
     <MESSAGE value="Update database" />
     <MESSAGE value="Quản lý nhân viên(Tài khoản), Khách, Phân quyền động" />
     <MESSAGE value="fix bug bán hàng, xong Khuyến mãi" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug bán hàng, xong Khuyến mãi" />
+    <MESSAGE value="base nhẹ thống kê" />
+    <option name="LAST_COMMIT_MESSAGE" value="base nhẹ thống kê" />
   </component>
 </project>
