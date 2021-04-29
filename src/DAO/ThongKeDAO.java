@@ -21,6 +21,8 @@ public class ThongKeDAO {
         ThongKe thongKe = new ThongKe();
         int[] tongThuQuy = new int[4];
         thongKe.setSoLuongSP(getTongSoLuongSP());
+        thongKe.setSoLuongKH(getSoLuongKhachHang());
+        thongKe.setSoLuongNV(getSoLuongNhanVien());
         tongThuQuy[0] = getTongThuQuy(nam, 1);
         tongThuQuy[1] = getTongThuQuy(nam, 2);
         tongThuQuy[2] = getTongThuQuy(nam, 3);
