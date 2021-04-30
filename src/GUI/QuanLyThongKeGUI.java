@@ -127,7 +127,11 @@ public class QuanLyThongKeGUI extends JPanel {
     }
 
     private void addEvents() {
+        btnReset.addAtionListener(
+    }
 
+    private void hienThiThongKe() {
+    
     }
 
 }
