@@ -1,5 +1,7 @@
 package GUI;
 
+import BUS.ThongKeBUS;
+import DTO.ThongKe;
 import MyCustom.TransparentPanel;
 
 import javax.swing.*;
@@ -8,6 +10,8 @@ import java.awt.*;
 
 import static Main.Main.changLNF;
 
+import java.util.Calendar;
+
 public class QuanLyThongKeGUI extends JPanel {
 
     public QuanLyThongKeGUI() {
@@ -15,13 +19,14 @@ public class QuanLyThongKeGUI extends JPanel {
         addControls();
         addEvents();
     }
-
+    ThongKeBUS thongKeBUS = new ThongKeBUS();
     final Color colorPanel = new Color(56, 56, 56);
     JLabel lblThongKeThucDon, lblThongKeKhachHang, lblThongKeNhanVien, lblThongKeDoanhThu;
     JLabel lblDoanhThuQuy1, lblDoanhThuQuy2, lblDoanhThuQuy3, lblDoanhThuQuy4, lblTongDoanhThu;
     JButton btnReset;
 
     private void addControls() {
+        ThongKe thongKe = thongKeBUS.thongKe(Calendar.getInstance().get(Calendar.YEAR));
         this.setLayout(new BorderLayout());
         this.setBackground(colorPanel);
         int w = 1030;
@@ -71,6 +76,11 @@ public class QuanLyThongKeGUI extends JPanel {
         lblThongKeKhachHang.setBounds(563, 100, 232, 87);
         lblThongKeNhanVien.setBounds(98, 350, 232, 87);
         lblThongKeDoanhThu.setBounds(563, 350, 369, 87);
+        
+        lblThongKeThucDon.setText(Integer.toString(thongKe.getSoLuongSP()));
+        lblThongKeKhachHang.setText(Integer.toString(thongKe.getSoLuongKH()));
+        lblThongKeNhanVien.setText(Integer.toString(thongKe.getSoLuongNV()));
+        lblThongKeDoanhThu.setText(Integer.toString(thongKe.getTongDoanhThu()));        
 
         pnThongKeTong.add(lblTile);
         pnThongKeTong.add(btnReset);
@@ -110,6 +120,12 @@ public class QuanLyThongKeGUI extends JPanel {
         lblDoanhThuQuy3.setBounds(x += 167, y, 167, 63);
         lblDoanhThuQuy4.setBounds(x += 167, y, 167, 63);
         lblTongDoanhThu.setBounds(265, 725, 667, 63);
+        
+        lblDoanhThuQuy1.setText(Integer.toString(thongKe.getTongThuQuy(1)));
+        lblDoanhThuQuy2.setText(Integer.toString(thongKe.getTongThuQuy(2)));
+        lblDoanhThuQuy3.setText(Integer.toString(thongKe.getTongThuQuy(3)));
+        lblDoanhThuQuy4.setText(Integer.toString(thongKe.getTongThuQuy(4)));
+        lblTongDoanhThu.setText(Integer.toString(thongKe.getTongDoanhThu()));
 
         pnThongKeTong.add(lblTongDoanhThu);
         pnThongKeTong.add(lblDoanhThuQuy1);
@@ -127,7 +143,7 @@ public class QuanLyThongKeGUI extends JPanel {
     }
 
     private void addEvents() {
-        btnReset.addAtionListener(
+        //btnReset.addAtionListener(
     }
 
     private void hienThiThongKe() {
