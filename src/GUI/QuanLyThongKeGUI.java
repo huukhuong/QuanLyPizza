@@ -10,6 +10,9 @@ import java.awt.*;
 
 import static Main.Main.changLNF;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class QuanLyThongKeGUI extends JPanel {
@@ -19,6 +22,7 @@ public class QuanLyThongKeGUI extends JPanel {
         addControls();
         addEvents();
     }
+
     ThongKeBUS thongKeBUS = new ThongKeBUS();
     final Color colorPanel = new Color(56, 56, 56);
     JLabel lblThongKeThucDon, lblThongKeKhachHang, lblThongKeNhanVien, lblThongKeDoanhThu;
@@ -26,7 +30,6 @@ public class QuanLyThongKeGUI extends JPanel {
     JButton btnReset;
 
     private void addControls() {
-        ThongKe thongKe = thongKeBUS.thongKe(Calendar.getInstance().get(Calendar.YEAR));
         this.setLayout(new BorderLayout());
         this.setBackground(colorPanel);
         int w = 1030;
@@ -42,14 +45,14 @@ public class QuanLyThongKeGUI extends JPanel {
 
         lblTile = new JLabel("THỐNG KÊ TỔNG QUÁT", JLabel.CENTER);
         lblTile.setFont(new Font("Tahoma", Font.BOLD, 28));
-        btnReset = new JButton("Reset");
+        btnReset = new JButton(new ImageIcon("image/Refresh-icon.png"));
         lblBackgroundThucDon = new JLabel(new ImageIcon("image/ManagerUI/thongKeMon.png"));
         lblBackgroundKhachHang = new JLabel(new ImageIcon("image/ManagerUI/thongKeKhachHang.png"));
         lblBackgroundNhanVien = new JLabel(new ImageIcon("image/ManagerUI/thongKeNhanVien.png"));
         lblBackgroundDoanhThu = new JLabel(new ImageIcon("image/ManagerUI/thongKeDoanhThu.png"));
 
         lblTile.setBounds(0, 15, w, 50);
-        btnReset.setBounds(492, 295, 40 ,40);
+        btnReset.setBounds(492, 295, 40, 40);
         lblBackgroundThucDon.setBounds(98, 85, 369, 201);
         lblBackgroundKhachHang.setBounds(563, 85, 369, 201);
         lblBackgroundNhanVien.setBounds(98, 340, 369, 201);
@@ -76,11 +79,6 @@ public class QuanLyThongKeGUI extends JPanel {
         lblThongKeKhachHang.setBounds(563, 100, 232, 87);
         lblThongKeNhanVien.setBounds(98, 350, 232, 87);
         lblThongKeDoanhThu.setBounds(563, 350, 369, 87);
-        
-        lblThongKeThucDon.setText(Integer.toString(thongKe.getSoLuongSP()));
-        lblThongKeKhachHang.setText(Integer.toString(thongKe.getSoLuongKH()));
-        lblThongKeNhanVien.setText(Integer.toString(thongKe.getSoLuongNV()));
-        lblThongKeDoanhThu.setText(Integer.toString(thongKe.getTongDoanhThu()));        
 
         pnThongKeTong.add(lblTile);
         pnThongKeTong.add(btnReset);
@@ -120,12 +118,6 @@ public class QuanLyThongKeGUI extends JPanel {
         lblDoanhThuQuy3.setBounds(x += 167, y, 167, 63);
         lblDoanhThuQuy4.setBounds(x += 167, y, 167, 63);
         lblTongDoanhThu.setBounds(265, 725, 667, 63);
-        
-        lblDoanhThuQuy1.setText(Integer.toString(thongKe.getTongThuQuy(1)));
-        lblDoanhThuQuy2.setText(Integer.toString(thongKe.getTongThuQuy(2)));
-        lblDoanhThuQuy3.setText(Integer.toString(thongKe.getTongThuQuy(3)));
-        lblDoanhThuQuy4.setText(Integer.toString(thongKe.getTongThuQuy(4)));
-        lblTongDoanhThu.setText(Integer.toString(thongKe.getTongDoanhThu()));
 
         pnThongKeTong.add(lblTongDoanhThu);
         pnThongKeTong.add(lblDoanhThuQuy1);
@@ -140,14 +132,30 @@ public class QuanLyThongKeGUI extends JPanel {
         pnMain.add(pnThongKeTong);
 
         this.add(pnMain, BorderLayout.CENTER);
+        hienThiThongKe();
     }
 
     private void addEvents() {
-        //btnReset.addAtionListener(
+        btnReset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                hienThiThongKe();
+            }
+        });
     }
 
     private void hienThiThongKe() {
-    
+        ThongKe thongKe = thongKeBUS.thongKe(Calendar.getInstance().get(Calendar.YEAR));
+        DecimalFormat dcf = new DecimalFormat("###,###");
+        lblThongKeThucDon.setText(dcf.format(thongKe.getSoLuongSP()));
+        lblThongKeKhachHang.setText(dcf.format(thongKe.getSoLuongKH()));
+        lblThongKeNhanVien.setText(dcf.format(thongKe.getSoLuongNV()));
+        lblThongKeDoanhThu.setText(dcf.format(thongKe.getTongDoanhThu()));
+        lblDoanhThuQuy1.setText(dcf.format(thongKe.getTongThuQuy(1)));
+        lblDoanhThuQuy2.setText(dcf.format(thongKe.getTongThuQuy(2)));
+        lblDoanhThuQuy3.setText(dcf.format(thongKe.getTongThuQuy(3)));
+        lblDoanhThuQuy4.setText(dcf.format(thongKe.getTongThuQuy(4)));
+        lblTongDoanhThu.setText(dcf.format(thongKe.getTongDoanhThu()));
     }
 
 }

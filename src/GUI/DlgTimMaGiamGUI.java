@@ -198,12 +198,7 @@ public class DlgTimMaGiamGUI extends JDialog {
 
     private void loadDataLenTable(String tuKhoa) {
         TableColumnModel columnModelBanHang = tblMaGiam.getColumnModel();
-        System.out.println(columnModelBanHang.getColumn(0).getPreferredWidth());
-        System.out.println(columnModelBanHang.getColumn(1).getPreferredWidth());
-        System.out.println(columnModelBanHang.getColumn(2).getPreferredWidth());
-        System.out.println(columnModelBanHang.getColumn(3).getPreferredWidth());
-        System.out.println(columnModelBanHang.getColumn(4).getPreferredWidth());
-        System.out.println(columnModelBanHang.getColumn(5).getPreferredWidth());
+
     }
 
 }

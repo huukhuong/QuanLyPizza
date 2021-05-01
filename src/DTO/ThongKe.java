@@ -64,7 +64,6 @@ public class ThongKe {
         int tong=0;
         for(int i=0;i<4;i++) {
             tong+=tongThuQuy[i];
-            System.out.println(tongThuQuy[i]);
         }
         System.out.println(tong);
         return tong;

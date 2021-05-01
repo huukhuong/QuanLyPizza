@@ -45,7 +45,6 @@ public class ThongKeDAO {
     }
     
     private String[] getDateString(int nam, int quy) {
-        System.out.println("quy"+quy);
         int namBatDau = nam;
         int namKetThuc = nam;
         String thangBatDau = "01"; //kiểu String do có số 0 ở phía trước
@@ -73,8 +72,6 @@ public class ThongKeDAO {
         String strKetThuc = Integer.toString(namKetThuc) + thangKetThuc + "01";
         kq[0] = strBatDau;
         kq[1] = strKetThuc;
-        System.out.println(kq[0]);
-        System.out.println(kq[1]);
         return kq;
     }
     
