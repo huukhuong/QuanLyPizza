@@ -18,6 +18,8 @@
       <root url="jar://$PROJECT_DIR$/src/libs/poi-integration-5.0.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/libs/commons-compress-1.20.jar!/" />
       <root url="jar://$PROJECT_DIR$/src/libs/SparseBitSet-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/jfreechart.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

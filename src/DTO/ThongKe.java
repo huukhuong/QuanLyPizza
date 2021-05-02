@@ -5,8 +5,9 @@
  */
 package DTO;
 
+import java.util.ArrayList;
+
 /**
- *
  * @author User
  */
 public class ThongKe {
@@ -14,14 +15,17 @@ public class ThongKe {
     public int soLuongKH;
     public int soLuongNV;
     public int[] tongThuQuy;
+    public ArrayList<SanPham> topSanPhamBanChay;
+
     public ThongKe() {
     }
 
-    public ThongKe(int soLuongSP, int soLuongKH, int soLuongNV, int[] tongThuQuy) {
+    public ThongKe(int soLuongSP, int soLuongKH, int soLuongNV, int[] tongThuQuy, ArrayList<SanPham> topSanPhamBanChay) {
         this.soLuongSP = soLuongSP;
         this.soLuongKH = soLuongKH;
         this.soLuongNV = soLuongNV;
         this.tongThuQuy = tongThuQuy;
+        this.topSanPhamBanChay = topSanPhamBanChay;
     }
 
     public int getSoLuongSP() {
@@ -51,21 +55,28 @@ public class ThongKe {
     public int[] getTongThuQuy() {
         return tongThuQuy;
     }
-    
+
     public int getTongThuQuy(int quy) {
-        return tongThuQuy[quy-1];
+        return tongThuQuy[quy - 1];
     }
 
     public void setTongThuQuy(int[] tongThuQuy) {
         this.tongThuQuy = tongThuQuy;
     }
-    
+
     public int getTongDoanhThu() {
-        int tong=0;
-        for(int i=0;i<4;i++) {
-            tong+=tongThuQuy[i];
+        int tong = 0;
+        for (int i = 0; i < 4; i++) {
+            tong += tongThuQuy[i];
         }
-        System.out.println(tong);
         return tong;
+    }
+
+    public ArrayList<SanPham> getTopSanPhamBanChay() {
+        return topSanPhamBanChay;
+    }
+
+    public void setTopSanPhamBanChay(ArrayList<SanPham> topSanPhamBanChay) {
+        this.topSanPhamBanChay = topSanPhamBanChay;
     }
 }

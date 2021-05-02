@@ -224,4 +224,12 @@ public class SanPhamBUS {
         }
         return false;
     }
+
+    public String getTenSP(int maSP) {
+        for (SanPham sp : listSanPham) {
+            if (sp.getMaSP() == maSP)
+                return sp.getTenSP();
+        }
+        return "";
+    }
 }
