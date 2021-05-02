@@ -24,6 +24,7 @@ public class XuatHoaDonGUI extends JDialog {
     private DlgTimMaGiamGUI timMaUI = new DlgTimMaGiamGUI();
 
     public XuatHoaDonGUI() {
+        checkBanHang = false;
         initComponents();
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);

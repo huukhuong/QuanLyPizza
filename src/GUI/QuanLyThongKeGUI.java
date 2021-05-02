@@ -158,7 +158,7 @@ public class QuanLyThongKeGUI extends JPanel {
         //              THỐNG KÊ CHI TIẾT
         // ==============================================
         JPanel pnThongKeChiTiet = new TransparentPanel(null);
-        pnThongKeChiTiet.setBackground(colorPanel);
+//        pnThongKeChiTiet.setBackground(colorPanel);
 
         btnBack = new JButton(new ImageIcon("image/icons8_undo_40px.png"));
         btnBack.setToolTipText("Quay lại");
@@ -195,16 +195,16 @@ public class QuanLyThongKeGUI extends JPanel {
         lblSoLuong4.setBounds(x, y += 50, 128, 50);
         lblSoLuong5.setBounds(x, y += 50, 128, 50);
 
-        lblMon1.setForeground(Color.WHITE);
-        lblMon2.setForeground(Color.WHITE);
-        lblMon3.setForeground(Color.WHITE);
-        lblMon4.setForeground(Color.WHITE);
-        lblMon5.setForeground(Color.WHITE);
-        lblSoLuong1.setForeground(Color.WHITE);
-        lblSoLuong2.setForeground(Color.WHITE);
-        lblSoLuong3.setForeground(Color.WHITE);
-        lblSoLuong4.setForeground(Color.WHITE);
-        lblSoLuong5.setForeground(Color.WHITE);
+        lblMon1.setForeground(Color.BLACK);
+        lblMon2.setForeground(Color.BLACK);
+        lblMon3.setForeground(Color.BLACK);
+        lblMon4.setForeground(Color.BLACK);
+        lblMon5.setForeground(Color.BLACK);
+        lblSoLuong1.setForeground(Color.BLACK);
+        lblSoLuong2.setForeground(Color.BLACK);
+        lblSoLuong3.setForeground(Color.BLACK);
+        lblSoLuong4.setForeground(Color.BLACK);
+        lblSoLuong5.setForeground(Color.BLACK);
 
         Font fontChiTiet = new Font("Tahoma", Font.BOLD, 18);
         lblMon1.setFont(fontChiTiet);
