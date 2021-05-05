@@ -29,6 +29,8 @@ public class XuatPhieuNhapGUI extends javax.swing.JDialog {
         this.listCTPhieuNhap = listCTPhieuNhap;
 
         initComponents();
+        
+        txtChiTiet.setEditable(false);
 
         for (CTPhieuNhap ctpn : this.listCTPhieuNhap) {
             this.tongTien += ctpn.getThanhTien();
@@ -169,14 +171,7 @@ public class XuatPhieuNhapGUI extends javax.swing.JDialog {
             ctpn.setMaPN(maPN);
             ctPhieuNhapBUS.luuCTPhieuNhap(ctpn);
         }
-        hd += "<tr>";
-        hd += "<td style='text-align:center;'>" + "</td>";
-        hd += "<td style='text-align:left;'>" + "</td>";
-        hd += "<td style='text-align:center;'>" + "</td>";
-        hd += "<td style='text-align:center;font-weight:bold'>Tổng cộng</td>";
-        hd += "<td style='text-align:center;'>" + dcf.format(tongTien) + "</td>";
-        hd += "</tr>";
-
+        
         hd += "<tr>";
         hd += "<td style='text-align:center;'>" + "</td>";
         hd += "<td style='text-align:left;'>" + "</td>";
