@@ -1,4 +1,4 @@
-package QuanLyPizza.MyCustom;
+package MyCustom;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileView;

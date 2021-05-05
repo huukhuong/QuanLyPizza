@@ -2,7 +2,7 @@ package QuanLyPizza.BUS;
 
 import QuanLyPizza.DAO.TaiKhoanDAO;
 import QuanLyPizza.DTO.TaiKhoan;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 
 public class TaiKhoanBUS {
 

@@ -1,4 +1,4 @@
-package QuanLyPizza.MyCustom;
+package MyCustom;
 
 import java.awt.Color;
 import java.awt.Dimension;

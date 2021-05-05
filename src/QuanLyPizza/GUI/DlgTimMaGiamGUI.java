@@ -2,8 +2,8 @@ package QuanLyPizza.GUI;
 
 import QuanLyPizza.BUS.GiamGiaBUS;
 import QuanLyPizza.DTO.GiamGia;
-import QuanLyPizza.MyCustom.MyDialog;
-import QuanLyPizza.MyCustom.MyTable;
+import MyCustom.MyDialog;
+import MyCustom.MyTable;
 
 import java.awt.BorderLayout;
 import java.awt.Container;

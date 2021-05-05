@@ -14,9 +14,9 @@ import QuanLyPizza.BUS.SanPhamBUS;
 
 import static Main.Main.changLNF;
 
-import QuanLyPizza.MyCustom.MyDialog;
-import QuanLyPizza.MyCustom.MyTable;
-import QuanLyPizza.MyCustom.TransparentPanel;
+import MyCustom.MyDialog;
+import MyCustom.MyTable;
+import MyCustom.TransparentPanel;
 
 import java.awt.*;
 import java.awt.event.*;

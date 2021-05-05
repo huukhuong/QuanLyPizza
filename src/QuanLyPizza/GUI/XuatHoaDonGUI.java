@@ -2,7 +2,7 @@ package QuanLyPizza.GUI;
 
 import QuanLyPizza.BUS.CTHoaDonBUS;
 import QuanLyPizza.BUS.HoaDonBUS;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 
 import java.awt.Image;
 import java.awt.Toolkit;

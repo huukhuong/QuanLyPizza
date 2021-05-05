@@ -2,7 +2,7 @@ package QuanLyPizza.BUS;
 
 import QuanLyPizza.DAO.LoaiDAO;
 import QuanLyPizza.DTO.LoaiSP;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 import java.util.ArrayList;
 
 public class LoaiBUS {

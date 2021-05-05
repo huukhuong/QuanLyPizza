@@ -3,7 +3,7 @@ package QuanLyPizza.GUI;
 import QuanLyPizza.BUS.KhachHangBUS;
 import QuanLyPizza.DAO.MyConnect;
 import QuanLyPizza.DTO.KhachHang;
-import QuanLyPizza.MyCustom.MyTable;
+import MyCustom.MyTable;
 
 import java.awt.BorderLayout;
 import java.awt.Container;

@@ -2,7 +2,7 @@ package QuanLyPizza.BUS;
 
 import QuanLyPizza.DAO.GiamGiaDAO;
 import QuanLyPizza.DTO.GiamGia;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 
 import java.util.ArrayList;
 import java.util.Date;

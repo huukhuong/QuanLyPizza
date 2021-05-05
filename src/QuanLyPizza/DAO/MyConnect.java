@@ -1,6 +1,6 @@
 package QuanLyPizza.DAO;
 
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 import com.mysql.jdbc.Driver;
 
 import java.io.BufferedReader;

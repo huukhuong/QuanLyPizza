@@ -3,8 +3,8 @@ package QuanLyPizza.GUI;
 import QuanLyPizza.BUS.GiamGiaBUS;
 import QuanLyPizza.DTO.GiamGia;
 import Main.Main;
-import QuanLyPizza.MyCustom.MyTable;
-import QuanLyPizza.MyCustom.TransparentPanel;
+import MyCustom.MyTable;
+import MyCustom.TransparentPanel;
 import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;

@@ -3,7 +3,7 @@ package QuanLyPizza.BUS;
 import QuanLyPizza.DAO.DangNhapDAO;
 import QuanLyPizza.DTO.PhanQuyen;
 import QuanLyPizza.DTO.TaiKhoan;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 
 import java.io.*;
 

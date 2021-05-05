@@ -5,7 +5,7 @@ import QuanLyPizza.BUS.PhieuNhapBUS;
 import QuanLyPizza.BUS.SanPhamBUS;
 import QuanLyPizza.DTO.CTPhieuNhap;
 import QuanLyPizza.DTO.SanPham;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

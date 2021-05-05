@@ -2,9 +2,9 @@ package QuanLyPizza.GUI;
 
 import QuanLyPizza.BUS.KhachHangBUS;
 import QuanLyPizza.DTO.KhachHang;
-import QuanLyPizza.MyCustom.MyDialog;
-import QuanLyPizza.MyCustom.MyTable;
-import QuanLyPizza.MyCustom.TransparentPanel;
+import MyCustom.MyDialog;
+import MyCustom.MyTable;
+import MyCustom.TransparentPanel;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

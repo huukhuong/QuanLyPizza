@@ -2,8 +2,8 @@ package QuanLyPizza.GUI;
 
 import QuanLyPizza.BUS.NhaCungCapBUS;
 import QuanLyPizza.DTO.NhaCungCap;
-import QuanLyPizza.MyCustom.MyDialog;
-import QuanLyPizza.MyCustom.MyTable;
+import MyCustom.MyDialog;
+import MyCustom.MyTable;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;

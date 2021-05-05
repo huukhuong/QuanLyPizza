@@ -2,7 +2,7 @@ package QuanLyPizza.BUS;
 
 import QuanLyPizza.DAO.KhachHangDAO;
 import QuanLyPizza.DTO.KhachHang;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 
 import java.util.ArrayList;
 import java.util.Locale;

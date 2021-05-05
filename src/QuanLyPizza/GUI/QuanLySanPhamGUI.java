@@ -7,10 +7,10 @@ import QuanLyPizza.DTO.SanPham;
 
 import static Main.Main.changLNF;
 
-import QuanLyPizza.MyCustom.XuLyFileExcel;
-import QuanLyPizza.MyCustom.MyDialog;
-import QuanLyPizza.MyCustom.MyTable;
-import QuanLyPizza.MyCustom.TransparentPanel;
+import MyCustom.XuLyFileExcel;
+import MyCustom.MyDialog;
+import MyCustom.MyTable;
+import MyCustom.TransparentPanel;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

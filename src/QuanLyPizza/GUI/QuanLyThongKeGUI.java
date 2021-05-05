@@ -2,7 +2,7 @@ package QuanLyPizza.GUI;
 
 import QuanLyPizza.BUS.ThongKeBUS;
 import QuanLyPizza.DTO.ThongKe;
-import QuanLyPizza.MyCustom.TransparentPanel;
+import MyCustom.TransparentPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;

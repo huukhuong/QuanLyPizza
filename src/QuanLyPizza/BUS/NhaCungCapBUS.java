@@ -2,7 +2,7 @@ package QuanLyPizza.BUS;
 
 import QuanLyPizza.DAO.NhaCungCapDAO;
 import QuanLyPizza.DTO.NhaCungCap;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

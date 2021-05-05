@@ -1,10 +1,10 @@
 package QuanLyPizza.GUI;
 
-import QuanLyPizza.MyCustom.XuLyFileExcel;
-import QuanLyPizza.MyCustom.MyDialog;
-import QuanLyPizza.MyCustom.TransparentPanel;
-import QuanLyPizza.MyCustom.MyTable;
-import QuanLyPizza.MyCustom.ImagePanel;
+import MyCustom.XuLyFileExcel;
+import MyCustom.MyDialog;
+import MyCustom.TransparentPanel;
+import MyCustom.MyTable;
+import MyCustom.ImagePanel;
 import static Main.Main.changLNF;
 
 import QuanLyPizza.BUS.NhanVienBUS;

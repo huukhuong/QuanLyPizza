@@ -1,7 +1,7 @@
 package QuanLyPizza.DAO;
 
 import QuanLyPizza.DTO.NhanVien;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

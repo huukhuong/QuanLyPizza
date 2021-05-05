@@ -2,7 +2,7 @@ package QuanLyPizza.BUS;
 
 import QuanLyPizza.DAO.HoaDonDAO;
 import QuanLyPizza.DTO.HoaDon;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

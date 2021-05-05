@@ -1,8 +1,8 @@
 package QuanLyPizza.GUI;
 
 import Main.Main;
-import QuanLyPizza.MyCustom.ImagePanel;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.ImagePanel;
+import MyCustom.MyDialog;
 import QuanLyPizza.BUS.DangNhapBUS;
 import QuanLyPizza.DTO.TaiKhoan;
 

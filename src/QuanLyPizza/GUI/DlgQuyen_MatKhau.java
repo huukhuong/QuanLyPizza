@@ -3,7 +3,7 @@ package QuanLyPizza.GUI;
 import QuanLyPizza.BUS.PhanQuyenBUS;
 import QuanLyPizza.BUS.TaiKhoanBUS;
 import QuanLyPizza.DTO.PhanQuyen;
-import QuanLyPizza.MyCustom.MyDialog;
+import MyCustom.MyDialog;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
