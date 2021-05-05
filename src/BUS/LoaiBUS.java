@@ -8,14 +8,20 @@ import java.util.ArrayList;
 public class LoaiBUS {
 
     private LoaiDAO loaiDAO = new LoaiDAO();
-    private ArrayList<LoaiSP> listLoai = new ArrayList<>();
+    private ArrayList<LoaiSP> listLoai = null;
+    
+    public LoaiBUS() {
+        docDanhSachLoai();
+    }
 
     public void docDanhSachLoai() {
         this.listLoai = loaiDAO.getDanhSachLoai();
     }
 
     public ArrayList<LoaiSP> getDanhSachLoai() {
-        docDanhSachLoai();
+        if (listLoai == null) {
+            docDanhSachLoai();
+        }
         return this.listLoai;
     }
 
@@ -45,7 +51,7 @@ public class LoaiBUS {
     }
 
     public boolean xoaLoai(String ma) {
-        if(ma.trim().equals("")) {
+        if (ma.trim().equals("")) {
             new MyDialog("Chưa chọn loại để xoá!", MyDialog.SUCCESS_DIALOG);
             return false;
         }

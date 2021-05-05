@@ -111,7 +111,7 @@ public class XuLyFileExcel {
 
                 DefaultTableModel dtmtbl = (DefaultTableModel) dtm;
                 dtmtbl.setRowCount(0);
-                for (int i = 1; i < sheet.getLastRowNum(); i++) {
+                for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                     Row row = sheet.getRow(i);
                     Vector vec = new Vector();
                     for (int j = 0; j < row.getLastCellNum(); j++) {

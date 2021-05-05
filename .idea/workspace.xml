@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="cập nhật biểu đồ thống kê">
+    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="xoá class thừa">
+      <change afterPath="$PROJECT_DIR$/dist/lib/AbsoluteLayout.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/jcalendar-1.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/jcommon-1.0.23.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/jfreechart.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/check-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BUS/NhaCungCapBUS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/NhaCungCapDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/DlgChonNhaCungCap.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/DlgChonNhaCungCap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/DlgSuaNhaCungCap.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/DlgSuaNhaCungCap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/DlgThemNhaCungCap.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/DlgThemNhaCungCap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/QuanLyNhapHangGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/XuatPhieuNhapGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/XuatPhieuNhapGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/ManagerUI/bangChiTiet.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/ManagerUI/bangChiTiet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/DoAn_QuanLyBanPizza.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/DoAn_QuanLyBanPizza.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/README.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/dist/README.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/jasperreports-6.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/jasperreports-fonts-6.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/jasperreports-javaflow-6.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LoginUI/btn-login--hover.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LoginUI/btn-login--hover.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LoginUI/btn-login.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LoginUI/btn-login.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/LoaiBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/LoaiBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/SanPhamBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/SanPhamBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/LoadingGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/LoadingGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyBanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyBanHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyNhapHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyNhapHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/QuanLySanPhamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLySanPhamGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/QuanLyThongKeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/QuanLyThongKeGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/XuatHoaDonGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/XuLyFileExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/XuLyFileExcel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619930902229</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="xoá class thừa">
+      <created>1619956667056</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619956667056</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,6 +275,7 @@
     <MESSAGE value="Xong front-end thống kê" />
     <MESSAGE value="fix GUI thống kê" />
     <MESSAGE value="cập nhật biểu đồ thống kê" />
-    <option name="LAST_COMMIT_MESSAGE" value="cập nhật biểu đồ thống kê" />
+    <MESSAGE value="xoá class thừa" />
+    <option name="LAST_COMMIT_MESSAGE" value="xoá class thừa" />
   </component>
 </project>

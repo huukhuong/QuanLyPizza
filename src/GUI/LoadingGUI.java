@@ -26,13 +26,13 @@ public class LoadingGUI extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
 
+        quanLyGUI = new MainQuanLyGUI();
         timer = new Timer(1, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (time >= 0) {
                     time--;
                     if (time == 60) {
-                        quanLyGUI = new MainQuanLyGUI();
                     }
                 } else {
                     quanLyGUI.showWindow();

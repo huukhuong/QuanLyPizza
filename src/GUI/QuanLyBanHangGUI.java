@@ -1,7 +1,6 @@
 package GUI;
 
 import BUS.*;
-import DAO.CTHoaDonDAO;
 import DTO.*;
 
 import static Main.Main.changLNF;
@@ -9,7 +8,6 @@ import static Main.Main.changLNF;
 import MyCustom.MyDialog;
 import MyCustom.MyTable;
 import MyCustom.TransparentPanel;
-import com.microsoft.schemas.vml.CTH;
 
 import java.awt.*;
 import java.awt.event.*;

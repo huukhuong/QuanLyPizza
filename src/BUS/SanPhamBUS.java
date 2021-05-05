@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class SanPhamBUS {
 
-    private ArrayList<SanPham> listSanPham;
+    private ArrayList<SanPham> listSanPham = null;
     private SanPhamDAO spDAO = new SanPhamDAO();
 
     public SanPhamBUS() {
@@ -20,7 +20,9 @@ public class SanPhamBUS {
     }
 
     public ArrayList<SanPham> getListSanPham() {
-        docListSanPham();
+        if (listSanPham == null) {
+            docListSanPham();
+        }
         return listSanPham;
     }
 
@@ -77,11 +79,11 @@ public class SanPhamBUS {
     }
 
     public boolean themSanPham(String ten,
-                               String loai,
-                               String soLuong,
-                               String donViTinh,
-                               String anh,
-                               String donGia) {
+            String loai,
+            String soLuong,
+            String donViTinh,
+            String anh,
+            String donGia) {
 
         if (ten.trim().equals("")) {
             new MyDialog("Tên SP không được để rỗng!", MyDialog.ERROR_DIALOG);
@@ -125,11 +127,11 @@ public class SanPhamBUS {
     }
 
     public boolean nhapSanPhamTuExcel(String ten,
-                                      String loai,
-                                      String soLuong,
-                                      String donViTinh,
-                                      String anh,
-                                      String donGia) {
+            String loai,
+            String soLuong,
+            String donViTinh,
+            String anh,
+            String donGia) {
 
         try {
             String[] loaiTmp = loai.split(" - ");
@@ -169,12 +171,12 @@ public class SanPhamBUS {
     }
 
     public boolean suaSanPham(String ma,
-                              String ten,
-                              String loai,
-                              String soLuong,
-                              String donViTinh,
-                              String anh,
-                              String donGia) {
+            String ten,
+            String loai,
+            String soLuong,
+            String donViTinh,
+            String anh,
+            String donGia) {
 
         try {
             if (ma.trim().equals("")) {
@@ -227,8 +229,9 @@ public class SanPhamBUS {
 
     public String getTenSP(int maSP) {
         for (SanPham sp : listSanPham) {
-            if (sp.getMaSP() == maSP)
+            if (sp.getMaSP() == maSP) {
                 return sp.getTenSP();
+            }
         }
         return "";
     }

@@ -39,6 +39,7 @@ public class QuanLyThongKeGUI extends JPanel {
     JPanel pnMain;
     JLabel lblMon1, lblMon2, lblMon3, lblMon4, lblMon5, lblSoLuong1, lblSoLuong2, lblSoLuong3, lblSoLuong4, lblSoLuong5;
     private ChartPanel chartPanel;
+    JPanel pnThongKeChiTiet, pnChart;
 
     private void addControls() {
         this.setLayout(new BorderLayout());
@@ -157,8 +158,7 @@ public class QuanLyThongKeGUI extends JPanel {
         // ==============================================
         //              THỐNG KÊ CHI TIẾT
         // ==============================================
-        JPanel pnThongKeChiTiet = new TransparentPanel(null);
-//        pnThongKeChiTiet.setBackground(colorPanel);
+        pnThongKeChiTiet = new TransparentPanel(null);
 
         btnBack = new JButton(new ImageIcon("image/icons8_undo_40px.png"));
         btnBack.setToolTipText("Quay lại");
@@ -230,7 +230,7 @@ public class QuanLyThongKeGUI extends JPanel {
         pnThongKeChiTiet.add(lblSoLuong5);
 
         //========BIỂU ĐỒ CỘT=============
-        JPanel pnChart = new TransparentPanel();
+        pnChart = new TransparentPanel();
         pnChart.setBounds(0, 398, 1030, 441);
 
         chartPanel = new ChartPanel(createChart());
@@ -245,28 +245,12 @@ public class QuanLyThongKeGUI extends JPanel {
         hienThiThongKe();
     }
 
-    private JFreeChart createChart() {
-        JFreeChart barChart = ChartFactory.createBarChart(
-                "Doanh thu năm",
-                "Tháng", "Doanh thu",
-                createDataset(), PlotOrientation.VERTICAL, false, false, false);
-        return barChart;
-    }
-
-    private CategoryDataset createDataset() {
-        final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for (int i = 1; i <= 12; i++) {
-            double value = thongKeBUS.getDoanhThuThang(i, Calendar.getInstance().get(Calendar.YEAR));
-            dataset.addValue(value, "Doanh thu", i + "");
-        }
-        return dataset;
-    }
-
     private void addEvents() {
         btnView.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 hienThiThongKe();
+                veLaiChart();
                 cardLayoutThongKe.show(pnMain, "2");
             }
         });
@@ -283,6 +267,32 @@ public class QuanLyThongKeGUI extends JPanel {
                 hienThiThongKe();
             }
         });
+    }
+
+    private void veLaiChart() {
+        pnChart.removeAll();
+
+        chartPanel = new ChartPanel(createChart());
+        chartPanel.setPreferredSize(new Dimension(1030, 441));
+
+        pnChart.add(chartPanel);
+    }
+
+    private JFreeChart createChart() {
+        JFreeChart barChart = ChartFactory.createBarChart(
+                "Doanh thu năm" + Calendar.getInstance().get(Calendar.YEAR),
+                "Tháng", "Doanh thu",
+                createDataset(), PlotOrientation.VERTICAL, false, false, false);
+        return barChart;
+    }
+
+    private CategoryDataset createDataset() {
+        final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        for (int i = 1; i <= 12; i++) {
+            double value = thongKeBUS.getDoanhThuThang(i, Calendar.getInstance().get(Calendar.YEAR));
+            dataset.addValue(value, "Doanh thu", i + "");
+        }
+        return dataset;
     }
 
     private DecimalFormat dcf = new DecimalFormat("###,###");
