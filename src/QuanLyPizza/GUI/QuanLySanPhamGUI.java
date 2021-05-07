@@ -394,34 +394,6 @@ public class QuanLySanPhamGUI extends JPanel {
         lblAnhSP.setIcon(getAnhSP(anh));
     }
 
-    File fileAnhSP;
-
-    private ImageIcon getAnhSP(String src) {
-        src = src.trim().equals("") ? "default.png" : src;
-        //Xử lý ảnh
-        BufferedImage img = null;
-        File fileImg = new File("image/SanPham/" + src);
-
-        if (!fileImg.exists()) {
-            src = "default.png";
-            fileImg = new File("image/SanPham/" + src);
-        }
-
-        try {
-            img = ImageIO.read(fileImg);
-            fileAnhSP = new File("image/SanPham/" + src);
-        } catch (IOException e) {
-            fileAnhSP = new File("image/SanPham/default.png");
-        }
-
-        if (img != null) {
-            Image dimg = img.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
-
-            return new ImageIcon(dimg);
-        }
-        return null;
-    }
-
     private void xuLyClickTblSanPham() {
         int row = tblSanPham.getSelectedRow();
         if (row > -1) {
@@ -447,13 +419,11 @@ public class QuanLySanPhamGUI extends JPanel {
                 }
             }
             cmbLoai.setSelectedIndex(flag);
-            loadAnh(anh);
+            loadAnh("image/SanPham/" + anh);
         }
     }
 
     private void loadDataLenBangSanPham() {
-        changLNF("Windows");
-        spBUS.docListSanPham();
         dtmSanPham.setRowCount(0);
 
         ArrayList<SanPham> dssp = spBUS.getListSanPham();
@@ -496,18 +466,19 @@ public class QuanLySanPhamGUI extends JPanel {
 
     private void xuLyThemSanPham() {
         String anh = fileAnhSP.getName();
-        String tenFile = fileAnhSP.getPath();
-        System.out.println(tenFile);
+        System.out.println(fileAnhSP.getName());
         boolean flag = spBUS.themSanPham(txtTen.getText(),
                 cmbLoai.getSelectedItem() + "",
                 txtsoLuong.getText(),
                 txtdonViTinh.getText(),
                 anh,
                 txtdonGia.getText());
-        if (flag) {
-            loadDataLenBangSanPham();
-        }
+        spBUS.docListSanPham();
+        loadDataLenBangSanPham();
+        luuFileAnh();
     }
+
+    File fileAnhSP;
 
     private void xuLySuaSanPham() {
         String anh = fileAnhSP.getName();
@@ -518,9 +489,9 @@ public class QuanLySanPhamGUI extends JPanel {
                 txtdonViTinh.getText(),
                 anh,
                 txtdonGia.getText());
-        if (flag) {
-            loadDataLenBangSanPham();
-        }
+        spBUS.docListSanPham();
+        loadDataLenBangSanPham();
+        luuFileAnh();
     }
 
     private void xuLyXoaSanPham() {
@@ -533,6 +504,19 @@ public class QuanLySanPhamGUI extends JPanel {
         }
     }
 
+    private void luuFileAnh() {
+        BufferedImage bImage = null;
+        try {
+            File initialImage = new File(fileAnhSP.getPath());
+            bImage = ImageIO.read(initialImage);
+
+            ImageIO.write(bImage, "png", new File("image/SanPham/" + fileAnhSP.getName()));
+
+        } catch (IOException e) {
+            System.out.println("Exception occured :" + e.getMessage());
+        }
+    }
+
     private void xuLyChonAnh() {
         JFileChooser fileChooser = new JFileChooser("image/SanPham/");
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -541,9 +525,35 @@ public class QuanLySanPhamGUI extends JPanel {
         int returnVal = fileChooser.showOpenDialog(null);
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            String name = fileChooser.getSelectedFile().getName();
-            lblAnhSP.setIcon(getAnhSP(name));
+            fileAnhSP = fileChooser.getSelectedFile();
+            lblAnhSP.setIcon(getAnhSP(fileAnhSP.getPath()));
         }
+    }
+
+    private ImageIcon getAnhSP(String src) {
+        src = src.trim().equals("") ? "default.png" : src;
+        //Xử lý ảnh
+        BufferedImage img = null;
+        File fileImg = new File(src);
+
+        if (!fileImg.exists()) {
+            src = "default.png";
+            fileImg = new File("image/SanPham/" + src);
+        }
+
+        try {
+            img = ImageIO.read(fileImg);
+            fileAnhSP = new File(src);
+        } catch (IOException e) {
+            fileAnhSP = new File("imgs/anhthe/avatar.jpg");
+        }
+
+        if (img != null) {
+            Image dimg = img.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+            return new ImageIcon(dimg);
+        }
+
+        return null;
     }
 
     private void xuLyTimKiem() {
