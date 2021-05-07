@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
-public class QuanLyLoaiGUI extends javax.swing.JDialog {
+public class DlgQuanLyLoai extends javax.swing.JDialog {
 
     DefaultTableModel dtmLoai;
 
-    public QuanLyLoaiGUI() {
+    public DlgQuanLyLoai() {
         initComponents();
         dtmLoai = new DefaultTableModel();
         dtmLoai.addColumn("Mã loại");
@@ -45,7 +45,7 @@ public class QuanLyLoaiGUI extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         pnTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblLoai = new javax.swing.JTable();
+        tblLoai = new MyTable();
         jPanel3 = new javax.swing.JPanel();
         pnMaLoai = new javax.swing.JPanel();
         lblMaLoai = new javax.swing.JLabel();

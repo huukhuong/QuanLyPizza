@@ -488,7 +488,7 @@ public class QuanLySanPhamGUI extends JPanel {
     private void xuLyThemLoai() {
         int x = cmbLoai.getSelectedIndex();
         if (x == cmbLoai.getItemCount() - 1) {
-            QuanLyLoaiGUI loaiGUI = new QuanLyLoaiGUI();
+            DlgQuanLyLoai loaiGUI = new DlgQuanLyLoai();
             loaiGUI.setVisible(true);
             loadDataCmbLoai();
         }
@@ -496,6 +496,8 @@ public class QuanLySanPhamGUI extends JPanel {
 
     private void xuLyThemSanPham() {
         String anh = fileAnhSP.getName();
+        String tenFile = fileAnhSP.getPath();
+        System.out.println(tenFile);
         boolean flag = spBUS.themSanPham(txtTen.getText(),
                 cmbLoai.getSelectedItem() + "",
                 txtsoLuong.getText(),
