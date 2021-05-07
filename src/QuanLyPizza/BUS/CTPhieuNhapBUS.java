@@ -21,7 +21,20 @@ public class CTPhieuNhapBUS {
         if (listPhieuNhap == null) {
             docDanhSach();
         }
-        return null;
+        return listPhieuNhap;
+    }
+    
+    public ArrayList<CTPhieuNhap> getListPhieuNhap(String maPN) {
+        ArrayList<CTPhieuNhap> dsct = new ArrayList<>();
+        int ma = Integer.parseInt(maPN);
+        
+        for(CTPhieuNhap ct: listPhieuNhap) {
+            if(ct.getMaPN() == ma) {
+                dsct.add(ct);
+            }
+        }
+        
+        return dsct;
     }
 
     public boolean luuCTPhieuNhap(CTPhieuNhap ctpn) {

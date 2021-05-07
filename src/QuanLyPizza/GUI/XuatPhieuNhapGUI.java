@@ -6,6 +6,7 @@ import QuanLyPizza.BUS.SanPhamBUS;
 import QuanLyPizza.DTO.CTPhieuNhap;
 import QuanLyPizza.DTO.SanPham;
 import MyCustom.MyDialog;
+import java.awt.print.PrinterException;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -77,6 +78,11 @@ public class XuatPhieuNhapGUI extends javax.swing.JDialog {
         btnInPhieu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnInPhieu.setText("In phiếu nhập");
         btnInPhieu.setPreferredSize(new java.awt.Dimension(145, 40));
+        btnInPhieu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInPhieuActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnInPhieu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,6 +192,14 @@ public class XuatPhieuNhapGUI extends javax.swing.JDialog {
         
         new MyDialog("Xác nhận thành công!", MyDialog.SUCCESS_DIALOG);
     }//GEN-LAST:event_btnXacNhanActionPerformed
+
+    private void btnInPhieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInPhieuActionPerformed
+        try {
+            txtChiTiet.print();
+        } catch (PrinterException e) {
+        }
+        this.dispose();
+    }//GEN-LAST:event_btnInPhieuActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInPhieu;

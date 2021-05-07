@@ -40,6 +40,7 @@ public class QuanLyThongKeGUI extends JPanel {
     JLabel lblMon1, lblMon2, lblMon3, lblMon4, lblMon5, lblSoLuong1, lblSoLuong2, lblSoLuong3, lblSoLuong4, lblSoLuong5;
     private ChartPanel chartPanel;
     JPanel pnThongKeChiTiet, pnChart;
+    JButton btn_filter;
 
     private void addControls() {
         this.setLayout(new BorderLayout());
@@ -146,8 +147,13 @@ public class QuanLyThongKeGUI extends JPanel {
         for (int i = year; i >= year - 10; i--)
             cmbNam.addItem(i);
         cmbNam.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        cmbNam.setBounds(w / 2 - 100 / 2, 560, 100, 35);
+        cmbNam.setBounds(w / 2 - 100 / 2, 560, 120, 35);
         pnThongKeTong.add(cmbNam);
+        
+        btn_filter = new JButton("Chi tiết");
+        btn_filter.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        btn_filter.setBounds((w / 2 - 100 / 2) + 140, 560, 100, 35);
+//        pnThongKeTong.add(btn_filter);
 
         JLabel lblBackgroundBang = new JLabel(new ImageIcon("image/ManagerUI/bangThongKe.png"));
         lblBackgroundBang.setBounds(98, 610, 834, 189);
@@ -267,6 +273,13 @@ public class QuanLyThongKeGUI extends JPanel {
                 hienThiThongKe();
             }
         });
+        btn_filter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DlgLocThongKe dlg = new DlgLocThongKe();
+                dlg.setVisible(true);
+            }
+        });
     }
 
     private void veLaiChart() {
@@ -280,7 +293,7 @@ public class QuanLyThongKeGUI extends JPanel {
 
     private JFreeChart createChart() {
         JFreeChart barChart = ChartFactory.createBarChart(
-                "Doanh thu năm" + Calendar.getInstance().get(Calendar.YEAR),
+                "Doanh thu năm " + Calendar.getInstance().get(Calendar.YEAR),
                 "Tháng", "Doanh thu",
                 createDataset(), PlotOrientation.VERTICAL, false, false, false);
         return barChart;
