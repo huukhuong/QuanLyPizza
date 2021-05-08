@@ -29,13 +29,13 @@ public class MainQuanLyGUI extends JFrame {
 
     JLabel btnDoiMatKhau;
     JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnKhuyenMai, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang, pnThongKe;
-    QuanLyBanHangGUI banHangPanel;
-    QuanLyKhuyenMaiGUI khuyenMaiPanel;
-    QuanLyNhapHangGUI nhapHangPanel;
-    QuanLySanPhamGUI sanPhamPanel;
-    QuanLyNhanVienGUI nhanVienPanel;
-    QuanLyKhachHangGUI khachHangPanel;
-    QuanLyThongKeGUI thongKePanel;
+    PnQuanLyBanHangGUI banHangPanel;
+    PnQuanLyKhuyenMaiGUI khuyenMaiPanel;
+    PnQuanLyNhapHangGUI nhapHangPanel;
+    PnQuanLySanPhamGUI sanPhamPanel;
+    PnQuanLyNhanVienGUI nhanVienPanel;
+    PnQuanLyKhachHangGUI khachHangPanel;
+    PnQuanLyThongKeGUI thongKePanel;
 
     JLabel btnClose, btnMinimize, lblBanHang, lblKhuyenMai, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe;
     final Color clLeftItem = new Color(63, 74, 89);
@@ -153,11 +153,11 @@ public class MainQuanLyGUI extends JFrame {
         pnCard.add(pnThongKe, "7");
 
         //==========ADD PANEL BÁN HÀNG + KHUYẾN MÃI (Ko phân quyền)==========
-        banHangPanel = new QuanLyBanHangGUI();
+        banHangPanel = new PnQuanLyBanHangGUI();
         pnBanHang.setLayout(new BorderLayout());
         pnBanHang.add(banHangPanel, BorderLayout.CENTER);
 
-        khuyenMaiPanel = new QuanLyKhuyenMaiGUI();
+        khuyenMaiPanel = new PnQuanLyKhuyenMaiGUI();
         pnKhuyenMai.setLayout(new BorderLayout());
         pnKhuyenMai.add(khuyenMaiPanel, BorderLayout.CENTER);
 
@@ -165,35 +165,35 @@ public class MainQuanLyGUI extends JFrame {
         PhanQuyen quyen = PhanQuyenBUS.quyenTK;
 
         if (quyen.getNhapHang() == 1) {
-            nhapHangPanel = new QuanLyNhapHangGUI();
+            nhapHangPanel = new PnQuanLyNhapHangGUI();
             pnNhapHang.setLayout(new BorderLayout());
             pnNhapHang.add(nhapHangPanel, BorderLayout.CENTER);
             lblNhapHang.setVisible(true);
         }
 
         if (quyen.getQlSanPham() == 1) {
-            sanPhamPanel = new QuanLySanPhamGUI();
+            sanPhamPanel = new PnQuanLySanPhamGUI();
             pnSanPham.setLayout(new BorderLayout());
             pnSanPham.add(sanPhamPanel, BorderLayout.CENTER);
             lblSanPham.setVisible(true);
         }
 
         if (quyen.getQlNhanVien() == 1) {
-            nhanVienPanel = new QuanLyNhanVienGUI();
+            nhanVienPanel = new PnQuanLyNhanVienGUI();
             pnNhanVien.setLayout(new BorderLayout());
             pnNhanVien.add(nhanVienPanel, BorderLayout.CENTER);
             lblNhanVien.setVisible(true);
         }
 
         if (quyen.getQlKhachHang() == 1) {
-            khachHangPanel = new QuanLyKhachHangGUI();
+            khachHangPanel = new PnQuanLyKhachHangGUI();
             pnKhachHang.setLayout(new BorderLayout());
             pnKhachHang.add(khachHangPanel, BorderLayout.CENTER);
             lblKhachHang.setVisible(true);
         }
 
         if (quyen.getThongKe() == 1) {
-            thongKePanel = new QuanLyThongKeGUI();
+            thongKePanel = new PnQuanLyThongKeGUI();
             pnThongKe.setLayout(new BorderLayout());
             pnThongKe.add(thongKePanel, BorderLayout.CENTER);
             lblThongKe.setVisible(true);

@@ -20,8 +20,8 @@ public class XuatHoaDonGUI extends JDialog {
 
     private HoaDonBUS hoadonBUS = new HoaDonBUS();
     private CTHoaDonBUS ctHoaDonBUS = new CTHoaDonBUS();
-    private DlgTimKhachGUI timKhachUI = new DlgTimKhachGUI();
-    private DlgTimMaGiamGUI timMaUI;
+    private DlgTimKhach timKhachUI = new DlgTimKhach();
+    private DlgTimMaGiam timMaUI;
 
     public XuatHoaDonGUI() {
         checkBanHang = false;
@@ -331,7 +331,7 @@ public class XuatHoaDonGUI extends JDialog {
         xuLyHienThiHoaDon();
         btnInHoaDon.setEnabled(true);
 
-        hoadonBUS.luuHoaDon(DlgTimKhachGUI.khachHangTimDuoc.getMaKH(), nhanVien, tongTien, "Đã thanh toán");
+        hoadonBUS.luuHoaDon(DlgTimKhach.khachHangTimDuoc.getMaKH(), nhanVien, tongTien, "Đã thanh toán");
 
         for (Vector vec : dsGioHang) {
             String maSP = vec.get(0) + "";
@@ -366,7 +366,7 @@ public class XuatHoaDonGUI extends JDialog {
 
 
     private void btnTimMaGiamActionPerformed(java.awt.event.ActionEvent evt) {
-        timMaUI = new DlgTimMaGiamGUI(tongTien);
+        timMaUI = new DlgTimMaGiam(tongTien);
         timMaUI.setVisible(true);
         if (timMaUI.maGiamTimDuoc != null) {
             txtMaGiam.setText(timMaUI.maGiamTimDuoc.getMaGiam() + " - " + timMaUI.maGiamTimDuoc.getTenGiamGia());

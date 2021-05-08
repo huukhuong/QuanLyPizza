@@ -21,9 +21,9 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
-public class QuanLyThongKeGUI extends JPanel {
+public class PnQuanLyThongKeGUI extends JPanel {
 
-    public QuanLyThongKeGUI() {
+    public PnQuanLyThongKeGUI() {
         changLNF("Windows");
         addControls();
         addEvents();

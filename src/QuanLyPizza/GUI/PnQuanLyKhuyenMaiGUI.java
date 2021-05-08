@@ -22,9 +22,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
 
-public class QuanLyKhuyenMaiGUI extends JPanel {
+public class PnQuanLyKhuyenMaiGUI extends JPanel {
 
-    public QuanLyKhuyenMaiGUI() {
+    public PnQuanLyKhuyenMaiGUI() {
         Main.changLNF("Windows");
         addControls();
         addEvents();

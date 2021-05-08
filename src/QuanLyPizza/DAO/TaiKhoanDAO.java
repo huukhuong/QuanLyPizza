@@ -120,4 +120,17 @@ public class TaiKhoanDAO {
         }
         return false;
     }
+
+    public int getTrangThai(int ma) {
+        try {
+            String sql = "SELECT TrangThai FROM TaiKhoan WHERE MaNV=" + ma;
+            Statement st = MyConnect.conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+        }
+        return -1;
+    }
 }

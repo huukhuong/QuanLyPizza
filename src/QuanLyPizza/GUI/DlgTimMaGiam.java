@@ -28,13 +28,13 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-public class DlgTimMaGiamGUI extends JDialog {
+public class DlgTimMaGiam extends JDialog {
 
     public static GiamGia maGiamTimDuoc = null;
     private GiamGiaBUS giamGiaBUS = new GiamGiaBUS();
     private int tongTien = 0;
 
-    public DlgTimMaGiamGUI(int tongTien) {
+    public DlgTimMaGiam(int tongTien) {
         this.tongTien = tongTien;
         addControls();
         addEvents();

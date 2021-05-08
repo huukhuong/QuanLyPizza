@@ -98,5 +98,10 @@ public class TaiKhoanBUS {
         }
         return flag;
     }
+    
+    public int getTrangThai(String maNV) {
+        int ma = Integer.parseInt(maNV);
+        return taiKhoanDAO.getTrangThai(ma);
+    }
 
 }

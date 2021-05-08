@@ -22,12 +22,12 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class DlgTimKhachGUI extends JDialog {
+public class DlgTimKhach extends JDialog {
 
     private KhachHangBUS khachHangBUS = new KhachHangBUS();
     public static KhachHang khachHangTimDuoc = null;
 
-    public DlgTimKhachGUI() {
+    public DlgTimKhach() {
         addControls();
         addEvents();
 

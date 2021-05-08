@@ -21,9 +21,9 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
-public class QuanLyNhapHangGUI extends javax.swing.JPanel {
+public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
 
-    public QuanLyNhapHangGUI() {
+    public PnQuanLyNhapHangGUI() {
         initComponents();
         customControls();
         loadDataCmbNhanVien();

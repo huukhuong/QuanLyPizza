@@ -22,9 +22,9 @@ import java.util.Vector;
 
 import static Main.Main.changLNF;
 
-public class QuanLyKhachHangGUI extends JPanel {
+public class PnQuanLyKhachHangGUI extends JPanel {
 
-    public QuanLyKhachHangGUI() {
+    public PnQuanLyKhachHangGUI() {
         changLNF("Windows");
         addControls();
         addEvents();

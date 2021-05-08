@@ -28,9 +28,9 @@ import java.util.Vector;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-public class QuanLyNhanVienGUI extends JPanel {
+public class PnQuanLyNhanVienGUI extends JPanel {
 
-    public QuanLyNhanVienGUI() {
+    public PnQuanLyNhanVienGUI() {
         changLNF("Windows");
         addControlsNhanVien();
         addEventsNhanVien();
@@ -257,6 +257,7 @@ public class QuanLyNhanVienGUI extends JPanel {
         dtmNhanVien.addColumn("Tên");
         dtmNhanVien.addColumn("Giới tính");
         dtmNhanVien.addColumn("Chức vụ");
+        dtmNhanVien.addColumn("Tài khoản");
         tblNhanVien = new MyTable(dtmNhanVien);
         JScrollPane scrTblNhanVien = new JScrollPane(tblNhanVien);
         pnTableNhanVien.add(scrTblNhanVien, BorderLayout.CENTER);
@@ -354,7 +355,6 @@ public class QuanLyNhanVienGUI extends JPanel {
     JComboBox<String> cmbQuyen;
     JCheckBox ckbNhapHang, ckbQLSanPham, ckbQLNhanVien, ckbQLKhachHang, ckbThongKe;
     JButton btnSuaQuyen, btnThemQuyen, btnXoaQuyen;
-
 
     private void addEventsNhanVien() {
         lblTabbedNhanVien.addMouseListener(new MouseListener() {
@@ -551,8 +551,9 @@ public class QuanLyNhanVienGUI extends JPanel {
             return;
         }
         MyDialog dlg = new MyDialog("Bạn có chắc chắn muốn xoá?", MyDialog.WARNING_DIALOG);
-        if (dlg.getAction() == MyDialog.CANCEL_OPTION)
+        if (dlg.getAction() == MyDialog.CANCEL_OPTION) {
             return;
+        }
         String tenQuyen = cmbQuyen.getSelectedItem() + "";
         boolean flag = phanQuyenBUS.xoaQuyen(tenQuyen);
         if (flag) {
@@ -650,17 +651,20 @@ public class QuanLyNhanVienGUI extends JPanel {
         }
         DlgCapTaiKhoan dialog = new DlgCapTaiKhoan(txtMaNV.getText());
         dialog.setVisible(true);
+        loadDataTblNhanVien();
     }
 
     private void xuLyKhoaTaiKhoan() {
         TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
         taiKhoanBUS.khoaTaiKhoan(txtMaNV.getText());
+        loadDataTblNhanVien();
     }
 
     private void xuLyNhapExcel() {
         MyDialog dlg = new MyDialog("Dữ liệu cũ sẽ bị xoá, tiếp tục?", MyDialog.WARNING_DIALOG);
-        if (dlg.getAction() != MyDialog.OK_OPTION)
+        if (dlg.getAction() != MyDialog.OK_OPTION) {
             return;
+        }
 
         XuLyFileExcel nhapExcel = new XuLyFileExcel();
         nhapExcel.nhapExcel(tblNhanVien);
@@ -764,8 +768,20 @@ public class QuanLyNhanVienGUI extends JPanel {
             vec.add(nv.getTen());
             vec.add(nv.getGioiTinh());
             vec.add(nv.getChucVu());
+            int trangThai = taiKhoanBUS.getTrangThai(nv.getMaNV() + "");
+            if (trangThai == 0) {
+                vec.add("Khoá");
+            }
+            else if(trangThai == 1) {
+                vec.add("Hiệu lực");
+            }
+            else {
+                vec.add("Chưa có");
+            }
             dtmNhanVien.addRow(vec);
         }
     }
+
+    TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
 
 }

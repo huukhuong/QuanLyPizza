@@ -29,7 +29,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 import javax.swing.text.*;
 
-public class QuanLyBanHangGUI extends JPanel {
+public class PnQuanLyBanHangGUI extends JPanel {
 
     private SanPhamBUS spBUS = new SanPhamBUS();
     private NhanVienBUS nvBUS = new NhanVienBUS();
@@ -56,7 +56,7 @@ public class QuanLyBanHangGUI extends JPanel {
     DefaultTableModel dtmCTHoaDon;
     JButton btnReset, btnResetCTHoaDon, btnResetHoaDon;
 
-    public QuanLyBanHangGUI() {
+    public PnQuanLyBanHangGUI() {
         changLNF("Windows");
         addControlsBanHang();
         addEventsBanHang();
