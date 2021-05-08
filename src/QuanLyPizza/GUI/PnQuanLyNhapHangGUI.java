@@ -1095,6 +1095,7 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
     private void btnResetKhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetKhoActionPerformed
         sanPhamBUS.docListSanPham();
         loadDataTableKho();
+        dtmGioNhap.setRowCount(0);
     }//GEN-LAST:event_btnResetKhoActionPerformed
 
 // <editor-fold defaultstate="collapsed" desc="Variable">

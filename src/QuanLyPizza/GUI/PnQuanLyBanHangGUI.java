@@ -922,7 +922,6 @@ public class PnQuanLyBanHangGUI extends JPanel {
     DecimalFormat dcf = new DecimalFormat("###,###");
 
     private void loadDataTableSanPhamBan() {
-        changLNF("Windows");
         dtmSanPhamBan.setRowCount(0);
         ArrayList<SanPham> dssp = null;
 
@@ -1049,6 +1048,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
 
                 // cập nhật lại số lượng trong db
                 spBUS.capNhatSoLuongSP(key, -soLuong);
+                spBUS.docListSanPham();
                 loadDataTableSanPhamBan();
                 return;
             }
@@ -1064,6 +1064,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
         vec.add(dcf.format(soLuong * donGiaSP));
         // cập nhật lại số lượng trong db
         spBUS.capNhatSoLuongSP(key, -soLuong);
+        spBUS.docListSanPham();
         loadDataTableSanPhamBan();
         dtmGioHang.addRow(vec);
     }

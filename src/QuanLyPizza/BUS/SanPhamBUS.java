@@ -45,7 +45,7 @@ public class SanPhamBUS {
         ArrayList<SanPham> dssp = new ArrayList<>();
         for (SanPham sp : listSanPham) {
             String tenSP = sp.getTenSP().toLowerCase();
-            if (tenSP.contains(ten)) {
+            if (tenSP.toLowerCase().contains(ten.toLowerCase())) {
                 dssp.add(sp);
             }
         }

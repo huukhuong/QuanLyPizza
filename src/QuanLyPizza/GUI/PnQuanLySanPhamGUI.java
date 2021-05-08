@@ -424,6 +424,7 @@ public class PnQuanLySanPhamGUI extends JPanel {
     }
 
     private void loadDataLenBangSanPham() {
+        spBUS.docListSanPham();
         dtmSanPham.setRowCount(0);
 
         ArrayList<SanPham> dssp = spBUS.getListSanPham();
