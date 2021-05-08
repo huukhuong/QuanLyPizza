@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="xoá class thừa" />
+    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="xoá class thừa">
+      <change afterPath="$PROJECT_DIR$/Tổng quan về đồ án.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/~$ng quan về đồ án.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/~WRL2368.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/QuanLyBanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/QuanLyBanHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -21,7 +21,7 @@ public class XuatHoaDonGUI extends JDialog {
     private HoaDonBUS hoadonBUS = new HoaDonBUS();
     private CTHoaDonBUS ctHoaDonBUS = new CTHoaDonBUS();
     private DlgTimKhachGUI timKhachUI = new DlgTimKhachGUI();
-    private DlgTimMaGiamGUI timMaUI = new DlgTimMaGiamGUI();
+    private DlgTimMaGiamGUI timMaUI;
 
     public XuatHoaDonGUI() {
         checkBanHang = false;
@@ -144,6 +144,7 @@ public class XuatHoaDonGUI extends JDialog {
                 tongTien = tongTien - (tongTien * percent / 100);
             } else {
                 new MyDialog("Không đủ điều kiện nhận ưu đãi!", MyDialog.ERROR_DIALOG);
+                btnTimMaGiam.setEnabled(true);
                 return;
             }
         }
@@ -365,6 +366,7 @@ public class XuatHoaDonGUI extends JDialog {
 
 
     private void btnTimMaGiamActionPerformed(java.awt.event.ActionEvent evt) {
+        timMaUI = new DlgTimMaGiamGUI(tongTien);
         timMaUI.setVisible(true);
         if (timMaUI.maGiamTimDuoc != null) {
             txtMaGiam.setText(timMaUI.maGiamTimDuoc.getMaGiam() + " - " + timMaUI.maGiamTimDuoc.getTenGiamGia());

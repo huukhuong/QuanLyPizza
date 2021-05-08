@@ -221,6 +221,7 @@ public class QuanLyBanHangGUI extends JPanel {
         lblTen.setFont(font);
         txtTenSPBanHang = new JTextField(15);
         txtTenSPBanHang.setFont(font);
+        txtTenSPBanHang.setEditable(false);
         pnTenSP.add(lblTen);
         pnTenSP.add(txtTenSPBanHang);
         pnThongTinBanHang.add(pnTenSP);

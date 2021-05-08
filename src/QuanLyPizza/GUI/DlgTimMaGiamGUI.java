@@ -32,8 +32,10 @@ public class DlgTimMaGiamGUI extends JDialog {
 
     public static GiamGia maGiamTimDuoc = null;
     private GiamGiaBUS giamGiaBUS = new GiamGiaBUS();
+    private int tongTien = 0;
 
-    public DlgTimMaGiamGUI() {
+    public DlgTimMaGiamGUI(int tongTien) {
+        this.tongTien = tongTien;
         addControls();
         addEvents();
 
@@ -143,6 +145,12 @@ public class DlgTimMaGiamGUI extends JDialog {
                 dieuKienst = dieuKienst.replace(">", "");
                 dieuKienst = dieuKienst.replace(",", "");
                 int dieuKien = Integer.parseInt(dieuKienst);
+
+                if(dieuKien > tongTien) {
+                    new MyDialog("Không đủ điều kiện áp dụng mã giảm này!", MyDialog.ERROR_DIALOG);
+                    return;
+                }
+                
                 SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                 Date ngayBD = sdf.parse(tblMaGiam.getValueAt(row, 4) + "");
                 Date ngayKT = sdf.parse(tblMaGiam.getValueAt(row, 5) + "");
