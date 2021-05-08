@@ -226,8 +226,9 @@ public class DangNhapGUI extends JFrame {
                 txtPassword.getText(), ckbRemember.isSelected());
         if (tk != null) {
             this.dispose();
-            LoadingGUI loading = new LoadingGUI();
-            loading.showWindow();
+            MainQuanLyGUI gui = new MainQuanLyGUI();
+            this.dispose();
+            gui.showWindow();
         }
     }
 
