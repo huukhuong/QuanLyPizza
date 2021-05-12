@@ -20,7 +20,7 @@ public class XuLyFileExcel {
         try {
             TableModel dtm = tbl.getModel();
 
-            JFileChooser chooser = new JFileChooser("export/");
+            JFileChooser chooser = new MyFileChooser("export/");
             chooser.setDialogTitle("Lưu vào");
             FileNameExtensionFilter fnef = new FileNameExtensionFilter("Excel Files", "xls", "xlsx", "xlsm");
             chooser.setFileFilter(fnef);
@@ -96,7 +96,7 @@ public class XuLyFileExcel {
         try {
             TableModel dtm = tbl.getModel();
 
-            JFileChooser chooser = new JFileChooser("export/");
+            JFileChooser chooser = new MyFileChooser("export/");
             chooser.setDialogTitle("Chọn file");
             FileNameExtensionFilter fnef = new FileNameExtensionFilter("Excel Files", "xls", "xlsx", "xlsm");
             chooser.setFileFilter(fnef);

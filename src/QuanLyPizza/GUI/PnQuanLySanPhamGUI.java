@@ -9,6 +9,7 @@ import static Main.Main.changLNF;
 
 import MyCustom.XuLyFileExcel;
 import MyCustom.MyDialog;
+import MyCustom.MyFileChooser;
 import MyCustom.MyTable;
 import MyCustom.TransparentPanel;
 
@@ -519,7 +520,7 @@ public class PnQuanLySanPhamGUI extends JPanel {
     }
 
     private void xuLyChonAnh() {
-        JFileChooser fileChooser = new JFileChooser("image/SanPham/");
+        JFileChooser fileChooser = new MyFileChooser("image/SanPham/");
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "Tệp hình ảnh", "jpg", "png", "jpeg");
         fileChooser.setFileFilter(filter);

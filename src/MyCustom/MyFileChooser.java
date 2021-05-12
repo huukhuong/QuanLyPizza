@@ -28,6 +28,10 @@ public class MyFileChooser  extends JFileChooser {
         public MyFileChooser() {
             super();
         }
+        
+        public MyFileChooser(String src) {
+            super(src);
+        }
 
         // --- Override the other constructors as needed ---
 
