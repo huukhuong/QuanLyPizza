@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 07, 2021 lúc 06:02 PM
+-- Thời gian đã tạo: Th5 14, 2021 lúc 01:26 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -112,7 +112,11 @@ INSERT INTO `cthoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`) VALUES
 (32, 120, 5, 239000, 1195000),
 (32, 121, 4, 229000, 916000),
 (33, 116, 1, 130000, 130000),
-(33, 119, 30, 239000, 7170000);
+(33, 119, 30, 239000, 7170000),
+(35, 113, 1, 119000, 119000),
+(35, 117, 1, 149000, 149000),
+(35, 131, 8, 10000, 70000),
+(37, 116, 1, 130000, 130000);
 
 -- --------------------------------------------------------
 
@@ -172,7 +176,7 @@ INSERT INTO `giamgia` (`MaGiam`, `TenGiamGia`, `PhanTramGiam`, `DieuKien`, `Ngay
 (1, 'Không giảm giá', 0, 0, '2020-01-01', '2042-12-31'),
 (2, 'Giảm 20% đơn hàng từ 150.000đ', 20, 150000, '2021-04-22', '2021-05-13'),
 (4, 'Giảm 10% đơn hàng từ 80.000đ', 10, 80000, '2021-03-26', '2021-05-31'),
-(6, '30/04-01/05 giảm 30% đơn hàng từ 300.000đ', 30, 300000, '2021-04-20', '2021-05-10');
+(6, '30/04-01/05 giảm 30% đơn hàng từ 300.000đ', 30, 300000, '2021-04-20', '2021-05-08');
 
 -- --------------------------------------------------------
 
@@ -209,7 +213,9 @@ INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `NgayLap`, `TongTien`, `GhiChu`) V
 (30, 10, 4, '2021-04-15', 3136800, 'Đã thanh toán'),
 (31, 11, 4, '2021-05-02', 782600, 'Đã thanh toán'),
 (32, 11, 0, '2021-05-03', 1477700, 'Đã thanh toán'),
-(33, 9, 0, '2021-05-06', 5110000, 'Đã thanh toán');
+(33, 9, 0, '2021-05-06', 5110000, 'Đã thanh toán'),
+(35, 3, 0, '2021-05-08', 304200, 'Đã thanh toán'),
+(37, 2, 0, '2021-05-08', 117000, 'Đã thanh toán');
 
 -- --------------------------------------------------------
 
@@ -232,8 +238,8 @@ CREATE TABLE `khachhang` (
 
 INSERT INTO `khachhang` (`MaKH`, `Ho`, `Ten`, `GioiTinh`, `TongChiTieu`, `TinhTrang`) VALUES
 (1, 'Nguyễn Văn', 'An', 'Nam', 1486400, 1),
-(2, 'Trần Ngọc', 'Bình', 'Nữ', 1231300, 1),
-(3, 'Lê Thị', 'Giải', 'Nữ', 1045600, 1),
+(2, 'Trần Ngọc', 'Bình', 'Nữ', 1497300, 1),
+(3, 'Lê Thị', 'Giải', 'Nữ', 1468800, 1),
 (4, 'Hà Thanh', 'Thoát', 'Nam', 1013600, 1),
 (7, 'Trịnh Thị', 'Yên', 'Nữ', 3219700, 1),
 (8, 'Trương Đình', 'Vui', 'Nam', 1877000, 1),
@@ -384,15 +390,15 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `MaLoai`, `SoLuong`, `DonViTinh`, `HinhAnh`, `DonGia`) VALUES
-(111, 'Pizza Hải Sản Pesto Xanh', 1, 34, 'Cái', 'pizza0.png', 169000),
+(111, 'Pizza Hải Sản Pesto Xanh', 1, 31, 'Cái', 'pizza0.png', 169000),
 (112, 'Pizza Hải Sản Nhiệt Đới', 1, 39, 'Cái', 'pizza1.png', 129000),
-(113, 'Pizza Hải Sản Cocktail', 1, 35, 'Cái', 'pizza2.png', 119000),
+(113, 'Pizza Hải Sản Cocktail', 1, 34, 'Cái', 'pizza2.png', 119000),
 (114, 'Pizza Tôm Cocktail', 1, 36, 'Cái', 'pizza3.png', 159000),
-(115, 'Pizza Aloha', 1, 39, 'Cái', 'pizza4.png', 119000),
-(116, 'Pizza Thịt Xông Khói', 1, 40, 'Cái', 'pizza5.png', 130000),
-(117, 'Pizza Thịt Nguội', 1, 36, 'Cái', 'pizza6.png', 149000),
-(118, 'Pizza Gà Nướng 3 Vị', 1, 36, 'Cái', 'pizza7.png', 129000),
-(119, 'Pizza hải sản Pesto gấp đôi nhân', 1, 14, 'Cái', 'pizza8.jpg', 239000),
+(115, 'Pizza Aloha', 1, 38, 'Cái', 'pizza4.png', 119000),
+(116, 'Pizza Thịt Xông Khói', 1, 39, 'Cái', 'pizza5.png', 130000),
+(117, 'Pizza Thịt Nguội', 1, 34, 'Cái', 'pizza6.png', 149000),
+(118, 'Pizza Gà Nướng 3 Vị', 1, 35, 'Cái', 'pizza7.png', 129000),
+(119, 'Pizza hải sản Pesto gấp đôi nhân', 1, 13, 'Cái', 'pizza8.jpg', 239000),
 (120, 'Pizza gấp đôi nhân phủ cơn lốc hải sản', 1, 37, 'Cái', 'pizza9.jpg', 239000),
 (121, 'Pizza gấp đôi nhân phủ hải sản xốt tiêu đen', 1, 41, 'Cái', 'pizza10.jpg', 229000),
 (122, 'Pizza bò nướng tiêu đen', 1, 43, 'Cái', 'pizza11.jpg', 249000),
@@ -404,7 +410,7 @@ INSERT INTO `sanpham` (`MaSP`, `TenSP`, `MaLoai`, `SoLuong`, `DonViTinh`, `HinhA
 (128, 'Pepsi no calories 330ml', 2, 180, 'Lon', 'douong4.jpg', 19000),
 (129, 'Mirinda cam 330ml', 2, 100, 'Lon', 'douong5.jpg', 19000),
 (130, 'Mirinda kem soda 330ml', 2, 80, 'Lon', 'douong6.jpg', 19000),
-(131, 'Nước suối Aquafina', 2, 60, 'Chai', 'douong7.jpg', 10000),
+(131, 'Nước suối Aquafina', 2, 52, 'Chai', 'douong7.jpg', 10000),
 (132, 'Trà sữa trà đen', 2, 6, 'Ly', 'douong8.jpg', 25000),
 (135, 'Bột mì Meizan 500g', 3, 100, 'Gói', 'default.png', 10000),
 (136, 'Men nở Mauripan 50g*5', 3, 200, 'Hộp', 'default.png', 23000),
@@ -532,7 +538,7 @@ ALTER TABLE `giamgia`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `MaHD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
@@ -568,7 +574,7 @@ ALTER TABLE `phieunhap`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
