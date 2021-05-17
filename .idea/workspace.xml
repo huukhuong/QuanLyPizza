@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="xoá class thừa">
-      <change afterPath="$PROJECT_DIR$/Tổng quan về đồ án.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~$ng quan về đồ án.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~WRL2368.tmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/QuanLyBanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/QuanLyBanHangGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimMaGiam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimMaGiam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/libs/jfreechart.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.25146887" />
     <property name="project.structure.side.proportion" value="0.31985942" />

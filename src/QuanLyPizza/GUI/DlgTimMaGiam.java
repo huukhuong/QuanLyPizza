@@ -133,7 +133,7 @@ public class DlgTimMaGiam extends JDialog {
         int row = tblMaGiam.getSelectedRow();
         if (row > -1) {
             try {
-                if (tblMaGiam.getValueAt(row, 3).equals("Không hiệu lực")) {
+                if (tblMaGiam.getValueAt(row, 6).equals("Không hiệu lực")) {
                     new MyDialog("Mã này đã hết hiệu lực!", MyDialog.ERROR_DIALOG);
                     loadDataLenTable();
                     return;
