@@ -147,7 +147,6 @@ public class ThongKeDAO {
         return 0;
     }
 
-
     public double getDoanhThuThang(int thang, int nam) {
         try {
             String thangBD = nam + "-" + thang + "-01";
@@ -164,5 +163,24 @@ public class ThongKeDAO {
             e.printStackTrace();
         }
         return nam;
+    }
+
+    public double abc(int thang, int nam) {
+        try {
+            String d1 = nam + "-" + thang + "-01";
+            String d2 = nam + "-" + (thang + 1) + "-01";
+            String sql = "SELECT SUM(TongTien) FROM HoaDon WHERE NgayLap BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
+
+            PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
+            pre.setString(1, d1);
+            pre.setString(2, d2);
+            ResultSet rs = pre.executeQuery();
+
+            while (rs.next())
+                return rs.getDouble(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0.0f;
     }
 }

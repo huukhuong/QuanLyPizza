@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="xoá class thừa">
+    <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="fix bug tìm mã giảm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimMaGiam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimMaGiam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/DangNhapBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/DangNhapBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/ThongKeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/ThongKeDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.25146887" />
     <property name="project.structure.side.proportion" value="0.31985942" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -218,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619956667056</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix bug tìm mã giảm">
+      <created>1621218231318</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1621218231318</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,6 +254,7 @@
     <MESSAGE value="fix GUI thống kê" />
     <MESSAGE value="cập nhật biểu đồ thống kê" />
     <MESSAGE value="xoá class thừa" />
-    <option name="LAST_COMMIT_MESSAGE" value="xoá class thừa" />
+    <MESSAGE value="fix bug tìm mã giảm" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug tìm mã giảm" />
   </component>
 </project>
