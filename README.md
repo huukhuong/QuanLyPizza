@@ -5,7 +5,6 @@
 |1    |3119410300  |[Sau Đại Phát](https://www.facebook.com/profile.php?id=100041069225312)|
 |2    |3119410493  |[Trần Quang Vinh](https://www.facebook.com/quangvinh.tran.188478)|
 |3    |3119410204  |[Trần Hữu Khương](https://www.facebook.com/JB.TranHuuKhuong/)|
-|4    |3119410364  |[Nhữ Quốc Anh Tài](https://www.facebook.com/tai.nhu.568)|
 ### Hướng dẫn:
 1) Tạo database "quanlypizza" và import ./database/quanlypizza.sql vào MySQL.
 2) Import các thư viện liên quan trong thư mục /libs/
