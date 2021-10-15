@@ -893,7 +893,6 @@ public class PnQuanLyBanHangGUI extends JPanel {
         cmbLoaiSPBanHang.removeAllItems();
         cmbLoaiSPBanHang.addItem("0 - Chọn loại");
         ArrayList<LoaiSP> dsl = loaiBUS.getDanhSachLoai();
-
         for (LoaiSP loai : dsl) {
             if (!loai.getTenLoai().equalsIgnoreCase("Nguyên liệu")) {
                 cmbLoaiSPBanHang.addItem(loai.getMaLoai() + " - " + loai.getTenLoai());

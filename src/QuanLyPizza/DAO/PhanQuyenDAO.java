@@ -11,7 +11,7 @@ public class PhanQuyenDAO {
 
     public ArrayList<PhanQuyen> getListQuyen() {
         try {
-            String sql = "SELECT * FROM PhanQuyen";
+            String sql = "SELECT * FROM phanquyen";
             Statement st = MyConnect.conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             ArrayList<PhanQuyen> dspq = new ArrayList<>();
@@ -33,7 +33,7 @@ public class PhanQuyenDAO {
 
     public PhanQuyen getQuyen(String quyen) {
         try {
-            String sql = "SELECT * FROM PhanQuyen WHERE quyen='" + quyen + "'";
+            String sql = "SELECT * FROM phanquyen WHERE quyen='" + quyen + "'";
             Statement st = MyConnect.conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()) {
@@ -88,7 +88,7 @@ public class PhanQuyenDAO {
             String sql1 = "UPDATE TaiKhoan SET Quyen='Default' WHERE Quyen='" + phanQuyen + "'";
             Statement st1 = MyConnect.conn.createStatement();
             st1.executeUpdate(sql1);
-            String sql = "DELETE FROM PhanQuyen WHERE Quyen='" + phanQuyen + "'";
+            String sql = "DELETE FROM phanquyen WHERE Quyen='" + phanQuyen + "'";
             Statement st = MyConnect.conn.createStatement();
             return st.executeUpdate(sql) > 0;
         } catch (Exception e) {

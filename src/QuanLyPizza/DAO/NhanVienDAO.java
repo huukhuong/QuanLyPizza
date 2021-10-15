@@ -12,7 +12,7 @@ public class NhanVienDAO {
 
     public ArrayList<NhanVien> getDanhSachNhanVien() {
         try {
-            String sql = "SELECT * FROM NhanVien";
+            String sql = "SELECT * FROM nhanvien";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
             ArrayList<NhanVien> dssv = new ArrayList<>();
@@ -37,7 +37,7 @@ public class NhanVienDAO {
     public NhanVien getNhanVien(int maNV) {
         NhanVien nv = null;
         try {
-            String sql = "SELECT * FROM NhanVien WHERE MaNV=?";
+            String sql = "SELECT * FROM nhanvien WHERE MaNV=?";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setInt(0, maNV);
             ResultSet rs = pre.executeQuery();
@@ -105,7 +105,7 @@ public class NhanVienDAO {
 
     public boolean nhapExcel(NhanVien nv) {
         try {
-            String sql = "DELETE * FROM NhanVien; " +
+            String sql = "DELETE * FROM nhanvien; " +
                     "INSERT INTO NhanVien(Ho, Ten, GioiTinh, ChucVu) " +
                     "VALUES(?, ?, ?, ?)";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);

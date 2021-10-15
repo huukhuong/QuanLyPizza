@@ -2,11 +2,110 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9383bdd5-577e-441d-bb74-6492b0243bab" name="Default Changelist" comment="done">
-      <change afterPath="$PROJECT_DIR$/image/ScreenShots/thongke1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/ScreenShots/thongke2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcalendar_1_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jcalendar_1_3_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48_bin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48_bin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConnectVariable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConnectVariable.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoAn_QuanLyBanPizza.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DoAn_QuanLyBanPizza.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/quanlypizza.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/quanlypizza.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/README.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/dist/README.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.mf" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.mf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/ImagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/MyDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/MyDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/MyFileChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/MyFileChooser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/MyTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/MyTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/TransparentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/TransparentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyCustom/XuLyFileExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyCustom/XuLyFileExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/CTHoaDonBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/CTHoaDonBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/CTPhieuNhapBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/CTPhieuNhapBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/DangNhapBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/DangNhapBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/GiamGiaBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/GiamGiaBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/HoaDonBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/HoaDonBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/KhachHangBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/KhachHangBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/LoaiBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/LoaiBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/NhaCungCapBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/NhaCungCapBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/NhanVienBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/NhanVienBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/PhanQuyenBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/PhanQuyenBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/PhieuNhapBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/PhieuNhapBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/SanPhamBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/SanPhamBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/TaiKhoanBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/TaiKhoanBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/BUS/ThongKeBUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/BUS/ThongKeBUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/CTHoaDonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/CTHoaDonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/CTPhieuNhapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/CTPhieuNhapDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/DangNhapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/DangNhapDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/GiamGiaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/GiamGiaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/HoaDonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/HoaDonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/KhachHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/KhachHangDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/LoaiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/LoaiDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/MyConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/MyConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/NhaCungCapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/NhaCungCapDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/NhanVienDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/NhanVienDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/PhanQuyenDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/PhanQuyenDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/PhieuNhapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/PhieuNhapDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/SanPhamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/SanPhamDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/TaiKhoanDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/TaiKhoanDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DAO/ThongKeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DAO/ThongKeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/CTHoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/CTHoaDon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/CTPhieuNhap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/CTPhieuNhap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/GiamGia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/GiamGia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/HoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/HoaDon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/KhachHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/LoaiSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/LoaiSP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/NhaCungCap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/NhaCungCap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/NhanVien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/NhanVien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/PhanQuyen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/PhanQuyen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/PhieuNhap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/PhieuNhap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/SanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/SanPham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/TaiKhoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/TaiKhoan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/DTO/ThongKe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/DTO/ThongKe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DangNhapGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DangNhapGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgCapTaiKhoan.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgCapTaiKhoan.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgCapTaiKhoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgCapTaiKhoan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgChonNhaCungCap.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgChonNhaCungCap.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgChonNhaCungCap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgChonNhaCungCap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgDoiMatKhau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgDoiMatKhau.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgDoiMatKhau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgDoiMatKhau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgLocThongKe.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgLocThongKe.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgLocThongKe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgLocThongKe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuanLyLoai.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuanLyLoai.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuanLyLoai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuanLyLoai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuyen_MatKhau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuyen_MatKhau.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuyen_MatKhau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgQuyen_MatKhau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgSuaNhaCungCap.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgSuaNhaCungCap.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgSuaNhaCungCap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgSuaNhaCungCap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemKhachHang.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemKhachHang.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemKhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemKhachHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemNhaCungCap.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemNhaCungCap.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemNhaCungCap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgThemNhaCungCap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimKhach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimKhach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimMaGiam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/DlgTimMaGiam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/MainQuanLyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/MainQuanLyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyBanHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyBanHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyKhachHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyKhachHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyKhuyenMaiGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyKhuyenMaiGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyNhanVienGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyNhanVienGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyNhapHangGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyNhapHangGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyNhapHangGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyNhapHangGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLySanPhamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLySanPhamGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyThongKeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/PnQuanLyThongKeGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatHoaDonGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatPhieuNhapGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatPhieuNhapGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatPhieuNhapGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuanLyPizza/GUI/XuatPhieuNhapGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -12,7 +12,7 @@ public class GiamGiaDAO {
 
     public ArrayList<GiamGia> getDanhSachMaGiam() {
         try {
-            String sql = "SELECT * FROM GiamGia";
+            String sql = "SELECT * FROM giamgia";
             Statement st = MyConnect.conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             ArrayList<GiamGia> dsgg = new ArrayList<>();

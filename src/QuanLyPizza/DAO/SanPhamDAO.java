@@ -11,7 +11,7 @@ public class SanPhamDAO {
 
     public ArrayList<SanPham> getListSanPham() {
         try {
-            String sql = "SELECT * FROM SanPham";
+            String sql = "SELECT * FROM sanpham";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
             ArrayList<SanPham> dssp = new ArrayList<>();
@@ -62,7 +62,7 @@ public class SanPhamDAO {
 
     public ArrayList<SanPham> getSanPhamTheoLoai(int maLoai) {
         try {
-            String sql = "SELECT * FROM SanPham WHERE MaLoai=?";
+            String sql = "SELECT * FROM sanpham WHERE MaLoai=?";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setInt(1, maLoai);
             ResultSet rs = pre.executeQuery();
@@ -136,7 +136,7 @@ public class SanPhamDAO {
 
     public boolean nhapSanPhamTuExcel(SanPham sp) {
         try {
-            String sql = "DELETE * FROM SanPham; " +
+            String sql = "DELETE * FROM sanpham; " +
                     "INSERT INTO SanPham(TenSP, MaLoai, SoLuong, DonViTinh, HinhAnh, DonGia) "
                     + "VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);

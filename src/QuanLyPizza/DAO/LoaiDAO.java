@@ -13,7 +13,7 @@ public class LoaiDAO {
 
     public ArrayList<LoaiSP> getDanhSachLoai() {
         try {
-            String sql = "SELECT * FROM Loai";
+            String sql = "SELECT * FROM loai";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
             ArrayList<LoaiSP> dsl = new ArrayList<>();

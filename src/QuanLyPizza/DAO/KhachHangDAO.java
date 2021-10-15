@@ -20,7 +20,7 @@ public class KhachHangDAO {
 
     public ArrayList<KhachHang> getListKhachHang() {
         try {
-            String sql = "SELECT * FROM KhachHang WHERE TinhTrang=1";
+            String sql = "SELECT * FROM khachhang WHERE TinhTrang=1";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
             ArrayList<KhachHang> dskh = new ArrayList<>();

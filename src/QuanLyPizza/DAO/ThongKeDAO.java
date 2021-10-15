@@ -151,7 +151,7 @@ public class ThongKeDAO {
         try {
             String thangBD = nam + "-" + thang + "-01";
             String thangKT = nam + "-" + (thang + 1) + "-01";
-            String sql = "SELECT SUM(TongTien) FROM HoaDon WHERE NgayLap BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
+            String sql = "SELECT SUM(TongTien) FROM hoadon WHERE NgayLap BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setString(1, thangBD);
             pre.setString(2, thangKT);
@@ -169,7 +169,7 @@ public class ThongKeDAO {
         try {
             String d1 = nam + "-" + thang + "-01";
             String d2 = nam + "-" + (thang + 1) + "-01";
-            String sql = "SELECT SUM(TongTien) FROM HoaDon WHERE NgayLap BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
+            String sql = "SELECT SUM(TongTien) FROM hoadon WHERE NgayLap BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)";
 
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setString(1, d1);
